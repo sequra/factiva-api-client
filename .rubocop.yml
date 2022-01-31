@@ -1,13 +1,9 @@
-AllCops:
-  TargetRubyVersion: 2.6
+inherit_gem:
+  sequra-style:
+    - default.yml
 
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+RSpec/ExampleLength:
+  Max: 999
 
-Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
-
-Layout/LineLength:
-  Max: 120
+RSpec/NestedGroups:
+  Enabled: false

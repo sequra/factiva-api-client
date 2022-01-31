@@ -28,7 +28,7 @@ module Factiva
       params = refresh ? refresh_authz_params : set_authz_params
 
       new_authz = make_request(params)
-      new_authz["expiration_timestamp"] = Time.now + new_authz["expires_in"]
+      new_authz["expiration_timestamp"] = time_now + new_authz["expires_in"]
       new_authz
     end
 
@@ -48,7 +48,7 @@ module Factiva
     end
 
     def expired?(timestamp)
-      timestamp < Time.now
+      timestamp < time_now
     end
 
     def set_authn_params
@@ -96,6 +96,10 @@ module Factiva
       url = url.delete_suffix("/") if url.end_with?("/")
 
       "#{url}/token"
+    end
+
+    def time_now
+      Time.now.utc
     end
 
     def config

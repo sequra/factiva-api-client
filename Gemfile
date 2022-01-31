@@ -6,10 +6,10 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake", "~> 13.0"
-gem "rubocop", "~> 1.25"
 
 group :development, :test do
   gem "rspec", "~> 3.0"
+  gem "sequra-style", "~> 0.1", git: "https://github.com/sequra/sequra-style", require: false
 end
 
 group :test do

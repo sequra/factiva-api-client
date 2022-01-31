@@ -5,7 +5,7 @@ module Factiva
                   :password,
                   :username,
                   :device
- 
+
     attr_reader :connection,
                 :authn_grant_type,
                 :authz_grant_type,

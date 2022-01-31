@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/sequra/sequra-style
+  revision: 500e9a9f22a32b71bfb41168b7773fcf248d79af
+  specs:
+    sequra-style (0.2.0)
+      rubocop (~> 1.22.3)
+      rubocop-performance (~> 1.11.5)
+      rubocop-rails (~> 2.12.4)
+      rubocop-rspec (~> 2.5.0)
+
 PATH
   remote: .
   specs:
@@ -7,9 +17,15 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (7.0.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
+    concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
     diff-lcs (1.5.0)
@@ -28,13 +44,17 @@ GEM
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
+    i18n (1.9.1)
+      concurrent-ruby (~> 1.0)
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
+    minitest (5.15.0)
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
     public_suffix (4.0.6)
+    rack (2.2.3)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.2.0)
@@ -52,18 +72,29 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.3)
-    rubocop (1.25.0)
+    rubocop (1.22.3)
       parallel (~> 1.10)
-      parser (>= 3.1.0.0)
+      parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.15.1, < 2.0)
+      rubocop-ast (>= 1.12.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.15.1)
       parser (>= 3.0.1.1)
+    rubocop-performance (1.11.5)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    rubocop-rails (2.12.4)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.7.0, < 2.0)
+    rubocop-rspec (2.5.0)
+      rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
@@ -81,7 +112,7 @@ DEPENDENCIES
   factiva-api-client!
   rake (~> 13.0)
   rspec (~> 3.0)
-  rubocop (~> 1.25)
+  sequra-style (~> 0.1)!
   vcr (~> 6.0)
   webmock (~> 3.0)
 
