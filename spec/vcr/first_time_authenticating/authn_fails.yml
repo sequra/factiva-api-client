@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: client_id=<SECRET_CLIENT_ID>&connection=service-account&grant_type=password&password=<SECRET_PASSWORD>&scope=openid+service_account_id+offline_access%3A&username=<SECRET_USERNAME>&device=testdevice
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '68'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Fri, 28 Jan 2022 14:16:39 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=95f6f3df-5632-4887-8505-ab9e0990afaf; domain=.dowjones.com; path=/;
+        Expires=Mon Jan 26 14:16:39 2032; max-age=315360000;Secure; SameSite=none
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '68'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Fri, 28 Jan 2022 14:16:39 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 dbb909966903df95f63a00d4241f7b7c.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - OKAfyr7WElez8kn0ZnZOpy7ETSP9K3gtkFgtNIMnldx21waPDX9Kuw==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Error from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 c9966d06baf42da6ee92424751ed7202.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD51-C2
+      X-Amz-Cf-Id:
+      - i3wSwv1b1kL41AOsUoLRlsdN8d-UPQ8Krke9VlfR7s1jpdYF5O9PUg==
+    body:
+      encoding: UTF-8
+      string: '{"error":"unauthorized_client","error_description":"invalid client"}'
+  recorded_at: Fri, 28 Jan 2022 14:16:40 GMT
+recorded_with: VCR 6.0.0

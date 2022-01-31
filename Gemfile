@@ -6,7 +6,13 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake", "~> 13.0"
+gem "rubocop", "~> 1.25"
 
-gem "rspec", "~> 3.0"
+group :development, :test do
+  gem "rspec", "~> 3.0"
+end
 
-gem "rubocop", "~> 1.21"
+group :test do
+  gem "vcr", "~> 6.0"
+  gem "webmock", "~> 3.0"
+end

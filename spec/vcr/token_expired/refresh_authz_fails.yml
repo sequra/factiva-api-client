@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"<SECRET_CLIENT_ID>","grant_type":"refresh_token","refresh_token":"qsrLyWTWHIGyir3usvhhLY-TZ70sZDNttxQHwaC74BJWg","scope":"openid
+        service_account_id offline_access:"}'
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '94'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Fri, 28 Jan 2022 15:11:01 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=ab0803ee-6f01-4338-bedd-3ffa5a2eaf78; domain=.dowjones.com; path=/;
+        Expires=Mon Jan 26 15:11:01 2032; max-age=315360000;Secure; SameSite=none
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '94'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Fri, 28 Jan 2022 15:11:00 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 4b0dd366e44414a4e7e6ed6970080d58.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - ndjXjq0Dg0gUWjWDewBtIh1qd-im1y97lbLgOivm5IicA17Clzd2sA==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Error from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 0250a97a9fe8f37b6e3c4270db2dc8ae.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD51-C2
+      X-Amz-Cf-Id:
+      - 9uhFTuU6KFNKMBasbEdkFQcZrvNzYUgISoAJV4J2aa4SN-KRFjOIRQ==
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_request","error_description":"refresh_token parameter
+        needs to be a string"}'
+  recorded_at: Sat, 29 Jan 2022 15:10:20 GMT
+recorded_with: VCR 6.0.0
