@@ -1,6 +1,7 @@
 module Factiva
   class Configuration
-    attr_accessor :base_url,
+    attr_accessor :auth_url,
+                  :base_url,
                   :client_id,
                   :password,
                   :username,
