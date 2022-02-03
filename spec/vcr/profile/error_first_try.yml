@@ -1,0 +1,444 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: client_id=<SECRET_CLIENT_ID>&connection=service-account&grant_type=password&password=<SECRET_PASSWORD>&scope=openid+service_account_id+offline_access%3A&username=<SECRET_USERNAME>&device=testdevice
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '873'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 02 Feb 2022 11:37:11 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=092e7104-b236-48ba-92e4-592de7af49b8; domain=.dowjones.com; path=/;
+        Expires=Sat Jan 31 11:37:11 2032; max-age=315360000;Secure; SameSite=none
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '873'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Wed, 02 Feb 2022 11:37:11 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 adb1632aa800f446f3f4e7b45c9dfd3e.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - ysvZTow83-oB1wwKO_bCbudyqE2BA1mmMod4vO9P3rbL1bzFaZFJPQ==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4debdaa39c21a3212350a638102f8b06.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD50-C1
+      X-Amz-Cf-Id:
+      - AEsvWHL-8nQPSEDaMo0OlFG9Tnw_4jgdXClsAQqAsbmuID8vOkUySQ==
+    body:
+      encoding: UTF-8
+      string: '{"id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMjAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJhdWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTgzMSwiZXhwIjoxNjQzODM3ODMxfQ.Ryag3J3mhLtBfnOHchMcQqCVXijzYs7IrnD5xFRfN1H1ONatW6bzArm9YXITy_z8gF0A45Kui-tpUe9qgcFQAyotwYbzyD4oteGR6vQdQP6DQHxZVgKHvmyvJ1FokrZnAhb5sC4RA2m18RB-qoWAAhUdY2xIappTng2iUGa0RnJ4_6ax8Baf6VzNaJr5Sd9OlDoEAvpUK1NcxrTAMCjYfy_uvIdnMB3mxnOdKQb1zn9GuxngTOXAQGecuiOyDWt3T501Gk56sQY_SWW0WCLV9TfyDhzIbEsQFJJ0N2o3l-jFwbzAd8hiGVsanruD3q-xRAD5QA9kyPWKjigDXSxxfA","access_token":"oH7Utsh_V5s0wx-1MrNtMygN8b8_NmYh","refresh_token":"4y5xh0QYHXWYx7W_bEXhKVfXTXEYso_zrrTlpbIdIxHHO","token_type":"bearer"}'
+  recorded_at: Wed, 02 Feb 2022 11:37:12 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMjAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJhdWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTgzMSwiZXhwIjoxNjQzODM3ODMxfQ.Ryag3J3mhLtBfnOHchMcQqCVXijzYs7IrnD5xFRfN1H1ONatW6bzArm9YXITy_z8gF0A45Kui-tpUe9qgcFQAyotwYbzyD4oteGR6vQdQP6DQHxZVgKHvmyvJ1FokrZnAhb5sC4RA2m18RB-qoWAAhUdY2xIappTng2iUGa0RnJ4_6ax8Baf6VzNaJr5Sd9OlDoEAvpUK1NcxrTAMCjYfy_uvIdnMB3mxnOdKQb1zn9GuxngTOXAQGecuiOyDWt3T501Gk56sQY_SWW0WCLV9TfyDhzIbEsQFJJ0N2o3l-jFwbzAd8hiGVsanruD3q-xRAD5QA9kyPWKjigDXSxxfA&client_id=<SECRET_CLIENT_ID>&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&scope=openid+pib
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1223'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 02 Feb 2022 11:37:12 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=58c0eb9a-ae94-4211-860c-9cafa95087bc; domain=.dowjones.com; path=/;
+        Expires=Sat Jan 31 11:37:12 2032; max-age=315360000;Secure; SameSite=none
+      Vary:
+      - Accept-Encoding
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '1223'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Wed, 02 Feb 2022 11:37:12 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 d3cd567650e598ded7d5dd9266aa396c.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - YJT3qsCKHjH6k_7QKpceDqSVhscdtWF2sGbw8V_CNEvOAPueRwA03g==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 02fcbf68a81897cc093ee1510fb7e93e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD50-C1
+      X-Amz-Cf-Id:
+      - qyTk0yPDXgKtsy5vLH8K94r6hLU6HJGRo-5Mif6bSyU2oL-Hks0IFg==
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OQlRHNDRUUU5SU0hBWFdHVEtaTkU0RVVaQ01ORllXU1NDQ09CTFVTV1RaS0JHRkFXUlZIRlhVTzRDVE1aWkdXV0QyS0ZVVU1VQ09OUVpET1JMQ0pWM1RJTVNHTVZTWFMyS1RLRldFUTRURk9SRUdHUUxTS04yWEVXU1NLSTNWQTREMktSVkhLWlJTTjVNVzI2SlNPVVhWUTVTUkdCNUdZNkJYTkJWV09OVFZKSlhVWTQyRUo1MkVNTUI1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTgzMywiZXhwIjoxNjQzODA1NDMzfQ.PC-oDRlLUfr55Yn9XfYvTRwwrfpNbcVqO4O4aK4KLIy7CeTBB3VF3CF347cWDp6eHy4mYEAJIf6_IsSGonr7QieAZd9ttyK05mZhFG_pC9rJpPHCwmqen2pQxxkDLMnfVGUPrx08XHTSJMKGb6P3DQQ2K7EXZjagdjOobZNXQs4FGQ2r8AFp52dy8I43g262So8_91oFf_YmB0krWEhVOahHED66wKtShlb6gYiUQwo2EYudj5ukmqAXfgWZTWSvGdxccgrjDf3vc8O-S-AGiI6rP-FubBVfWxz0Wj0vXN4ochf0swGGE3_TupWBaRkEYS5_Ua-Q2zzJEWL_KPvrBw","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Wed, 02 Feb 2022 11:37:13 GMT
+- request:
+    method: get
+    uri: https://api.dowjones.com/riskentities/profiles/2261549
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OQlRHNDRUUU5SU0hBWFdHVEtaTkU0RVVaQ01ORllXU1NDQ09CTFVTV1RaS0JHRkFXUlZIRlhVTzRDVE1aWkdXV0QyS0ZVVU1VQ09OUVpET1JMQ0pWM1RJTVNHTVZTWFMyS1RLRldFUTRURk9SRUdHUUxTS04yWEVXU1NLSTNWQTREMktSVkhLWlJTTjVNVzI2SlNPVVhWUTVTUkdCNUdZNkJYTkJWV09OVFZKSlhVWTQyRUo1MkVNTUI1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTgzMywiZXhwIjoxNjQzODA1NDMzfQ.PC-oDRlLUfr55Yn9XfYvTRwwrfpNbcVqO4O4aK4KLIy7CeTBB3VF3CF347cWDp6eHy4mYEAJIf6_IsSGonr7QieAZd9ttyK05mZhFG_pC9rJpPHCwmqen2pQxxkDLMnfVGUPrx08XHTSJMKGb6P3DQQ2K7EXZjagdjOobZNXQs4FGQ2r8AFp52dy8I43g262So8_91oFf_YmB0krWEhVOahHED66wKtShlb6gYiUQwo2EYudj5ukmqAXfgWZTWSvGdxccgrjDf3vc8O-S-AGiI6rP-FubBVfWxz0Wj0vXN4ochf0swGGE3_TupWBaRkEYS5_Ua-Q2zzJEWL_KPvrBwA
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '80'
+      Connection:
+      - close
+      B3:
+      - 4b18ef29fad88d24f0ac9fc255e10b15-7df2312614ec746a-1
+      Date:
+      - Wed, 02 Feb 2022 11:37:13 GMT
+      Server:
+      - openresty
+      X-Dj-Transaction-Id:
+      - 4b18ef29fad88d24f0ac9fc255e10b15-7df2312614ec746a
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 ae4d019557edbe1ef4b61e6fa4de6432.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD50-C1
+      X-Amz-Cf-Id:
+      - QdV2bvXxJzqSKEu9qZCXDXCXltk59AF3OLyBFP0Vr8lRiJbsTt7DvQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":1011004,"status":401,"title":"JWT access token is
+        invalid"}]}'
+  recorded_at: Wed, 02 Feb 2022 11:37:13 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: client_id=<SECRET_CLIENT_ID>&connection=service-account&grant_type=password&password=<SECRET_PASSWORD>&scope=openid+service_account_id+offline_access%3A&username=<SECRET_USERNAME>&device=testdevice
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '873'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 02 Feb 2022 11:37:14 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=91c2e6e1-6b9d-4d2e-9ed0-3629293e7802; domain=.dowjones.com; path=/;
+        Expires=Sat Jan 31 11:37:14 2032; max-age=315360000;Secure; SameSite=none
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '873'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Wed, 02 Feb 2022 11:37:14 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 6aa8d2883437a2897f326bfc58beed3c.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - 51MOnXYoum5TNYlT2Buv8n6vjhJEOVG8SM7ss36pC6SSASe296qolA==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 b7f1ef8baa42cd103b00928d6f7d73b6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD50-C1
+      X-Amz-Cf-Id:
+      - g1bR7WIBYfGhSDeACzl3UrEdfw9pItPLczLnkQTaag5_aJTFBkFFZA==
+    body:
+      encoding: UTF-8
+      string: '{"id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMjAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJhdWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTgzNCwiZXhwIjoxNjQzODM3ODM0fQ.okKSY1kJ7XEZZNOgRMdADO-2L7Ia_ngI3rjsceD3uHlHoo9oYWdn_fs_9qzWU03yLZT069zQ58zg8DlYZZidlwIqf5ffs5Glj-BfKpEBVZ9DRXIWITLKNArWpwOFLK3diFlFgDmJMkHs1TcRxWtbDoupvVWu_Mt_gfw1Ck6Lddcib7NLfq9Mw9gV8UDdFY0h3rk5QaHrd6YmgUbv3IZgeNOl_8AETjM3dai_5zimEmSg4ZBF-qGkLON4WeayunJiGaRRG51FpclVjP8DMD7fCUzCPZfYm7-D4EjuGfsjcl39TVXH97B7mprYoB8I5O4VRv4njxIqO4f0ogvUMBOscA","access_token":"qQDvmDH6f-zQu6OK0omOZDuz2IkE47xo","refresh_token":"KrHbS3NP-_WhGHFfCEjJ1zl0m4ykhF4ZLHg0x5g-v50hC","token_type":"bearer"}'
+  recorded_at: Wed, 02 Feb 2022 11:37:14 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMjAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJhdWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTgzNCwiZXhwIjoxNjQzODM3ODM0fQ.okKSY1kJ7XEZZNOgRMdADO-2L7Ia_ngI3rjsceD3uHlHoo9oYWdn_fs_9qzWU03yLZT069zQ58zg8DlYZZidlwIqf5ffs5Glj-BfKpEBVZ9DRXIWITLKNArWpwOFLK3diFlFgDmJMkHs1TcRxWtbDoupvVWu_Mt_gfw1Ck6Lddcib7NLfq9Mw9gV8UDdFY0h3rk5QaHrd6YmgUbv3IZgeNOl_8AETjM3dai_5zimEmSg4ZBF-qGkLON4WeayunJiGaRRG51FpclVjP8DMD7fCUzCPZfYm7-D4EjuGfsjcl39TVXH97B7mprYoB8I5O4VRv4njxIqO4f0ogvUMBOscA&client_id=<SECRET_CLIENT_ID>&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&scope=openid+pib
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1223'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 02 Feb 2022 11:37:14 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=15ae5f8b-247a-4ecb-8fd2-c2cf900d6bde; domain=.dowjones.com; path=/;
+        Expires=Sat Jan 31 11:37:14 2032; max-age=315360000;Secure; SameSite=none
+      Vary:
+      - Accept-Encoding
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '1223'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Wed, 02 Feb 2022 11:37:14 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 ec18462cf9d88c8bdb0cd5e50dbe442a.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - TSBSZ7kpESsQZRHlNfcnzcmsqO4v6XNBF0P8WA1nKcNbBvLBqvIMNQ==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 86b86f43445d5446c8b16910b2a9b8f8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD50-C1
+      X-Amz-Cf-Id:
+      - A2P1X5-3cuSmA33yLpGi4YYZg-4aTYUUoU-g5uU2kCMwhmmJVvdqhA==
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OQlRHNDRUUU5SU0hBWFVVMzJPS1kyRElPRFhOTVpIS1NaWk1FWVVTTTJTRk5SRzI1UlZQQjVGRVNLUUlSWUcyUVNQTjRaVzRUREtMRlJXWVpETEpCRkNXM0NUSVZaWE0yMkZHNFpVNlozVk9SV0hDWkxaTlJMR1lVQlZPVlZYUVNEWkdKTURHVkpYTEJGRlVNVFFPSk1XQ1dMR0dNMkhPTkRZTlVZSElaM1ZKWkpFTVZEV09KRldLWVo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTgzNSwiZXhwIjoxNjQzODA1NDM1fQ.bh4HPFXgar1Zsrw6Fz4s93WgYelP63x8Z-AIvnYlkchYWqOT5xyDPDkPnr0Fxx8WJ_fTKE57JgpMii2maAT9V2puFt6sC9VF5wb9fLUbDkL-xwepbSZavDDa2y-0LeIngi4CDrjK1buASdHr-NT_C62aBW5TX7FRs299-t_rV8egG4H1OcEGjcn773AyhOQblJKF9i3o9Rz0bn9RidLSqUBIPYySDTKqWxa70BHg1PKQngGURfnzGkAs64qUgiX-HY_EmDUCWy5TXrYnVfTt17fKaN55EvxxvmrmPVP0RDAqsIt8Tz0q2udNuqtvXi5IaRzxiYtWcvYzv9V7OzCQRA","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Wed, 02 Feb 2022 11:37:15 GMT
+- request:
+    method: get
+    uri: https://api.dowjones.com/riskentities/profiles/2261549
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OQlRHNDRUUU5SU0hBWFVVMzJPS1kyRElPRFhOTVpIS1NaWk1FWVVTTTJTRk5SRzI1UlZQQjVGRVNLUUlSWUcyUVNQTjRaVzRUREtMRlJXWVpETEpCRkNXM0NUSVZaWE0yMkZHNFpVNlozVk9SV0hDWkxaTlJMR1lVQlZPVlZYUVNEWkdKTURHVkpYTEJGRlVNVFFPSk1XQ1dMR0dNMkhPTkRZTlVZSElaM1ZKWkpFTVZEV09KRldLWVo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTgzNSwiZXhwIjoxNjQzODA1NDM1fQ.bh4HPFXgar1Zsrw6Fz4s93WgYelP63x8Z-AIvnYlkchYWqOT5xyDPDkPnr0Fxx8WJ_fTKE57JgpMii2maAT9V2puFt6sC9VF5wb9fLUbDkL-xwepbSZavDDa2y-0LeIngi4CDrjK1buASdHr-NT_C62aBW5TX7FRs299-t_rV8egG4H1OcEGjcn773AyhOQblJKF9i3o9Rz0bn9RidLSqUBIPYySDTKqWxa70BHg1PKQngGURfnzGkAs64qUgiX-HY_EmDUCWy5TXrYnVfTt17fKaN55EvxxvmrmPVP0RDAqsIt8Tz0q2udNuqtvXi5IaRzxiYtWcvYzv9V7OzCQRA
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '3102'
+      Connection:
+      - close
+      Vary:
+      - Accept-Encoding
+      B3:
+      - fd3987905320d68b6b192e8c5c3ac07f-e04af6e242495d19-1
+      Cache-Control:
+      - no-cache, no-store, max-age=0
+      Date:
+      - Wed, 02 Feb 2022 11:37:16 GMT
+      Expires:
+      - '0'
+      Pattern:
+      - "/riskentities/profiles/{id}$"
+      Request-Uri:
+      - "/riskentities/profiles/2261549"
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Dj-Media-Type:
+      - dowjones.dna; resource=riskentities-profiles; version=1.0; format=json
+      X-Dj-Transaction-Id:
+      - fd3987905320d68b6b192e8c5c3ac07f-e04af6e242495d19
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 0ef74e866fd3a98abc576c37ab84cf4e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD50-C1
+      X-Amz-Cf-Id:
+      - 8EN6YcFoNa5wKSzJwohPmEVPNSsGe28TVhNrugQs3o5wPWFt9tSM2A==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"basic":{"type":"Person","name_details":{"primary_name":{"first_name":"John","middle_name":"Winston","surname":"Boone"},"also_known_as":[{"first_name":"John","surname":"Smith"},{"first_name":"Justin","surname":"Winabali"},{"first_name":"John","surname":"Greene"},{"first_name":"John","surname":"King"}]}},"person":{"country_territory_details":{"citizenship":[{"code":"USA","descriptor":"United
+        States","iso_alpha2":"US","iso_alpha3":"USA"}],"residence":[{"code":"USA","descriptor":"United
+        States","iso_alpha2":"US","iso_alpha3":"USA"}],"reported_allegation":[{"code":"USA","descriptor":"United
+        States","iso_alpha2":"US","iso_alpha3":"USA"}]},"date_details":{"birth":[{"date":{"year":1963}},{"date":{"year":1964}}]},"gender":"Male","is_deceased":false,"icon_hints":["SI-PERSON"],"content_sets":["WL"]},"watchlist":{"last_reviewed_date":"2015-03-27T17:36:45.847Z","content_type_details":{"active_status":"Active","is_lower_threshold":false,"content_types":[{"level":1,"description":"Special
+        Interest Person (SIP)","sub_content_types":[{"level":2,"description":"Financial
+        Crime","category_id":1003}]}]},"sources":[{"title":"Associated Press Newswires,
+        30-Nov-2012, on Factiva.com ","drn":"drn:archive.newsarticle.APRS000020121130e8bu005b5","accession_number":"APRS000020121130e8bu005b5"},{"title":"Contra
+        Costa Times, 14-Jan-2015, on Factiva.com ","drn":"drn:archive.newsarticle.CCT0000020150116eb1e0000u","accession_number":"CCT0000020150116eb1e0000u"},{"title":"Department
+        of Justice Documents, 13-Jan-2015, on Factiva.com ","drn":"drn:archive.newsarticle.DOJDOC0020150113eb1d0008l","accession_number":"DOJDOC0020150113eb1d0008l"},{"title":"Visalia
+        Times-Delta (Calif.), 14-Jan-2015, on Factiva.com ","drn":"drn:archive.newsarticle.XVIS000020150203eb1e000e7","accession_number":"XVIS000020150203eb1e000e7"},{"title":"Visalia
+        Times-Delta, 14-Jan-2015, on Factiva.com ","drn":"drn:archive.newsarticle.XVIS000020150203eb1e000e7","accession_number":"XVIS000020150203eb1e000e7"}],"comment_details":{"si_comment":"Keywords:
+        fraud\nPeople mentioned: John Winston Boone\nCompanies mentioned: HS Consortium
+        Inc., American Blog Inc., Great Ideas LLC.\nProfile:\nJohn Winston Boone was
+        sentenced to 10 years in federal prison on January 13, 2015, after pleading
+        guilty to wire fraud for operating a website advertising scheme that defrauded
+        over USD 1.2m from 18 people. He was also ordered to pay USD 1.2m in restitution.\nThe
+        court heard that from 2005 to July 2010, Boone targeted people who wished
+        to work from home and offered purported website domain names for sale, web
+        training and other services. However, once customers realised that the website
+        domains did not earn any revenue, Boone cut off communications.\nBoone ran
+        the scheme through the business names HS Consortium Inc., American Blog Inc.
+        and Great Ideas LLC."},"address_details":[{"city":"Novato","country":{"code":"USA","descriptor":"United
+        States","iso_alpha2":"US","iso_alpha3":"USA"},"region":"California"}]}},"type":"profiles","links":{"self":"http://api.dowjones.com/riskentities/profiles/2261549"},"id":"2261549"}}'
+  recorded_at: Wed, 02 Feb 2022 11:37:16 GMT
+recorded_with: VCR 6.0.0

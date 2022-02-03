@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.dowjones.com/riskentities/profiles/2261549
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OQlRHNDRUUU5SU0hBWFdFU1RZTUkzR09VM1lMQTJWSzIzUkpWVVhFVUNJTk5MVTRVWlBLRVpFNEwzSFBKTEVZVjJSRk5JSENSVFZHNVRFWTJMWE41SEZJUjNOR1ZJRU82VE9NUktYTzJaUE1OVkhPT0xaSU5BWE9aWllPWVhXTVpDWkhGWlZRVVNTTlZNV1NURFVHUVhYSVVSVElWUlVTTFpSTTVKV1lNU0pPUk1HTVRDT01aRERDT0I1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0MzgwMTUyNiwiZXhwIjoxNjQzODA1MTI2fQ.Zfu9PDWyRdrrqcwdZmUoRjcE1EHJH8IyGVfGVylYiYp5x1csV3v5RxDTKbxAqoQAC_ItzPoDf_cAtSQIGR5XseQPckhgNqhCbD6IuiAFYZaCjEaIWVn8GEGF7h4lMNapanB4aLqhcY9eNj_NBu8oHR-V18aNjYLPJkJzojpAgG7rXt1mc91Q3B5LE4YYBiNZL2bR_HSxZL-PGoV4DuCDtIDvc7cuOKDPeKPgM0t8z8GIv_yD5pL1iSfz76RXjHFQDkx24hSrB3fuB9qvyTDhTxoGsg3C7NucWmgniGvfXiDKRoHM0aPVKRjpoIGINCeQ_0PGvjNzbUCBpOLtaXPCtw
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '3102'
+      Connection:
+      - close
+      Vary:
+      - Accept-Encoding
+      B3:
+      - 3f61c8dd7e7e58b17b112659025b3643-ce01af2b15afb0fa-1
+      Cache-Control:
+      - no-cache, no-store, max-age=0
+      Date:
+      - Wed, 02 Feb 2022 11:32:44 GMT
+      Expires:
+      - '0'
+      Pattern:
+      - "/riskentities/profiles/{id}$"
+      Request-Uri:
+      - "/riskentities/profiles/2261549"
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Dj-Media-Type:
+      - dowjones.dna; resource=riskentities-profiles; version=1.0; format=json
+      X-Dj-Transaction-Id:
+      - 3f61c8dd7e7e58b17b112659025b3643-ce01af2b15afb0fa
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 9d2dddf4e5a6eb0fbe872acf3cba5888.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD50-C1
+      X-Amz-Cf-Id:
+      - NqHj5z9_mFrMNX74yiFv_TWry7BixvkLaqPy2_fXMJUn_47GYzrT6w==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"basic":{"type":"Person","name_details":{"primary_name":{"first_name":"John","middle_name":"Winston","surname":"Boone"},"also_known_as":[{"first_name":"John","surname":"Smith"},{"first_name":"Justin","surname":"Winabali"},{"first_name":"John","surname":"Greene"},{"first_name":"John","surname":"King"}]}},"person":{"country_territory_details":{"citizenship":[{"code":"USA","descriptor":"United
+        States","iso_alpha2":"US","iso_alpha3":"USA"}],"residence":[{"code":"USA","descriptor":"United
+        States","iso_alpha2":"US","iso_alpha3":"USA"}],"reported_allegation":[{"code":"USA","descriptor":"United
+        States","iso_alpha2":"US","iso_alpha3":"USA"}]},"date_details":{"birth":[{"date":{"year":1963}},{"date":{"year":1964}}]},"gender":"Male","is_deceased":false,"icon_hints":["SI-PERSON"],"content_sets":["WL"]},"watchlist":{"last_reviewed_date":"2015-03-27T17:36:45.847Z","content_type_details":{"active_status":"Active","is_lower_threshold":false,"content_types":[{"level":1,"description":"Special
+        Interest Person (SIP)","sub_content_types":[{"level":2,"description":"Financial
+        Crime","category_id":1003}]}]},"sources":[{"title":"Associated Press Newswires,
+        30-Nov-2012, on Factiva.com ","drn":"drn:archive.newsarticle.APRS000020121130e8bu005b5","accession_number":"APRS000020121130e8bu005b5"},{"title":"Contra
+        Costa Times, 14-Jan-2015, on Factiva.com ","drn":"drn:archive.newsarticle.CCT0000020150116eb1e0000u","accession_number":"CCT0000020150116eb1e0000u"},{"title":"Department
+        of Justice Documents, 13-Jan-2015, on Factiva.com ","drn":"drn:archive.newsarticle.DOJDOC0020150113eb1d0008l","accession_number":"DOJDOC0020150113eb1d0008l"},{"title":"Visalia
+        Times-Delta (Calif.), 14-Jan-2015, on Factiva.com ","drn":"drn:archive.newsarticle.XVIS000020150203eb1e000e7","accession_number":"XVIS000020150203eb1e000e7"},{"title":"Visalia
+        Times-Delta, 14-Jan-2015, on Factiva.com ","drn":"drn:archive.newsarticle.XVIS000020150203eb1e000e7","accession_number":"XVIS000020150203eb1e000e7"}],"comment_details":{"si_comment":"Keywords:
+        fraud\nPeople mentioned: John Winston Boone\nCompanies mentioned: HS Consortium
+        Inc., American Blog Inc., Great Ideas LLC.\nProfile:\nJohn Winston Boone was
+        sentenced to 10 years in federal prison on January 13, 2015, after pleading
+        guilty to wire fraud for operating a website advertising scheme that defrauded
+        over USD 1.2m from 18 people. He was also ordered to pay USD 1.2m in restitution.\nThe
+        court heard that from 2005 to July 2010, Boone targeted people who wished
+        to work from home and offered purported website domain names for sale, web
+        training and other services. However, once customers realised that the website
+        domains did not earn any revenue, Boone cut off communications.\nBoone ran
+        the scheme through the business names HS Consortium Inc., American Blog Inc.
+        and Great Ideas LLC."},"address_details":[{"city":"Novato","country":{"code":"USA","descriptor":"United
+        States","iso_alpha2":"US","iso_alpha3":"USA"},"region":"California"}]}},"type":"profiles","links":{"self":"http://api.dowjones.com/riskentities/profiles/2261549"},"id":"2261549"}}'
+  recorded_at: Wed, 02 Feb 2022 11:32:44 GMT
+recorded_with: VCR 6.0.0
