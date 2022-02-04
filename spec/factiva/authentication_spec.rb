@@ -7,7 +7,7 @@ module Factiva
     let(:subject) { Authentication.new }
 
     context "First time authenticating" do
-      context "Factiva responds as expected", vcr: { cassette_name: "first_time_authenticating/ok" } do
+      context "Factiva responds as expected", vcr: { cassette_name: "authentication/first_time_authenticating/ok" } do
         it "returns token" do
           # Two requests: Get authn and Get authz
           expect(HTTP).to receive(:post).twice.and_call_original
@@ -32,7 +32,7 @@ module Factiva
         end
       end
 
-      context "retrieve authn token fails", vcr: { cassette_name: "first_time_authenticating/authn_fails" } do
+      context "retrieve authn token fails", vcr: { cassette_name: "authentication/first_time_authenticating/authn_fails" } do
         it "raises an exception" do
           # One request: Get authn
           expect(HTTP).to receive(:post).once.and_call_original
@@ -42,7 +42,7 @@ module Factiva
         end
       end
 
-      context "retrieve authz token fails", vcr: { cassette_name: "first_time_authenticating/authz_fails" } do
+      context "retrieve authz token fails", vcr: { cassette_name: "authentication/first_time_authenticating/authz_fails" } do
         it "raises an exception" do
           # Two requests: Get authn and Get authz
           expect(HTTP).to receive(:post).twice.and_call_original
@@ -56,7 +56,7 @@ module Factiva
     context "Already authenticated" do
       before do
         # Authenticate first
-        VCR.use_cassette("first_time_authenticating/ok") do
+        VCR.use_cassette("authentication/first_time_authenticating/ok") do
           subject.token
         end
       end
@@ -95,7 +95,7 @@ module Factiva
           )
         end
 
-        context "Factiva responds as expected", vcr: { cassette_name: "token_expired/ok" } do
+        context "Factiva responds as expected", vcr: { cassette_name: "authentication/token_expired/ok" } do
           it "refreshes the token" do
             # One request: Refresh authz
             expect(HTTP).to receive(:post).once.and_call_original
@@ -115,7 +115,7 @@ module Factiva
           end
         end
 
-        context "Refresh token request fails", vcr: { cassette_name: "token_expired/refresh_authz_fails" } do
+        context "Refresh token request fails", vcr: { cassette_name: "authentication/token_expired/refresh_authz_fails" } do
           it "raises an exception" do
             # One request: Refresh authz
             expect(HTTP).to receive(:post).once.and_call_original

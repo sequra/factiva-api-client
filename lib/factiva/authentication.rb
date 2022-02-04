@@ -2,8 +2,6 @@ require "http"
 require "json"
 
 module Factiva
-  class RequestError < Exception; end
-
   class Authentication
     def token
       authz["access_token"]
@@ -34,7 +32,7 @@ module Factiva
 
     def make_request(params)
       response = HTTP.post(
-        url,
+        config.auth_url,
         params
       )
 
@@ -85,17 +83,6 @@ module Factiva
           scope: config.authn_scope
         }
       }
-    end
-
-    def url
-      @url ||= make_url
-    end
-
-    def make_url
-      url = config.base_url
-      url = url.delete_suffix("/") if url.end_with?("/")
-
-      "#{url}/token"
     end
 
     def time_now
