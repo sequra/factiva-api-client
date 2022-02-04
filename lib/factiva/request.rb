@@ -21,10 +21,15 @@ module Factiva
       set_auth
     end
 
-    def search(first_name:, last_name:)
+    def search(first_name:, last_name:, birth_year: nil, birth_month: nil, birth_day: nil, offset: 0, limit: 200)
       params = { json: search_body(
-        first_name: first_name,
-        last_name: last_name
+        first_name,
+        last_name,
+        birth_year,
+        birth_month,
+        birth_day,
+        offset,
+        limit
       ) }
 
       # If the request fails auth is reset and the request retried
@@ -96,7 +101,7 @@ module Factiva
       "#{url}/#{suffix}"
     end
 
-    def search_body(first_name:, last_name:, offset: 0, limit: 200)
+    def search_body(first_name, last_name, birth_year, birth_month, birth_day, offset, limit)
       {
         "data" => {
           "type" => "RiskEntitySearch",
@@ -118,13 +123,33 @@ module Factiva
                   "first_name" => first_name,
                   "last_name" => last_name,
                   "search_type" => "Broad"
-                }
+                },
+                "date_of_birth" => date_search_filter(
+                  birth_year,
+                  birth_month,
+                  birth_day
+                )
               },
               "group_operator" => "And"
             }
           }
         }
       }
+    end
+
+    def date_search_filter(year, month, day)
+      return nil if [year, month, day].all? { |value| value.nil? }
+
+      date_filter = {
+        "date" => {
+          "is_strict_match" => true
+        }
+      }
+
+      date_filter["date"]["year"]  = year  if year
+      date_filter["date"]["month"] = month if month
+      date_filter["date"]["day"]   = day   if day
+      date_filter
     end
 
     def config

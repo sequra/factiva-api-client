@@ -27,6 +27,42 @@ module Factiva
           expect(response["meta"]["total_count"]).to eq(99)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end
+
+        context "filtering by date" do
+          let(:params) do
+            {
+              first_name: "Jhon",
+              last_name: "Smith",
+              birth_year: "1992",
+              birth_month: "12",
+              birth_day: "22"
+            }
+          end
+
+          it "returns search info", vcr: "search/filter_by_date" do
+            response = subject.search(params)
+            expect(response["meta"]["total_count"]).to eq(47)
+            expect(response["data"][0]["type"]).to eq("RiskEntities")
+          end
+        end
+
+        context "with limits and offset" do
+          let(:params) do
+            {
+              first_name: "Jhon",
+              last_name: "Smith",
+              limit: 50,
+              offset: 20
+            }
+          end
+          it "returns search info", vcr: "search/limit_and_offset" do
+            response = subject.search(params)
+            expect(response["meta"]["total_count"]).to eq(99)
+            expect(response["meta"]["count"]).to eq(50)
+            expect(response["meta"]["next"]).to eq(70)
+            expect(response["data"][0]["type"]).to eq("RiskEntities")
+          end
+        end
       end
 
       context "Search returns error on the first try", vcr: "search/error_first_try" do
