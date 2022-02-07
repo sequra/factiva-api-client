@@ -1,31 +1,92 @@
-# Factiva::Api::Client
+# Factiva-api-client
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/factiva/api/client`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem integrates your ruby app with [Dow Jones Risk & Compliance API](https://developer.dowjones.com/site/docs/risk_and_compliance_apis/risk_and_compliance_2_0/index.gsp)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'factiva-api-client'
+gem 'factiva-api-client', git: "git@github.com:sequra/factiva-api-client.git"
 ```
 
 And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install factiva-api-client
+```bash
+$ bundle install
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+A configuration is required. Add this to your app config with your credentials:
+```ruby
+Factiva.configure do |config|
+  config.auth_url = "https://accounts.dowjones.com/oauth2/v1/token"
+  config.base_url = "https://api.dowjones.com"
+  config.client_id = "your_client_id"
+  config.password = "your_password"
+  config.username = "your_username"
+  config.device = "testdevice"
+end
+```
+
+Authentication is performed automatically on your first request, as well as token handling and expiration.
+
+Then, there are two requests available that can be made through `Factiva::Request`.
+
+### Search request.
+Search the Dow Jones RiskCenter database for risk entities.
+The response will return an array of json formatted `RiskEntities`.
+
+Method parameters:
+| parameter   | type    | required |
+| ----------- | ------- | -------- |
+| first_name  | string  | true     |
+| last_name   | string  | true     |
+| birth_year  | string  | false    |
+| birth_month | string  | false    |
+| birth_day   | string  | false    |
+| offset      | integer | false    |
+| limit       | integer | false    |
+
+Example:
+```ruby
+Factiva::Request.search(first_name: "Jhon", last_name: "Smith", birth_year: "1992")
+=> {"meta"=>{"count"=>47, "first"=>0, "last"=>0, "total_count"=>47, "screen...
+```
+
+### Profile request.
+View risk profiles in the Dow Jones RiskCenter database. The method requires as a param the `RiskEntity` id that is returned in search request.
+
+Example:
+```ruby
+Factiva::Request.profile("11266381")
+=> {"data"=>{"attributes"=>{"basic"=>{"type"=>"Person", "name_details"=>{"primary_...
+```
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### Docker
+Create a docker image defined in Dockerfile:
+```bash
+docker build -t factiva-gem .
+```
+
+Run a container based on the image. `bin/console` is the default command:
+```bash
+docker run --rm -it -v $(PWD):/app factiva-gem
+```
+
+Run tests:
+```bash
+docker run --rm -it -v $(PWD):/app factiva-gem rspec
+```
+
+## Contributing
+
+1. Fork it ( https://github.com/sequra/factiva-api-client.git )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
