@@ -31,10 +31,12 @@ module Factiva
     end
 
     def make_request(params)
-      response = HTTP.post(
-        config.auth_url,
-        params
-      )
+      response = HTTP
+        .timeout(config.timeout)
+        .post(
+          config.auth_url,
+          params
+        )
 
       response_body = JSON.parse(response.body.to_s)
 
