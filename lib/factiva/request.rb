@@ -21,7 +21,18 @@ module Factiva
       set_auth
     end
 
-    def search(first_name:, last_name:, birth_year: nil, birth_month: nil, birth_day: nil, offset: 0, limit: 200)
+    def search(first_name:, last_name:, birth_date: nil, birth_year: nil,
+               birth_month: nil, birth_day: nil, offset: 0, limit: 200)
+
+      # Birth date takes priority over year, month and day values
+      if birth_date
+        birth_year, birth_month, birth_day = [
+          birth_date.year.to_s,
+          birth_date.month.to_s,
+          birth_date.day.to_s
+        ]
+      end
+
       params = { json: search_body(
         first_name,
         last_name,
