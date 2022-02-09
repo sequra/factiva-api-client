@@ -29,20 +29,56 @@ module Factiva
         end
 
         context "filtering by date" do
-          let(:params) do
-            {
-              first_name: "Jhon",
-              last_name: "Smith",
-              birth_year: "1992",
-              birth_month: "12",
-              birth_day: "22"
-            }
+          context "using year, month and day option", vcr: "search/filter_by_date" do
+            let(:params) do
+              {
+                first_name: "Jhon",
+                last_name: "Smith",
+                birth_year: "1992",
+                birth_month: "12",
+                birth_day: "22"
+              }
+            end
+
+            it "returns search info" do
+              response = subject.search(params)
+              expect(response["meta"]["total_count"]).to eq(47)
+              expect(response["data"][0]["type"]).to eq("RiskEntities")
+            end
           end
 
-          it "returns search info", vcr: "search/filter_by_date" do
-            response = subject.search(params)
-            expect(response["meta"]["total_count"]).to eq(47)
-            expect(response["data"][0]["type"]).to eq("RiskEntities")
+          context "using birthdate option", vcr: "search/filter_by_date" do
+            let(:params) do
+              {
+                first_name: "Jhon",
+                last_name: "Smith",
+                birth_date: Date.new(1992, 12, 22)
+              }
+            end
+
+            it "returns search info" do
+              response = subject.search(params)
+              expect(response["meta"]["total_count"]).to eq(47)
+              expect(response["data"][0]["type"]).to eq("RiskEntities")
+            end
+          end
+
+          context "using both options", vcr: "search/filter_by_date" do
+            let(:params) do
+              {
+                first_name: "Jhon",
+                last_name: "Smith",
+                birth_date: Date.new(1992, 12, 22),
+                birth_year: "1980",
+                birth_month: "5",
+                birth_day: "11"
+              }
+            end
+            it "takes birthdate as priority and returns search info" do
+              response = subject.search(params)
+              expect(response["meta"]["total_count"]).to eq(47)
+              expect(response["data"][0]["type"]).to eq("RiskEntities")
+            end
           end
         end
 
