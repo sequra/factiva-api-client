@@ -80,6 +80,7 @@ module Factiva
 
       begin
         response = HTTP
+          .timeout(config.timeout)
           .auth("Bearer #{auth.token}")
           .send(*http_params)
 
