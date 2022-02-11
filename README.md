@@ -17,15 +17,16 @@ $ bundle install
 
 ## Usage
 
-A configuration is required. Add this to your app config with your credentials:
+A configuration is required. Add this to your app config with your credentials and the global timeout you want to set for each request:
 ```ruby
 Factiva.configure do |config|
-  config.auth_url = "https://accounts.dowjones.com/oauth2/v1/token"
-  config.base_url = "https://api.dowjones.com"
+  config.auth_url  = "https://accounts.dowjones.com/oauth2/v1/token"
+  config.base_url  = "https://api.dowjones.com"
+  config.timeout   = 5
   config.client_id = "your_client_id"
-  config.password = "your_password"
-  config.username = "your_username"
-  config.device = "testdevice"
+  config.password  = "your_password"
+  config.username  = "your_username"
+  config.device    = "testdevice"
 end
 ```
 
@@ -42,13 +43,22 @@ Method parameters:
 | ----------- | ------- | -------- |
 | first_name  | string  | true     |
 | last_name   | string  | true     |
+| birth_date  | Date    | false    |
 | birth_year  | string  | false    |
 | birth_month | string  | false    |
 | birth_day   | string  | false    |
 | offset      | integer | false    |
 | limit       | integer | false    |
 
-Example:
+The parameter `birth_date` takes priority over year, month and day.
+
+Examples:
+
+```ruby
+Factiva::Request.search(first_name: "Jhon", last_name: "Smith", birth_date: Date.new(1995, 8, 22))
+=> {"meta"=>{"count"=>32, "first"=>0, "last"=>0, "total_count"=>32, "screen...
+```
+
 ```ruby
 Factiva::Request.search(first_name: "Jhon", last_name: "Smith", birth_year: "1992")
 => {"meta"=>{"count"=>47, "first"=>0, "last"=>0, "total_count"=>47, "screen...
@@ -68,19 +78,19 @@ Factiva::Request.profile("11266381")
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 ### Docker
-Create a docker image defined in Dockerfile:
+Create the docker image defined in Dockerfile:
 ```bash
-docker build -t factiva-gem .
+$ docker build -t factiva-gem .
 ```
 
 Run a container based on the image. `bin/console` is the default command:
 ```bash
-docker run --rm -it -v $(PWD):/app factiva-gem
+$ docker run --rm -it -v $(PWD):/app factiva-gem
 ```
 
 Run tests:
 ```bash
-docker run --rm -it -v $(PWD):/app factiva-gem rspec
+$ docker run --rm -it -v $(PWD):/app factiva-gem rspec
 ```
 
 ## Contributing
