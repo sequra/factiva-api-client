@@ -167,5 +167,56 @@ module Factiva
         end
       end
     end
+
+    context "#Stub!" do
+      let(:search_params) { { first_name: "Jhon", last_name: "Smith" } }
+      let(:profile_id)    { "2261549" }
+
+      context "stubbing the request" do
+        let(:stubbed_search) do
+          {
+            "meta" => "stubbed",
+            "data" => [
+              "name" => "Jhon Search Stubbed",
+              "last_name" => "Smith Search Stubbed"
+            ]
+          }
+        end
+
+        let(:stubbed_profile) do
+          {
+            "data" => {
+              "name" => "Jhon Profile Stubbed",
+              "last_name" => "Smith Profile Stubbed"
+            }
+          }
+        end
+
+        before do
+          subject.stub!(search: stubbed_search, profile: stubbed_profile)
+        end
+
+        it "returns stubbed response" do
+          expect(subject.search(search_params)).to eq(stubbed_search)
+          expect(subject.profile(profile_id)).to eq(stubbed_profile)
+        end
+
+        context "unstubbing the request after stubbing", vcr: "unstub/ok" do
+          before do
+            subject.unstub!
+          end
+
+          it "makes real requests" do
+            search_response = subject.search(search_params)
+            expect(search_response["meta"]["total_count"]).to eq(99)
+            expect(search_response["data"][0]["type"]).to eq("RiskEntities")
+
+            profile_response = subject.profile(profile_id)
+            expect(profile_response["data"]["id"]).to eq(profile_id)
+            expect(profile_response["data"]["type"]).to eq("profiles")
+          end
+        end
+      end
+    end
   end
 end
