@@ -201,16 +201,18 @@ module Factiva
           expect(subject.profile(profile_id)).to eq(stubbed_profile)
         end
 
-        context "unstubbing the request after stubbing", vcr: "unstub/ok" do
+        context "unstubbing the request after stubbing" do
           before do
             subject.unstub!
           end
 
-          it "makes real requests" do
+          it "makes real search request", vcr: "search/first_search" do
             search_response = subject.search(search_params)
             expect(search_response["meta"]["total_count"]).to eq(99)
             expect(search_response["data"][0]["type"]).to eq("RiskEntities")
+          end
 
+          it "makes real profile request", vcr: "profile/first_profile" do
             profile_response = subject.profile(profile_id)
             expect(profile_response["data"]["id"]).to eq(profile_id)
             expect(profile_response["data"]["type"]).to eq("profiles")
