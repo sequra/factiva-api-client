@@ -17,6 +17,34 @@ module Factiva
       instance.profile(*args)
     end
 
+    def self.stub!(search: {}, profile: {})
+      @instance = MockedRequest.new(search, profile)
+      true
+    end
+
+    def self.unstub!
+      @instance = nil
+      true
+    end
+
+    class MockedRequest
+      attr_reader :stubbed_search, :stubbed_profile
+
+      def initialize(stubbed_search, stubbed_profile)
+        @stubbed_search  = stubbed_search
+        @stubbed_profile = stubbed_profile
+      end
+
+      def search(first_name: nil, last_name: nil, birth_date: nil, birth_year: nil,
+                 birth_month: nil, birth_day: nil, offset: 0, limit: 200)
+        stubbed_search
+      end
+
+      def profile(id = nil)
+        stubbed_profile
+      end
+    end
+
     def initialize
       set_auth
     end

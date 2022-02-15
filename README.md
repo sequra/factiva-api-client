@@ -73,6 +73,43 @@ Factiva::Request.profile("11266381")
 => {"data"=>{"attributes"=>{"basic"=>{"type"=>"Person", "name_details"=>{"primary_...
 ```
 
+### Stub requests
+Both methods `search` and `profile` can be mocked using `Factiva::Response` class method `stub!`. Once it is used, it will ignore the configuration and return always given fixed responses passed to it. Example:
+```ruby
+Factiva::Request.stub!(
+  search: { "data" => ["Jhon", "Smith"] },
+  profile: { "data" => "Jhon Smith" }
+)
+=> true
+
+Factiva::Request.search(first_name: "Jhon", last_name: "Smith")
+=> {"data"=>["Jhon", "Smith"]}
+
+Factiva::Request.profile("1234")
+=> {"data"=>"Jhon Smith"}
+```
+
+If a method response is not given to `stub!`, it will be mocked with empty response. Example:
+```ruby
+Factiva::Request.stub!(
+  profile: { "data" => "Jhon Smith" }
+)
+=> true
+
+Factiva::Request.search(first_name: "Jhon", last_name: "Smith")
+=> {}
+```
+
+Use `unstub!` to go back to use real requests with given configuration. Example:
+```ruby
+Factiva::Request.unstub!
+=> true
+
+Factiva::Request.profile("11266381")
+=> {"data"=>{"attributes"=>{"basic"=>{"type"=>"Person", "name_details"=>{"primary_...
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
