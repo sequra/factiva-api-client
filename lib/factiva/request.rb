@@ -162,7 +162,7 @@ module Factiva
                 "person_name" => {
                   "first_name" => first_name,
                   "last_name" => last_name,
-                  "search_type" => "Broad"
+                  "search_type" => "Precise"
                 },
                 "date_of_birth" => date_search_filter(
                   birth_year,

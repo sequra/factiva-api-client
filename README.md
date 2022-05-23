@@ -127,7 +127,7 @@ $ docker run --rm -it -v $(PWD):/app factiva-gem
 
 Run tests:
 ```bash
-$ docker run --rm -it -v $(PWD):/app factiva-gem rspec
+$ docker run --rm -v $(PWD):/app factiva-gem rspec
 ```
 
 ## Contributing

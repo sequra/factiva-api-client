@@ -5,12 +5,12 @@ module Factiva
     let(:subject) { Request }
 
     context "#Search" do
-      let(:params) { { first_name: "Jhon", last_name: "Smith" } }
+      let(:params) { { first_name: "John", last_name: "Smith" } }
 
       context "First search", vcr: "search/first_search" do
         it "authenticates and returns search info" do
           response = subject.search(params)
-          expect(response["meta"]["total_count"]).to eq(99)
+          expect(response["meta"]["total_count"]).to eq(93)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end
       end
@@ -24,7 +24,7 @@ module Factiva
 
         it "returns search info", vcr: "search/second_search" do
           response = subject.search(params)
-          expect(response["meta"]["total_count"]).to eq(99)
+          expect(response["meta"]["total_count"]).to eq(93)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end
 
@@ -32,7 +32,7 @@ module Factiva
           context "using year, month and day option", vcr: "search/filter_by_date" do
             let(:params) do
               {
-                first_name: "Jhon",
+                first_name: "John",
                 last_name: "Smith",
                 birth_year: "1992",
                 birth_month: "12",
@@ -42,7 +42,7 @@ module Factiva
 
             it "returns search info" do
               response = subject.search(params)
-              expect(response["meta"]["total_count"]).to eq(47)
+              expect(response["meta"]["total_count"]).to eq(42)
               expect(response["data"][0]["type"]).to eq("RiskEntities")
             end
           end
@@ -58,7 +58,7 @@ module Factiva
 
             it "returns search info" do
               response = subject.search(params)
-              expect(response["meta"]["total_count"]).to eq(47)
+              expect(response["meta"]["total_count"]).to eq(42)
               expect(response["data"][0]["type"]).to eq("RiskEntities")
             end
           end
@@ -76,7 +76,7 @@ module Factiva
             end
             it "takes birthdate as priority and returns search info" do
               response = subject.search(params)
-              expect(response["meta"]["total_count"]).to eq(47)
+              expect(response["meta"]["total_count"]).to eq(42)
               expect(response["data"][0]["type"]).to eq("RiskEntities")
             end
           end
@@ -85,7 +85,7 @@ module Factiva
         context "with limits and offset" do
           let(:params) do
             {
-              first_name: "Jhon",
+              first_name: "John",
               last_name: "Smith",
               limit: 50,
               offset: 20
@@ -93,7 +93,7 @@ module Factiva
           end
           it "returns search info", vcr: "search/limit_and_offset" do
             response = subject.search(params)
-            expect(response["meta"]["total_count"]).to eq(99)
+            expect(response["meta"]["total_count"]).to eq(93)
             expect(response["meta"]["count"]).to eq(50)
             expect(response["meta"]["next"]).to eq(70)
             expect(response["data"][0]["type"]).to eq("RiskEntities")
@@ -104,7 +104,7 @@ module Factiva
       context "Search returns error on the first try", vcr: "search/error_first_try" do
         it "retries the request" do
           response = subject.search(params)
-          expect(response["meta"]["total_count"]).to eq(99)
+          expect(response["meta"]["total_count"]).to eq(93)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end
       end
@@ -208,7 +208,7 @@ module Factiva
 
           it "makes real search request", vcr: "search/first_search" do
             search_response = subject.search(search_params)
-            expect(search_response["meta"]["total_count"]).to eq(99)
+            expect(search_response["meta"]["total_count"]).to eq(93)
             expect(search_response["data"][0]["type"]).to eq("RiskEntities")
           end
 

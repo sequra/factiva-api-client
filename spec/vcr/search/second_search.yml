@@ -5,10 +5,10 @@ http_interactions:
     uri: https://api.dowjones.com/riskentities/search
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"RiskEntitySearch","attributes":{"paging":{"offset":0,"limit":200},"sort":null,"filter_group_and":{"filters":{"content_set":["Watchlist"],"record_types":["Person"],"person_name":{"first_name":"Jhon","last_name":"Smith","search_type":"Broad"},"date_of_birth":null},"group_operator":"And"}}}}'
+      string: '{"data":{"type":"RiskEntitySearch","attributes":{"paging":{"offset":0,"limit":200},"sort":null,"filter_group_and":{"filters":{"content_set":["Watchlist"],"record_types":["Person"],"person_name":{"first_name":"John","last_name":"Smith","search_type":"Precise"},"date_of_birth":null},"group_operator":"And"}}}}'
     headers:
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OQlRIRTNUQ05CU0hBWFdVM1JQTU5OSEVVVE9HQklIUTMzSko1U1dPWkNESEZUVkdVMlFKRktTVzJTWU5aVEdPSzNLSkpLVVVRVEhPVkpGUTVUSk5GTkhFM0NOS1E0RU81RFVLQlpIQ09CUk1WTkNXM0NVTUZGREVVU1lHSlJGRUwzTlBGU1ZNWkRRR05XRzRWUkxORVpUQ1kzWUxFWFdZWVRERk5OSEdWRExJVkFVS1pDWUdKMkRFNFo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY0Mzk3Mzg5MiwiZXhwIjoxNjQzOTc3NDkyfQ.TxJsbnj3UYBnGfXJQQ8m3B3Ycsbzs3oqevL3vGsIMtkcpiU9kQUeA9i0tfZXjpvFe9T-1ETaCku0qyG3p3piMRfW1WWGueQIcmafti7wuTbfh9ofW8QJW59OTYp5JaXlI59ElfyScEbdpGH7IjyrKMbdo5N8702Kqy4WtR6VgqDtLF3FDe-6X5LFuNLAl8rLuKt15G9qZVOUq5_WRbBigZC54W6uTajZGMvnLzvdwMwdbJMBBgdLYV9N-EEMg-6NmmlBXr9TlsAXYKfkpwghvFjMhmqfHDUWDX1wN4Ery8lStSLhIJ8PR0ZYoAzK1PqFafms-G6wGVHGvypcsgzkQA
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlRHTVlUT01CU0hBWFVXMlRIT1JWVVFWTFNONTJGTTUyUklWS1dVMjJCTlpLVU1ZWlZNSTRFNFVUMklWNFhTMlNNT0pLRU9PTFBHSkpYRTVMTUtCRkhPMkNMT1ZRVEVMM1RNWlhHSVYyTElaRkVVUkNJTlJFWEtTWlVGTlNYTzQzTktOR1hNS1pWS1ozVElXRFZOVkdVQ1pLR1BGSkRBTUJRR0JGVk1UQlpPTk1XS1dLU05SWUhTT0I1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY1MzMyMDI4MiwiZXhwIjoxNjUzMzIzODgyfQ.TuX-bDij1w-D8ANRRI5vQSEtia6OBzaQyD33SwgJ99sve-PEQFeu16_wNk4YW_Ziyimx-BCME_NXKU0M80J81LZzJwzLvYP8jCB-DTSaMjnF-XzEsl0VjnS18Vd8sWbbU1f9xW6njqGu-4nLIkYkzSLkuuPgPabuXqq0eAwUURA3F_7iTcZ0O25HDmSO8HHx8eNNtR5NjahbrnD27Q2bm89iZ1ZbGeQ89y1YHDMTOd_1mskXRBERlUzneoR6lso0CX1fsEwR3B2RSz-geOREfMIO5xVDPiG9oCSOT0ERapWGg_VOWhS4Ryev3Hp-ZWLbv6N_m7c8okZ0Zd10QbCEDA
       Connection:
       - close
       Content-Type:
@@ -31,15 +31,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       B3:
-      - e5bb845573826021410e81f1c629de8e-168cdebd31db6941-1
+      - 10961e3f6ce04a3d860283f0624dd0b1-864ab8ac4054e558-1
       Cache-Control:
       - no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0
       Date:
-      - Fri, 04 Feb 2022 11:25:01 GMT
+      - Mon, 23 May 2022 15:38:18 GMT
       Expires:
       - Tue, 03 Jul 2001 06:00:00 GMT
       Last-Modified:
-      - Fri, 04 Feb 2022 11:25:01 GMT
+      - Mon, 23 May 2022 15:38:18 GMT
       Pattern:
       - "/riskentities/search$"
       Request-Uri:
@@ -49,406 +49,383 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       X-Dj-Media-Type:
-      - dowjones.dna; resource=riskentities; version=1.1; format=json
+      - dowjones.dna; resource=riskentities; version=2.0; format=json
       X-Dj-Transaction-Id:
-      - e5bb845573826021410e81f1c629de8e-168cdebd31db6941
+      - 10961e3f6ce04a3d860283f0624dd0b1-864ab8ac4054e558
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 0ef74e866fd3a98abc576c37ab84cf4e.cloudfront.net (CloudFront)
+      - 1.1 5a6aa8759fff6aff6533795b6f5125f8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - MAD50-C1
+      - MAD51-C1
       X-Amz-Cf-Id:
-      - JB3CRGL24Mk0cqVwSwECsuJoirD85IqXHPO2YgBrP0VGoTVxfrKZJQ==
+      - ZV6tsTDUPJBiHwtLA0zVlEO5y82KhzjJa1LIPeDif_Q3BnfH4pcUfA==
     body:
       encoding: ASCII-8BIT
-      string: '{"meta":{"count":99,"first":0,"last":0,"total_count":99,"screening_context":"H4sIAAAAAAAAAEWPsQ7CMAxE/8Vzh4qxG0gsTAgGBoQik7ptRHEqx5VAqP+OkyKxXXyXp7sPtKgIzQf0PRE0cArpsWcN+j4Tih+gAlSVcJ+VUs5N2Afus4pdl0ihqSsYwzOY2tT1UkHyQsQWcj6y0ssMMEwXRiVxvcR5cshtRqy3wi1ZVleQV7ig+mEMSeFWgZCP0rpcMWXzaH8iZ2cqyjE+aeVJ0t8LDoNlrBv+T2ermSelss39Nu8kYguLVV/LRaOiRjFry9lYli9V+knZKAEAAA\u003d\u003d"},"data":[{"id":"11266381","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Ortega-Ramirez,
-        Jose Ramon","title":"","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
-        of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1993"},{"day":"","month":"","year":"1994"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"Jhon
-        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2261549","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Boone,
+      string: '{"meta":{"count":93,"first":0,"last":0,"total_count":93,"screening_context":"H4sIAAAAAAAAAEWPsW7DMAxE/4WzB6Ojtw5dOgXN0KEoBFambaIOZZAMkCDwv5eSA1TTiUc93T1gREcYHuD3jWCAD7bfN3H2+5lQ8wIdoLvyz9XJ6t6GM8tcVZkmI4eh72DlC4d66fu9A8tKJLGUchGnWxgQmIlXJ02zluuWUMaKOGaN23bFU0N+wSd6XlY2h+8OlHLRMdWIVs1TvClSna2pJHihg6fmzxu8l0Xi3xX/R+eIWStZ65aenU/BZyPYI/wRrwQXvWiYr5F0j/MHCIz/HyoBAAA\u003d"},"data":[{"id":"2261549","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Boone,
         John Winston","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1963"},{"day":"","month":"","year":"1964"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"3414917","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Collins,
-        Oribahor","title":"","country_territory_code":"NIGEA","country_territory_name":"Nigeria","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"NIGEA","iso_alpha2":"NG","iso_alpha3":"NGA"},{"type":"Resident
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"3414917","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Collins,
+        Oribahor","title":"","country_territory_code":"NIGEA","country_territory_name":"Nigeria","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"NIGEA","iso_alpha2":"NG","iso_alpha3":"NGA"},{"type":"Resident
         of","code":"INDON","iso_alpha2":"ID","iso_alpha3":"IDN"},{"type":"Reported
         Allegation","code":"INDON","iso_alpha2":"ID","iso_alpha3":"IDN"}],"date_of_birth":[{"day":"","month":"","year":"1969"},{"day":"","month":"","year":"1970"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2295204","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Daws,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2295204","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Daws,
         Terry Jason","title":"Crimestoppers (UK) Most Wanted List","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"NOTK"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"888486","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Ehis,
-        Anthony Friday","title":"","country_territory_code":"SENEG","country_territory_name":"Senegal","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"SENEG","iso_alpha2":"SN","iso_alpha3":"SEN"},{"type":"Resident
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"888486","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Ehis,
+        Anthony Friday","title":"","country_territory_code":"SENEG","country_territory_name":"Senegal","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"SENEG","iso_alpha2":"SN","iso_alpha3":"SEN"},{"type":"Resident
         of","code":"NETH","iso_alpha2":"NL","iso_alpha3":"NLD"},{"type":"Citizenship","code":"FRA","iso_alpha2":"FR","iso_alpha3":"FRA"}],"date_of_birth":[{"day":"","month":"","year":"1974"},{"day":"","month":"","year":"1975"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        J. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"825519","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Gritzenbach
+        J. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"825519","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Gritzenbach
         II, Richard James","title":"DEA Most Wanted Fugitives","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"NOTK"}],"date_of_birth":[{"day":"29","month":"5","year":"1969"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Richard Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11915626","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Hart,
+        Richard Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11915626","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Hart,
         Darylle Robbins","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1975"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11258836","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Labadie,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11258836","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Labadie,
         Steven","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1978"},{"day":"","month":"","year":"1979"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1406240","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1406240","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         Edward","title":"Crimestoppers (UK) Most Wanted List","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"NOTK"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"208756","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John","title":"See Previous Roles","country_territory_code":"ZIMBAB","country_territory_name":"Zimbabwe","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"ZIMBAB","iso_alpha2":"ZW","iso_alpha3":"ZWE"},{"type":"Resident
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"208756","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John","title":"See Previous Roles","country_territory_code":"ZIMBAB","country_territory_name":"Zimbabwe","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"ZIMBAB","iso_alpha2":"ZW","iso_alpha3":"ZWE"},{"type":"Resident
         of","code":"ZIMBAB","iso_alpha2":"ZW","iso_alpha3":"ZWE"},{"type":"Jurisdiction","code":"ZIMBAB","iso_alpha2":"ZW","iso_alpha3":"ZWE"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"599137","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"599137","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"Deceased","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"13","month":"9","year":"1938"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"876301","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"876301","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1961"},{"day":"","month":"","year":"1962"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1057300","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John","title":"","country_territory_code":"IRE","country_territory_name":"Ireland","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"IRE","iso_alpha2":"IE","iso_alpha3":"IRL"},{"type":"Resident
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1057300","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John","title":"","country_territory_code":"IRE","country_territory_name":"Ireland","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"IRE","iso_alpha2":"IE","iso_alpha3":"IRL"},{"type":"Resident
         of","code":"IRE","iso_alpha2":"IE","iso_alpha3":"IRL"},{"type":"Jurisdiction","code":"IRE","iso_alpha2":"IE","iso_alpha3":"IRL"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1073713","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1073713","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1979"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1102069","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1102069","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1984"},{"day":"","month":"","year":"1985"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1487975","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John","title":"","country_territory_code":"AUSTR","country_territory_name":"Australia","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"AUSTR","iso_alpha2":"AU","iso_alpha3":"AUS"},{"type":"Resident
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1487975","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John","title":"","country_territory_code":"AUSTR","country_territory_name":"Australia","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"AUSTR","iso_alpha2":"AU","iso_alpha3":"AUS"},{"type":"Resident
         of","code":"AUSTR","iso_alpha2":"AU","iso_alpha3":"AUS"},{"type":"Jurisdiction","code":"AUSTR","iso_alpha2":"AU","iso_alpha3":"AUS"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1784024","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1784024","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1974"},{"day":"","month":"","year":"1975"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2315601","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2315601","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2364190","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2364190","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Reported Allegation","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1967"},{"day":"","month":"","year":"1968"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2982581","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2982581","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1978"},{"day":"","month":"","year":"1979"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"3448855","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"3448855","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"4539300","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"4539300","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Reported Allegation","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"16","month":"9","year":"1990"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"4835557","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"4835557","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"4847493","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"4847493","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1974"},{"day":"","month":"","year":"1975"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith Jr."},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11211630","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith Jr."},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11211630","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1955"},{"day":"","month":"","year":"1956"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11514803","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11514803","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Reported Allegation","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1973"},{"day":"","month":"","year":"1974"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11955534","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11955534","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"Devon \u0026 Cornwall (UK) Police Court and Convicted","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1969"},{"day":"","month":"","year":"1970"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"12005162","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"12005162","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"12105166","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"12105166","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"NZ","iso_alpha2":"NZ","iso_alpha3":"NZL"},{"type":"Jurisdiction","code":"NZ","iso_alpha2":"NZ","iso_alpha3":"NZL"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"12392454","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"12392454","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"NOTK"},{"type":"Jurisdiction","code":"NZ","iso_alpha2":"NZ","iso_alpha3":"NZL"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"12571885","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"12571885","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Reported Allegation","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1973"},{"day":"","month":"","year":"1962"},{"day":"","month":"","year":"1963"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2372086","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2372086","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John A.","title":"Member, Board of Directors, Civil Service Commission","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"GUAM","iso_alpha2":"GU","iso_alpha3":"GUM"},{"type":"Jurisdiction","code":"GUAM","iso_alpha2":"GU","iso_alpha3":"GUM"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        A. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1309213","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        A. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1309213","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John B.","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        B. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"508801","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        B. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"508801","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Barry","title":"See Previous Roles","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"16","month":"8","year":"1957"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Barry Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1377634","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Barry Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1377634","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Barry","title":"Member, Board of Directors, Cayman Islands Stock Exchange","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP","BRD"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP","BRD"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"CAYI","iso_alpha2":"KY","iso_alpha3":"CYM"},{"type":"Jurisdiction","code":"CAYI","iso_alpha2":"KY","iso_alpha3":"CYM"}],"date_of_birth":[{"day":"13","month":"5","year":"1945"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Barry Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2494061","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Barry Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2494061","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John C.","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1959"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        C. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1194930","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        C. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1194930","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Christopher","title":"Crimestoppers (UK) Most Wanted List","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"NOTK"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Christopher Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"3392166","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Christopher Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"3392166","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Christopher","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Reported Allegation","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1973"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Christopher Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"3422047","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Christopher Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"3422047","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Christopher","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Reported Allegation","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1991"},{"day":"","month":"","year":"1992"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Christopher Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1503195","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John Clark","title":"Interpol Red Notices","country_territory_code":"SURM","country_territory_name":"Suriname","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"SURM","iso_alpha2":"SR","iso_alpha3":"SUR"},{"type":"Resident
+        Christopher Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1503195","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John Clark","title":"Interpol Red Notices","country_territory_code":"SURM","country_territory_name":"Suriname","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"SURM","iso_alpha2":"SR","iso_alpha3":"SUR"},{"type":"Resident
         of","code":"NOTK"}],"date_of_birth":[{"day":"3","month":"4","year":"1966"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Clark Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"4817714","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Clark Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"4817714","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Conrad","title":"FINRA (US) Monthly Disciplinary Actions","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Conrad Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1201393","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John D.","title":"See Previous Roles","country_territory_code":"CANA","country_territory_name":"Canada","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP","BRD"],"countries_territories":[{"type":"Citizenship","code":"CANA","iso_alpha2":"CA","iso_alpha3":"CAN"},{"type":"Resident
+        Conrad Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1201393","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John D.","title":"See Previous Roles","country_territory_code":"CANA","country_territory_name":"Canada","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP","BRD"],"countries_territories":[{"type":"Citizenship","code":"CANA","iso_alpha2":"CA","iso_alpha3":"CAN"},{"type":"Resident
         of","code":"CANA","iso_alpha2":"CA","iso_alpha3":"CAN"},{"type":"Jurisdiction","code":"CANA","iso_alpha2":"CA","iso_alpha3":"CAN"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        D. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1876182","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        D. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1876182","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John D.","title":"HHS OIG (US) List of Excluded Individuals and Entities","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OEL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OEL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"8","month":"6","year":"1970"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        D. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"786555","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        D. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"786555","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Dorrance","title":"See Previous Roles","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"25","month":"5","year":"1951"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Dorrance Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"4370872","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Dorrance Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"4370872","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John E.","title":"See Previous Roles","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        E. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"3231379","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        E. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"3231379","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Edward Kitson","title":"Crown Representative, Cabinet Office","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP","BRD"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP","BRD"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"24","month":"10","year":"1954"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Edward Kitson Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1362391","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Edward Kitson Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1362391","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Edwin","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Edwin Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11174867","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Edwin Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11174867","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Eldrid","title":"Judge, High Court of Eastern Cape","country_territory_code":"SAFR","country_territory_name":"South
-        Africa","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"SAFR","iso_alpha2":"ZA","iso_alpha3":"ZAF"},{"type":"Resident
-        of","code":"SAFR","iso_alpha2":"ZA","iso_alpha3":"ZAF"},{"type":"Jurisdiction","code":"SAFR","iso_alpha2":"ZA","iso_alpha3":"ZAF"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Eldrid Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"359409","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Africa","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"SAFR","iso_alpha2":"ZA","iso_alpha3":"ZAF"},{"type":"Resident
+        of","code":"SAFR","iso_alpha2":"ZA","iso_alpha3":"ZAF"},{"type":"Jurisdiction","code":"SAFR","iso_alpha2":"ZA","iso_alpha3":"ZAF"}],"date_of_birth":[{"day":"5","month":"11","year":"1958"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
+        Eldrid Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"359409","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Farquharson","title":"See Previous Roles","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"7","month":"5","year":"1930"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Farquharson Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"648813","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Farquharson Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"648813","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Floyd","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Floyd Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1034657","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John Gerard","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
-        of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1964"},{"day":"","month":"","year":"1965"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Gerard Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"371595","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Floyd Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"371595","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John H.","title":"See Previous Roles","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1941"},{"day":"","month":"","year":"1940"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"Major
-        General John H. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"423400","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        General John H. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"423400","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Henry","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Henry Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"816337","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Henry Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"816337","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Henry","title":"","country_territory_code":"TRTO","country_territory_name":"Trinidad
-        and Tobago","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"TRTO","iso_alpha2":"TT","iso_alpha3":"TTO"},{"type":"Resident
+        and Tobago","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"TRTO","iso_alpha2":"TT","iso_alpha3":"TTO"},{"type":"Resident
         of","code":"TRTO","iso_alpha2":"TT","iso_alpha3":"TTO"},{"type":"Reported
         Allegation","code":"TRTO","iso_alpha2":"TT","iso_alpha3":"TTO"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Henry Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"3372192","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Henry Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"3372192","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Howard","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1958"},{"day":"","month":"","year":"1959"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Howard Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1029031","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Howard Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1029031","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Joseph","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Joseph Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11045605","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John Joseph","title":"See Previous Roles","country_territory_code":"IRE","country_territory_name":"Ireland","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"IRE","iso_alpha2":"IE","iso_alpha3":"IRL"},{"type":"Resident
+        Joseph Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11045605","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John Joseph","title":"See Previous Roles","country_territory_code":"IRE","country_territory_name":"Ireland","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"IRE","iso_alpha2":"IE","iso_alpha3":"IRL"},{"type":"Resident
         of","code":"IRE","iso_alpha2":"IE","iso_alpha3":"IRL"},{"type":"Jurisdiction","code":"UKRN","iso_alpha2":"UA","iso_alpha3":"UKR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Joseph Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2977481","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Joseph Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2977481","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John L.","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"9","month":"10","year":"1980"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        L. Smith III"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11029030","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        L. Smith III"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11029030","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John L.","title":"Chief Prosecutor, Kosovo Specialist Prosecutor\u0027s Office","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"NETH","iso_alpha2":"NL","iso_alpha3":"NLD"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"INTERNATIONAL"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        L. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"948361","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        L. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"948361","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Leonard William","title":"Assets Recovery Agency (UK) Press Releases","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Leonard William Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"3422042","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Leonard William Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"3422042","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Leonard William","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Reported Allegation","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1974"},{"day":"","month":"","year":"1975"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Leonard William Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2499941","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Leonard William Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2499941","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Levi","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"23","month":"12","year":"1983"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Levi Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"423493","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Levi Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"423493","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Lindsay Eric","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"3","month":"4","year":"1923"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Lindsay Eric Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11727953","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Lindsay Eric Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11727953","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Lucian","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1945"},{"day":"","month":"","year":"1946"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Lucian Smith Jr."},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11727967","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Lucian Smith Jr."},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11727967","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Lucian","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Lucian Smith III"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2939396","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Lucian Smith III"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2939396","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Martin","title":"Companies House (UK) Disqualified Directors","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"11","month":"3","year":"1970"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Martin Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2301633","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Martin Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2301633","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Michael","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Michael Smith Jr."},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"518760","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Michael Smith Jr."},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"518760","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Mortimer Fourette","title":"Deceased","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"23","month":"6","year":"1935"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Mortimer Fourette Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2939397","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Mortimer Fourette Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2939397","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Neil","title":"Companies House (UK) Disqualified Directors","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"13","month":"1","year":"1968"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Neil Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2399993","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Neil Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2399993","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Orlando","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1984"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Orlando Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2939398","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Orlando Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2939398","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Peter","title":"Companies House (UK) Disqualified Directors","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"FIJI","iso_alpha2":"FJ","iso_alpha3":"FJI"}],"date_of_birth":[{"day":"27","month":"10","year":"1947"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Peter Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11756066","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Peter Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11756066","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Philip","title":"HHS OIG (US) List of Excluded Individuals and Entities","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"UNKNOWN","is_subsidiary":false,"score":"0.78571427","icon_hints":["OEL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"UNKNOWN","is_subsidiary":false,"score":"1.0","icon_hints":["OEL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"29","month":"9","year":"1949"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Philip Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1480044","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Philip Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1480044","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John R.","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        R. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"4802591","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        R. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"4802591","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John R.","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        R. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1798495","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        R. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1798495","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Raymond","title":"FBI Crime Alert","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"NOTK"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Raymond Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2163980","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Raymond Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"2163980","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Raymond","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported
         Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1959"},{"day":"","month":"","year":"1960"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Raymond Smith Jr."},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"11844008","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John Richard","title":"","country_territory_code":"NETH","country_territory_name":"Netherlands","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"NETH","iso_alpha2":"NL","iso_alpha3":"NLD"},{"type":"Resident
+        Raymond Smith Jr."},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"11844008","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John Richard","title":"","country_territory_code":"NETH","country_territory_name":"Netherlands","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"NETH","iso_alpha2":"NL","iso_alpha3":"NLD"},{"type":"Resident
         of","code":"NANT","iso_alpha2":"CW","iso_alpha3":"CUW"},{"type":"Jurisdiction","code":"NANT","iso_alpha2":"CW","iso_alpha3":"CUW"},{"type":"Jurisdiction","code":"ARUBA","iso_alpha2":"AW","iso_alpha3":"ABW"},{"type":"Jurisdiction","code":"NETH","iso_alpha2":"NL","iso_alpha3":"NLD"},{"type":"Jurisdiction","code":"SINTMA","iso_alpha2":"SX","iso_alpha3":"SXM"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Richard Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"362750","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Richard Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"362750","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Robert","title":"See Previous Roles","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"","month":"","year":"1949"},{"day":"","month":"","year":"1948"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Robert Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1101629","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Robert Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1101629","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John S.","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"CAYI","iso_alpha2":"KY","iso_alpha3":"CYM"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        S. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"4807909","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        S. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"4807909","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Stuart","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"INTERNATIONAL"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Stuart Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1417151","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Stuart Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1417151","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John T.","title":"See Previous Roles","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP","BRD"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP","BRD"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"TCAI","iso_alpha2":"TC","iso_alpha3":"TCA"},{"type":"Jurisdiction","code":"TCAI","iso_alpha2":"TC","iso_alpha3":"TCA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        T. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"12041514","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        T. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"12041514","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Victor","title":"FINRA (US) Monthly Disciplinary Actions","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        Known","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Victor Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1170427","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Victor Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1170427","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John W.","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        W. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1636223","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        W. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1636223","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John W.","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        W. Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"689228","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        W. Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"689228","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Warner","title":"See Previous Roles","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Jurisdiction","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Warner Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"4795903","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        Warner Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"4795903","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John Wayne","title":"","country_territory_code":"USA","country_territory_name":"United
-        States","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
+        States","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-LT"],"countries_territories":[{"type":"Citizenship","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Resident
         of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"},{"type":"Reported Allegation","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Wayne Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"12436333","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John William","title":"","country_territory_code":"AUSTR","country_territory_name":"Australia","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"AUSTR","iso_alpha2":"AU","iso_alpha3":"AUS"},{"type":"Resident
+        Wayne Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"12436333","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John William","title":"","country_territory_code":"AUSTR","country_territory_name":"Australia","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"AUSTR","iso_alpha2":"AU","iso_alpha3":"AUS"},{"type":"Resident
         of","code":"AUSTR","iso_alpha2":"AU","iso_alpha3":"AUS"},{"type":"Reported
         Allegation","code":"AUSTR","iso_alpha2":"AU","iso_alpha3":"AUS"}],"date_of_birth":[{"day":"","month":"","year":"1954"},{"day":"","month":"","year":"1955"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        William Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"358742","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        William Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"358742","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
         John William Patrick","title":"See Previous Roles","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["PEP"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"17","month":"3","year":"1951"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        William Patrick Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1179451","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Winick,
-        Sandy","title":"Ontario Securities Commission Cease Trade Orders","country_territory_code":"CANA","country_territory_name":"Canada","gender":"Male","is_subsidiary":false,"score":"0.78571427","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"CANA","iso_alpha2":"CA","iso_alpha3":"CAN"},{"type":"Resident
+        William Patrick Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"1179451","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Winick,
+        Sandy","title":"Ontario Securities Commission Cease Trade Orders","country_territory_code":"CANA","country_territory_name":"Canada","gender":"Male","is_subsidiary":false,"score":"1.0","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"CANA","iso_alpha2":"CA","iso_alpha3":"CAN"},{"type":"Resident
         of","code":"CANA","iso_alpha2":"CA","iso_alpha3":"CAN"}],"date_of_birth":[{"day":"","month":"","year":"1957"},{"day":"","month":"","year":"1958"},{"day":"25","month":"3","year":"1958"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Peter Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"647398","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Abel
+        Peter Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":false}}}},{"id":"647398","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Abel
         Smith, John Lawrence","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.76214284","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.97","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
         of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Lawrence Abel Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":true}}}},{"id":"1095495","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Lovell-Smith,
-        John Bird","title":"","country_territory_code":"NZ","country_territory_name":"New
-        Zealand","gender":"Male","is_subsidiary":false,"score":"0.76214284","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"NZ","iso_alpha2":"NZ","iso_alpha3":"NZL"},{"type":"Resident
-        of","code":"NZ","iso_alpha2":"NZ","iso_alpha3":"NZL"},{"type":"Jurisdiction","code":"PITCIS","iso_alpha2":"PN","iso_alpha3":"PCN"},{"type":"Jurisdiction","code":"COOKIS","iso_alpha2":"CK","iso_alpha3":"COK"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Bird Lovell-Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":true}}}},{"id":"649823","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Pridmore-Smith,
-        Bramwell J.","title":"BIS Denied Persons List","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.76214284","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
-        of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1929"},{"day":"","month":"10","year":"1928"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        B. Pridmore Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":true}}}},{"id":"1876183","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
-        John William","title":"HHS OIG (US) List of Excluded Individuals and Entities","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.76214284","icon_hints":["OEL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
-        of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"20","month":"10","year":"1960"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        William Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":true}}}},{"id":"12341014","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Stewart-Smith,
-        John Oliver Nepomuk","title":"","country_territory_code":"UK","country_territory_name":"United
-        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.76214284","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
-        of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"23","month":"4","year":"2009"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Oliver Nepomuk Stewart-Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":true}}}},{"id":"1523520","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smyth,
-        John Bernard Alphonse","title":"British Columbia Securities Commission Cease
-        Trade Orders","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.7285714","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
-        of","code":"CANA","iso_alpha2":"CA","iso_alpha3":"CAN"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Bernard Alphonse Smyth"},"type":{"type":"Broad","is_linguistic_variation":true,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"872707","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Heidbreder,
-        Bernhard","title":"German Federal Criminal Police (BKA) Most Wanted List","country_territory_code":"GFR","country_territory_name":"Germany","gender":"Male","is_subsidiary":false,"score":"0.7275","icon_hints":["OOL-PERSON","SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"GFR","iso_alpha2":"DE","iso_alpha3":"DEU"},{"type":"Resident
+        Lawrence Abel Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":true}}}},{"id":"872707","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Heidbreder,
+        Bernhard","title":"German Federal Criminal Police (BKA) Most Wanted List","country_territory_code":"GFR","country_territory_name":"Germany","gender":"Male","is_subsidiary":false,"score":"0.97","icon_hints":["OOL-PERSON","SI-PERSON"],"countries_territories":[{"type":"Citizenship","code":"GFR","iso_alpha2":"DE","iso_alpha3":"DEU"},{"type":"Resident
         of","code":"NOTK"},{"type":"Reported Allegation","code":"GFR","iso_alpha2":"DE","iso_alpha3":"DEU"}],"date_of_birth":[{"day":"19","month":"11","year":"1960"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Londono Smith"},"type":{"type":"Broad","is_linguistic_variation":false,"is_non_linguistic_variation":true,"is_structural_variation":true}}}},{"id":"67887","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smythe,
-        John","title":"SECO (Switzerland) Liberia List","country_territory_code":"LIBER","country_territory_name":"Liberia","gender":"Male","is_subsidiary":false,"score":"0.64285713","icon_hints":["SAN-PERSON","PEP"],"countries_territories":[{"type":"Citizenship","code":"LIBER","iso_alpha2":"LR","iso_alpha3":"LBR"},{"type":"Resident
-        of","code":"LIBER","iso_alpha2":"LR","iso_alpha3":"LBR"},{"type":"Jurisdiction","code":"LIBER","iso_alpha2":"LR","iso_alpha3":"LBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smythe"},"type":{"type":"Broad","is_linguistic_variation":true,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"1698577","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smythe,
-        John","title":"Defense Logistics Agency (DLA) Debarred Parties","country_territory_code":"NOTK","country_territory_name":"Not
-        Known","gender":"Male","is_subsidiary":false,"score":"0.64285713","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
-        of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Smythe"},"type":{"type":"Broad","is_linguistic_variation":true,"is_non_linguistic_variation":true,"is_structural_variation":false}}}},{"id":"2335867","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smythe,
-        John Henry","title":"","country_territory_code":"LIBER","country_territory_name":"Liberia","gender":"Male","is_subsidiary":false,"score":"0.64285713","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"LIBER","iso_alpha2":"LR","iso_alpha3":"LBR"},{"type":"Resident
-        of","code":"LIBER","iso_alpha2":"LR","iso_alpha3":"LBR"},{"type":"Jurisdiction","code":"LIBER","iso_alpha2":"LR","iso_alpha3":"LBR"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
-        Henry Smythe"},"type":{"type":"Broad","is_linguistic_variation":true,"is_non_linguistic_variation":true,"is_structural_variation":false}}}}]}'
-  recorded_at: Fri, 04 Feb 2022 11:25:02 GMT
+        Londono Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":true}}}},{"id":"1095495","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Lovell-Smith,
+        John Bird","title":"","country_territory_code":"NZ","country_territory_name":"New
+        Zealand","gender":"Male","is_subsidiary":false,"score":"0.97","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"NZ","iso_alpha2":"NZ","iso_alpha3":"NZL"},{"type":"Resident
+        of","code":"NZ","iso_alpha2":"NZ","iso_alpha3":"NZL"},{"type":"Jurisdiction","code":"PITCIS","iso_alpha2":"PN","iso_alpha3":"PCN"},{"type":"Jurisdiction","code":"COOKIS","iso_alpha2":"CK","iso_alpha3":"COK"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
+        Bird Lovell-Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":true}}}},{"id":"649823","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Pridmore-Smith,
+        Bramwell J.","title":"BIS Denied Persons List","country_territory_code":"NOTK","country_territory_name":"Not
+        Known","gender":"Male","is_subsidiary":false,"score":"0.97","icon_hints":["OOL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"","month":"","year":"1929"},{"day":"","month":"10","year":"1928"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
+        B. Pridmore Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":true}}}},{"id":"1876183","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Smith,
+        John William","title":"HHS OIG (US) List of Excluded Individuals and Entities","country_territory_code":"NOTK","country_territory_name":"Not
+        Known","gender":"Male","is_subsidiary":false,"score":"0.97","icon_hints":["OEL-PERSON"],"countries_territories":[{"type":"Citizenship","code":"NOTK"},{"type":"Resident
+        of","code":"USA","iso_alpha2":"US","iso_alpha3":"USA"}],"date_of_birth":[{"day":"20","month":"10","year":"1960"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
+        William Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":true}}}},{"id":"12341014","type":"RiskEntities","attributes":{"type":"Person","primary_name":"Stewart-Smith,
+        John Oliver Nepomuk","title":"","country_territory_code":"UK","country_territory_name":"United
+        Kingdom","gender":"Male","is_subsidiary":false,"score":"0.97","icon_hints":["RCA"],"countries_territories":[{"type":"Citizenship","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Resident
+        of","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"},{"type":"Jurisdiction","code":"UK","iso_alpha2":"GB","iso_alpha3":"GBR"}],"date_of_birth":[{"day":"23","month":"4","year":"2009"}],"matched_criteria":{"date_of_birth":{},"name":{"name":"John
+        Oliver Nepomuk Stewart-Smith"},"type":{"type":"Precise","is_linguistic_variation":false,"is_non_linguistic_variation":false,"is_structural_variation":true}}}}]}'
+  recorded_at: Mon, 23 May 2022 15:38:18 GMT
 recorded_with: VCR 6.0.0
