@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "factiva"
+require "pry"
 Dir[File.join(__dir__, "support", "*.rb")].each { |file| require file }
 
 RSpec.configure do |config|

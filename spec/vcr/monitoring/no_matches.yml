@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.dowjones.com/risk-entity-screening-cases/06f61bd4-ac2f-492d-85b2-428eacb19d18/matches
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZHNFlUSU5SU0hBWFVVM0pUR0pJRUdWVFRQRjNYUU1aVElONERLTDJOSU5ESEM0M1pJUkNXRzRETUdCNFVTMlpVR1EzVTI0Q1FHQktXQzZLVU9GTkdFV0xXR05DWE1XS1BLNUtVR1MzVE5SWlc0VVNGTEZMRkk2U0xOUlZWQU9LUktaSkRTNTJYTUZZWE9RMlpQSlZHMk9DTE5aQlZDMzNPTEJNVVlTS0hKTkFWT1NKWUdWRldFUko1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTcxNzYyNiwiZXhwIjoxNjU1NzIxMjI2fQ.YfIIlKn4DrFpEY1z9bDKxiu7iMGsQuJeiQbRTMm11_K-bCa9LS09Y0iKTNfuvEoPzwb12nQj1vi0rEE2_ZwzcxzFKfAV2iCo7JOBrYYvpu3XVDF3o3eoYP63u8fSWOL9vfxkxePpdcXRjFkBTw7Bvt-wq4oQTtkZF5WisrFg881m94TrRVjn-_ECNhl8CN0mNBiz33g105nj3PRSGShNf7iR5Y-OUe7tCMojVQ6EjfaewMV6c0KJbOPxrc6w6ctmyBvC-EQlmiEg4W4TgFxgRETav0gM7RE9HQoJjoAytFTuQ_Q7XosGuui1fmzi3fSvlYY_zqYhHuvzo4VsJIRGOQ
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '325'
+      Connection:
+      - close
+      B3:
+      - c4a61dbeeef5ab37137a145fc322d0a1-5697af70305ac401-1
+      Date:
+      - Mon, 20 Jun 2022 09:35:52 GMT
+      Pattern:
+      - "/risk-entity-screening-cases/{id}/matches$"
+      Request-Uri:
+      - "/risk-entity-screening-cases/06f61bd4-ac2f-492d-85b2-428eacb19d18/matches"
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Dj-Media-Type:
+      - dowjones.dna; resource=matches; version=1.0; format=json
+      X-Dj-Transaction-Id:
+      - c4a61dbeeef5ab37137a145fc322d0a1-5697af70305ac401
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e5774f09cc2ae0875c0445786827ad1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD50-C1
+      X-Amz-Cf-Id:
+      - VINRzRXa3DzlZ3VkaShquLsZFQ_htDBEdHAM_bPRcNot8efBDzBxYA==
+    body:
+      encoding: UTF-8
+      string: '{"data":[],"links":{"last":"https://api.dowjones.com/risk-entity-screening-cases/06f61bd4-ac2f-492d-85b2-428eacb19d18/matches?page[offset]=0","first":"https://api.dowjones.com/risk-entity-screening-cases/06f61bd4-ac2f-492d-85b2-428eacb19d18/matches?page[offset]=0"},"meta":{"offset":{"last":"0","first":"0"},"total_count":0}}'
+  recorded_at: Mon, 20 Jun 2022 09:35:52 GMT
+recorded_with: VCR 6.0.0
