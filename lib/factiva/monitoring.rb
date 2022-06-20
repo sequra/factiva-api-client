@@ -237,9 +237,8 @@ module Factiva
           "attributes": {
             "country": country,
             "external_id": external_id,
-            # "gender": "MALE",
             "identification_details": {
-              "type": "1018",
+              "type": "1018", # TAX NUMBER https://developer.dowjones.com/site/docs/risk_and_compliance_apis/risk_and_compliance_2_0/risk_taxonomy_api/index.gsp
               "value": nin,
             },
             "names": [
