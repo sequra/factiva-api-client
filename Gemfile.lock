@@ -121,7 +121,7 @@ PLATFORMS
 
 DEPENDENCIES
   factiva-api-client!
-  pry
+  pry (~> 0.14.1)
   rake (~> 13.0)
   rspec (~> 3.0)
   sequra-style (~> 0.1)!
