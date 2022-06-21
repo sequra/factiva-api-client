@@ -103,11 +103,11 @@ module Factiva
     end
 
     def create_case
-      params = { json: case_body }
+      params = { json: create_case_body }
 
       # If the request fails auth is reset and the request retried
-      post(case_url, params)
-        .or       { set_auth; post(case_url, params) }
+      post(create_case_url, params)
+        .or       { set_auth; post(create_case_url, params) }
         .value_or { |error| raise RequestError.new(error) }
     end
 
@@ -212,59 +212,56 @@ module Factiva
       "#{url}/#{suffix}"
     end
 
-    def case_url
-      @case_url ||= make_url("risk-entity-screening-cases")
+    def create_case_url
+      make_url("risk-entity-screening-cases")
     end
 
-    def case_body
+    def create_case_body
       {
         "data": {
           "attributes": {
-            "case_name": "string",
-            "external_id": "string",
-            "has_alerts": true,
-            "is_case_valid": true,
+            "case_name": "SeQura-TM",
             "options": {
               "has_to_match_low_quality_alias": false,
-              "is_indexed": false,
+              "is_indexed": true,
               "score_threshold": 1,
               "search_type": "PRECISE"
             },
-            "owner_id": "string",
+            "owner_id": "SeQura",
             "score_preferences": {
               "country": {
-                "has_exclusions": true,
+                "has_exclusions": false,
                 "score": 0
               },
               "gender": {
-                "has_exclusions": true,
+                "has_exclusions": false,
                 "score": 0
               },
               "identification_details": {
-                "has_exclusions": true,
+                "has_exclusions": false,
                 "score": 0
               },
               "industry_sector": {
-                "has_exclusions": true,
+                "has_exclusions": false,
                 "score": 0
               },
               "year_of_birth": {
-                "has_exclusions": true,
+                "has_exclusions": false,
                 "score": 0
               },
               "deceased": {
-                "has_exclusions": true,
+                "has_exclusions": false,
                 "score": 0
               }
             }
           },
-          "type": "string"
+          "type": "risk-entity-screening-cases"
         }
       }
     end
 
     def association_url
-      @association_url ||= make_url("risk-entity-screening-associations")
+      make_url("risk-entity-screening-associations")
     end
 
     def association_body(first_name, last_name, birth_year, external_id, nin, country)
@@ -294,7 +291,7 @@ module Factiva
     end
 
     def case_association_url(case_id)
-      @case_association_url ||= make_url("risk-entity-screening-cases/#{case_id}/risk-entity-screening-associations")
+      make_url("risk-entity-screening-cases/#{case_id}/risk-entity-screening-associations")
     end
 
     def case_association_body(association_id)
@@ -309,11 +306,11 @@ module Factiva
     end
 
     def matches_url(case_id)
-      @matches_url ||= make_url("risk-entity-screening-cases/#{case_id}/matches")
+      make_url("risk-entity-screening-cases/#{case_id}/matches")
     end
 
     def log_decision_url(case_id, match_id)
-      @log_decision_url ||= make_url("risk-entity-screening-cases/#{case_id}/matches/#{match_id}")
+      make_url("risk-entity-screening-cases/#{case_id}/matches/#{match_id}")
     end
 
     def log_decision_body(comment, state, risk_rating)
