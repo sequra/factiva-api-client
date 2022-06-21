@@ -32,16 +32,22 @@ module Factiva
       instance.get_matches(*args)
     end
 
+    def self.log_decision(*args)
+      instance.log_decision(*args)
+    end
+
     def self.stub!(create_case: {},
         create_association: {},
         add_association_to_case: {},
-        get_matches: {}
+        get_matches: {},
+        log_decision: {}
         )
       @instance = MockedRequest.new(
         create_case,
         create_association,
         add_association_to_case,
-        get_matches
+        get_matches,
+        log_decision
       )
       true
     end
@@ -52,13 +58,23 @@ module Factiva
     end
 
     class MockedRequest
-      attr_reader :stubbed_create_case, :stubbed_create_association, :stubbed_add_association_to_case, :stubbed_get_matches
+      attr_reader :stubbed_create_case,
+      :stubbed_create_association,
+      :stubbed_add_association_to_case,
+      :stubbed_get_matches,
+      :stubbed_log_decision
 
-      def initialize(stubbed_create_case, stubbed_create_association, stubbed_add_association_to_case, stubbed_get_matches)
+      def initialize(stubbed_create_case,
+        stubbed_create_association,
+        stubbed_add_association_to_case,
+        stubbed_get_matches,
+        stubbed_log_decision
+      )
         @stubbed_create_case  = stubbed_create_case
         @stubbed_create_association  = stubbed_create_association
         @stubbed_add_association_to_case  = stubbed_add_association_to_case
         @stubbed_get_matches = stubbed_get_matches
+        @stubbed_log_decision = stubbed_log_decision
       end
 
       def create_case
@@ -75,6 +91,10 @@ module Factiva
 
       def get_matches
         stubbed_get_matches
+      end
+
+      def log_decision
+        stubbed_log_decision
       end
     end
 
@@ -127,6 +147,18 @@ module Factiva
         .value_or { |error| raise RequestError.new(error) }
     end
 
+    def log_decision(case_id:, match_id:, comment:, state:, risk_rating:)
+      params = { json: log_decision_body(
+          comment, state, risk_rating,
+        )
+      }
+
+      # If the request fails auth is reset and the request retried
+      patch(log_decision_url(case_id, match_id), params)
+        .or       { set_auth; patch(log_decision_url(case_id, match_id), params) }
+        .value_or { |error| raise RequestError.new(error) }
+    end
+
   private
     def self.instance
       @instance ||= new
@@ -140,12 +172,16 @@ module Factiva
       make_request(:post, url, params)
     end
 
+    def patch(url, params)
+      make_request(:patch, url, params)
+    end
+
     def get(url)
       make_request(:get, url)
     end
 
-    def make_request(method, url, params = nil)
-      http_params = method == :post ? [:post, url, params] : [:get, url]
+    def make_request(http_method, url, params = nil)
+      http_params = [http_method, url, params].compact
 
       begin
         response = HTTP
@@ -274,6 +310,23 @@ module Factiva
 
     def matches_url(case_id)
       @matches_url ||= make_url("risk-entity-screening-cases/#{case_id}/matches")
+    end
+
+    def log_decision_url(case_id, match_id)
+      @log_decision_url ||= make_url("risk-entity-screening-cases/#{case_id}/matches/#{match_id}")
+    end
+
+    def log_decision_body(comment, state, risk_rating)
+      {
+        "data": {
+          "attributes": {
+            "comment": comment,
+            "current_state": state,
+            "risk_rating": risk_rating
+          },
+          "type": "match"
+        }
+      }
     end
 
     def config

@@ -1,0 +1,278 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://api.dowjones.com/risk-entity-screening-cases/06f61bd4-ac2f-492d-85b2-428eacb19d18/matches/73a745e0e0f80149bfc52cf971ac8bd2c5a4d2029cf692626d9e19789eb7e9e2
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"comment":"False positive","current_state":"CLEARED","risk_rating":1},"type":"match"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZHUTJUS05CU0hBWFRDM0NRS0pDRkFSTFRKWkNXV1VDWkpSQkVJUlNUUEJER0laS1dJSjNIVVMyT0dNWVVNTjNGSklaSE9NS0ZOSldTNjZURk9GM1ZPWlNWR1pLSFU0WldNRkRES1REWU9SS1dHTTNSRzUySEM2S0lHSjRHWTVEVlBKQVVNVktMS1Y0V0MyVFdNRkNFTVIzTElKVkhPVERQS0JFVE1RU1hHUkVYQzQyQkpWNERTNFo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTQ2MTM0OSwiZXhwIjoxNjU1NDY0OTQ5fQ.pT1t6gZ7U9IDrSQ9d_MjQY1ZKbxl1AW7ML2PA5xb-B-xKzgFqkaktlTGz4Hoe9zGI89CwDbOAqjWOtpwiIUVcdsoGhSCN8GylP9JHSbFUSU1aIb1hYM1J5kU0bIpS2UcotVmEl3bsZ3aCQVZsLSep3e29jIl5tZj9RMzlbyqz5G67sKYEiqf0oXuauAPLTYX-OEy3-bJlol9M9yANlYlPv-cpdpldgIfUzm01aVrx31k3iX5v3kqlZpwlhi3nrExtLCH7ee4eAIbX6RNbim9BuqXvnMSNCVAFYO4GpeUmNJ5rc9EZlWfjB7Ra_dRU3aUD7cCVclJjIFTiTrhZLiN4w
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '140'
+      Connection:
+      - close
+      B3:
+      - 498a128cf83f348001ecc9972a5fb0e7-be2fead3d3e91675-1
+      Date:
+      - Tue, 21 Jun 2022 07:08:13 GMT
+      Server:
+      - openresty
+      X-Dj-Transaction-Id:
+      - 498a128cf83f348001ecc9972a5fb0e7-be2fead3d3e91675
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 cb73c89aea88aaa55481f7cc9396966e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD51-C1
+      X-Amz-Cf-Id:
+      - m4PzU4ighlHLbZZOnUZ5i1aBU4eZv7aKI8tG2lCOrZDj86_boZPxyQ==
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"code":1011007,"title":"jwt signature verification failed:
+        ''exp'' claim expired at Fri, 17 Jun 2022 11:22:29 GMT","status":401}]}'
+  recorded_at: Tue, 21 Jun 2022 07:08:13 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: client_id=<SECRET_CLIENT_ID>&connection=service-account&grant_type=password&password=<SECRET_PASSWORD>&scope=openid+service_account_id+offline_access%3A&username=<SECRET_USERNAME>&device=testdevice
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '873'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Tue, 21 Jun 2022 07:08:14 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=0046b4cf-427b-4cc0-be91-caa952e04603; domain=.dowjones.com; path=/;
+        Expires=Fri Jun 18 07:08:14 2032; max-age=315360000;Secure; SameSite=none
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '873'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Tue, 21 Jun 2022 07:08:14 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 d4c915561282ddbdd32f1872279fb546.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - ojRLl_gzWkGB6bFb6aJ9QrzurpgqBZxxcdBDm22spN_Lkdu_zZLKAw==
+      X-P-X-Amz-Cf-Pop:
+      - IAD66-C2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e9c760453b6eccd1556a68a55a4a90c4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD51-C2
+      X-Amz-Cf-Id:
+      - dTEN1ShDyQIsjKNo4h1KzWn9vFapYJEs4_8v9c_0I5EG6Hi73HEA4Q==
+    body:
+      encoding: UTF-8
+      string: '{"id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMzAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJhdWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTc5NTI5NCwiZXhwIjoxNjU1ODMxMjk0fQ.mN3sUW6nSKHi3r3WiUBN4K0f1uUir8iPfxSvUsb_wZ6747DYX6gz1PzfT0OOuXdXap4oeYDm2iUxfVi_KTW1eWYEoGBpm8afhEPD1XOP2yxhOIxQHkztnSctgb0r-6o3fCr7ChhTNlerDHAQ57jLAVYs9LxZ8BE-81vhQME9z3MCieZN6nMK5ddnfMei-6qCo0vLKacKhPQDd2lyRPldMtMO2Pdh2PZXb5NKGL2aBgLverWXv3Vaswmrn9--5JYxDioHUKYJfHWtG2WoL8dkwDeSnSeHAMi2nGHPDH6cSnl6J2XomKtceOD9F7aRI7YUo75m5TkYd_2N8KDNex8WSA","access_token":"EBI1mBsPts_75Cmh_ju8qwnGb12viI2h","refresh_token":"gXmBOQk_AZiyL2gVtdKLYDxcsH_0P84nUADZFJNErP01o","token_type":"bearer"}'
+  recorded_at: Tue, 21 Jun 2022 07:08:14 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMzAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJhdWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTc5NTI5NCwiZXhwIjoxNjU1ODMxMjk0fQ.mN3sUW6nSKHi3r3WiUBN4K0f1uUir8iPfxSvUsb_wZ6747DYX6gz1PzfT0OOuXdXap4oeYDm2iUxfVi_KTW1eWYEoGBpm8afhEPD1XOP2yxhOIxQHkztnSctgb0r-6o3fCr7ChhTNlerDHAQ57jLAVYs9LxZ8BE-81vhQME9z3MCieZN6nMK5ddnfMei-6qCo0vLKacKhPQDd2lyRPldMtMO2Pdh2PZXb5NKGL2aBgLverWXv3Vaswmrn9--5JYxDioHUKYJfHWtG2WoL8dkwDeSnSeHAMi2nGHPDH6cSnl6J2XomKtceOD9F7aRI7YUo75m5TkYd_2N8KDNex8WSA&client_id=<SECRET_CLIENT_ID>&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&scope=openid+pib
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1223'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Tue, 21 Jun 2022 07:08:15 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=50a3581a-0f51-4cf7-86a3-5f405552360d; domain=.dowjones.com; path=/;
+        Expires=Fri Jun 18 07:08:15 2032; max-age=315360000;Secure; SameSite=none
+      Vary:
+      - Accept-Encoding
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '1223'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Tue, 21 Jun 2022 07:08:15 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 478e42d78af3de35728ba409bf63e348.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - fCXrER4g6S-HDwlg1n5mGxm_brfl0A86rPRl3P3NnTcvKQgkuzGeww==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 aece96245a5f852367d1447c4953c7e0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD51-C2
+      X-Amz-Cf-Id:
+      - ovlO5fe-k9ZIcgGrjsOw_SxnINav39dZ68DYw-GdJkCZO2qJ3-Dnag==
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZHNDRUR09CU0hBWFVHNEJaSUZGVk9XVEZKQklXR05MWktCWFVHWVpMT05XVVlMMlJLVk1HUVpDWkpKSkVRVUtETlJKWE1OM1hQSlVEU1RMWElGWFc2UlJYUEVYV1FSQldNUVpXS1ZKVkhCMlRRT0tLT0EyV1FUUlJPTjRWTTZCVElFWVVTVDMySEZNR0s0WldHWkJXRzVMRkpWTkhBU1NLS0JBVFFRMldQQkhXTzJTR01GTFZDWlo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTc5NTI5NSwiZXhwIjoxNjU1Nzk4ODk1fQ.cZIoae6K_avEzgF6KFNdkDHVuAidSTGRtOYbwBt3LzLjRxMf5605--ez-G3lK2dQGE4WzqXGMbXWP6LaVglu3JbDjvKAMTSu5TQaoYVm3gFDyBCy_1ehQN3rnRzyRRa7Ly_9ShB8vZ_N2uf_CYaFve1HgiXKNfsjuhIphWQ-FbsjaupZ4haoMukOWP_dhi5v1BzutgM6nUgnsA-1zFzxoBmgDLUGWvl_38Af-R1hx8UK5Ml4Nb6Sk_Ys3zxj3H_Top_wvns9YJgjemZEbNac7z79aTI9iUdpkTbXsDP5BNpYdslSyjqFF_B9dCFbDS-FtjdbB9HEGWe1aHe13QroQg","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Tue, 21 Jun 2022 07:08:15 GMT
+- request:
+    method: patch
+    uri: https://api.dowjones.com/risk-entity-screening-cases/06f61bd4-ac2f-492d-85b2-428eacb19d18/matches/73a745e0e0f80149bfc52cf971ac8bd2c5a4d2029cf692626d9e19789eb7e9e2
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"comment":"False positive","current_state":"CLEARED","risk_rating":1},"type":"match"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZHNDRUR09CU0hBWFVHNEJaSUZGVk9XVEZKQklXR05MWktCWFVHWVpMT05XVVlMMlJLVk1HUVpDWkpKSkVRVUtETlJKWE1OM1hQSlVEU1RMWElGWFc2UlJYUEVYV1FSQldNUVpXS1ZKVkhCMlRRT0tLT0EyV1FUUlJPTjRWTTZCVElFWVVTVDMySEZNR0s0WldHWkJXRzVMRkpWTkhBU1NLS0JBVFFRMldQQkhXTzJTR01GTFZDWlo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTc5NTI5NSwiZXhwIjoxNjU1Nzk4ODk1fQ.cZIoae6K_avEzgF6KFNdkDHVuAidSTGRtOYbwBt3LzLjRxMf5605--ez-G3lK2dQGE4WzqXGMbXWP6LaVglu3JbDjvKAMTSu5TQaoYVm3gFDyBCy_1ehQN3rnRzyRRa7Ly_9ShB8vZ_N2uf_CYaFve1HgiXKNfsjuhIphWQ-FbsjaupZ4haoMukOWP_dhi5v1BzutgM6nUgnsA-1zFzxoBmgDLUGWvl_38Af-R1hx8UK5Ml4Nb6Sk_Ys3zxj3H_Top_wvns9YJgjemZEbNac7z79aTI9iUdpkTbXsDP5BNpYdslSyjqFF_B9dCFbDS-FtjdbB9HEGWe1aHe13QroQg
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1176'
+      Connection:
+      - close
+      Vary:
+      - Accept-Encoding
+      B3:
+      - f86edde8e7ff2635f97cda0762cae7e9-f48a5920a9a499a1-1
+      Date:
+      - Tue, 21 Jun 2022 07:08:17 GMT
+      Pattern:
+      - "/risk-entity-screening-cases/{case_id}/matches/{id}$"
+      Request-Uri:
+      - "/risk-entity-screening-cases/06f61bd4-ac2f-492d-85b2-428eacb19d18/matches/73a745e0e0f80149bfc52cf971ac8bd2c5a4d2029cf692626d9e19789eb7e9e2"
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Dj-Media-Type:
+      - dowjones.dna; resource=matches; version=1.0; format=json
+      X-Dj-Transaction-Id:
+      - f86edde8e7ff2635f97cda0762cae7e9-f48a5920a9a499a1
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 8fe33d67287131bcace48d75970a4ae4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD51-C1
+      X-Amz-Cf-Id:
+      - une8-ptM7HYDgd5N9XRawYBi3O1zVc6ObCPtdaLbJVDZGvZRiBpU-A==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"peid":"1003410","type":"RELATIONSHIP","variation":{"structural":false,"linguistic":false,"non_linguistic":false},"title":"OFAC
+        - Principal Significant Foreign Narcotics Trafficker List","match_id":"73a745e0e0f80149bfc52cf971ac8bd2c5a4d2029cf692626d9e19789eb7e9e2","match_name":"Maria
+        Remedios Garcia Albert","match_type":"PRECISE","percentage_match":1.0,"subscription_name":"Maria
+        Remedios Garcia Albert","boosting_events":[],"icon_hints":["SAN-PERSON","SI-PERSON"],"primary_country":"SPAIN","is_score_boosted":false,"current_state":{"timestamp":"2022-06-21T07:08:17.158","comment":"False
+        positive","state":"CLEARED","risk_rating":1},"previous_state":[{"timestamp":"2022-06-20T09:49:12","state":"OPEN"}],"birthdates":[{"day":17,"year":1951,"month":2}],"gender":"FEMALE","is_deceased":false,"match_date":"2022-06-20T09:49:12","primary_name":{"name_type":"PRIMARY","first_name":"Maria
+        Remedios","last_name":"Garcia Albert"},"has_alerts":false,"is_match_valid":false,"match_invalid_date":"2022-06-20T09:49:12.567","match_invalid_reason":"Match
+        excluded by filter"},"type":"matches","id":"73a745e0e0f80149bfc52cf971ac8bd2c5a4d2029cf692626d9e19789eb7e9e2"}}'
+  recorded_at: Tue, 21 Jun 2022 07:08:17 GMT
+recorded_with: VCR 6.0.0

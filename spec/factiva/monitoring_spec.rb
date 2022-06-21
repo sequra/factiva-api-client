@@ -92,8 +92,27 @@ module Factiva
 
           expect(result["data"][0]["attributes"]["matches"][0]).to eq(full_expected_result)
           expect(result["data"][0]["attributes"]["matches"][0]["subscription_name"]).to eq("Maria Remedios Garcia Albert")
+          expect(result["data"][0]["attributes"]["matches"][0]["match_id"]).to eq("73a745e0e0f80149bfc52cf971ac8bd2c5a4d2029cf692626d9e19789eb7e9e2")
           expect(result["data"][0]["attributes"]["external_id"]).to eq("id1234")
         end
+      end
+    end
+
+    context "#log_decision", vcr: "monitoring/log_decision" do
+      let(:sample_data) {
+        {
+          match_id: "73a745e0e0f80149bfc52cf971ac8bd2c5a4d2029cf692626d9e19789eb7e9e2",
+          case_id: "06f61bd4-ac2f-492d-85b2-428eacb19d18",
+          comment: "False positive",
+          state: "CLEARED",
+          risk_rating: 1,
+        }
+      }
+
+      it "authenticates and Logs a decision to a Match" do
+        res = subject.log_decision(sample_data)
+
+        expect(res["data"]["attributes"]["current_state"]).to eq({"timestamp"=>"2022-06-21T07:08:17.158", "comment"=>"False positive", "state"=>"CLEARED", "risk_rating"=>1})
       end
     end
   end
