@@ -31,12 +31,12 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Tue, 21 Jun 2022 10:00:37 GMT
+      - Wed, 22 Jun 2022 07:38:47 GMT
       Server:
       - Apache
       Set-Cookie:
-      - djcs_route=2f12eefd-7067-46c0-8159-03f304bc4cde; domain=.dowjones.com; path=/;
-        Expires=Fri Jun 18 10:00:37 2032; max-age=315360000;Secure; SameSite=none
+      - djcs_route=9a6bca5e-954a-4d8d-a67e-7ed67c024c49; domain=.dowjones.com; path=/;
+        Expires=Sat Jun 19 07:38:47 2032; max-age=315360000;Secure; SameSite=none
       X-P-Cache-Control:
       - no-store
       X-P-Connection:
@@ -46,7 +46,7 @@ http_interactions:
       X-P-Content-Type:
       - application/json; charset=utf-8
       X-P-Date:
-      - Tue, 21 Jun 2022 10:00:37 GMT
+      - Wed, 22 Jun 2022 07:38:47 GMT
       X-P-P3p:
       - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
         PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
@@ -55,9 +55,9 @@ http_interactions:
       X-P-Server:
       - Microsoft-IIS/8.5
       X-P-Via:
-      - 1.1 cbb1ad5df105c42cc24cca0b876989aa.cloudfront.net (CloudFront)
+      - 1.1 2b0c54ffe9876882253b010d44184bdc.cloudfront.net (CloudFront)
       X-P-X-Amz-Cf-Id:
-      - Jfk7nGH7Wkgpyx5IffPZ3de5hobQOG6-R9LaGBlLXhKA50EbztAoUw==
+      - SDigHBM7K5cN0EfClXfqvBPFsiQHO1SLfHZ_iJM3DdauNRpnDfexSQ==
       X-P-X-Amz-Cf-Pop:
       - IAD89-P2
       X-P-X-Cache:
@@ -67,21 +67,21 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 420b8a28f9c0d6b931e87c57010ee656.cloudfront.net (CloudFront)
+      - 1.1 357f30c9b61f0d3b40806a8243d42882.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - LIS50-C1
       X-Amz-Cf-Id:
-      - iL03lYZ9X6XaRmH-shJMuXegKySl9Q7B5Djjl-UjmsTKiIjrr_LjZA==
+      - zSDjsDolI-XWQuaHAAqcbRJcsJCFQUNmzHurLnucjQi6DVyNUeDvMw==
     body:
       encoding: UTF-8
-      string: '{"id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMzAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJhdWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTgwNTYzNywiZXhwIjoxNjU1ODQxNjM3fQ.W9_3I4wkKZYf6F6APw4UHITnMo4fdbm0QS91Qn4Tzc7kXG6bVo3bxQSnWA96XnXQgYyZAKD7O-hE8W2tmGOyOHjMPCiJHZC6gBNxUWYdO0uRevpCyTMRnFsf9fqKKzNTKlY3Sydg7_fUAqVcIzlCDPn9XBk4DUXW7IL0zPtnLJqoc31xmIhqLh4wxf1jyaO7XnjHmM59DwKqT8ULffD3T0GynZHBZqXUXoi8o6JiBgPiPysm-nTfRzr38SG2akpwEf7RU8NsjcP5P9-AlyfDoISIPdQsTvq4wMDaskhTJl2mYQ92eEl4EbRLesvGQGO9Ah7pQxHOYJ5yLSqUvspEqg","access_token":"u0PzrExoud63giToVxLa2OCwTB4B2afW","refresh_token":"aAWxbSLH18Iysg8IVoReNSlMSKMY4lNUoR2JxzpknJ-tS","token_type":"bearer"}'
-  recorded_at: Tue, 21 Jun 2022 10:00:38 GMT
+      string: '{"id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMzAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJhdWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTg4MzUyNywiZXhwIjoxNjU1OTE5NTI3fQ.QF8zxY1t7cC8W2mMN1MEPlnL2shDAnBIq2xP8du8xzdO5JXGkC4IT8WaUamN6ZBwxt_w0CyWQEdbGC_57_LmB9ik6wSVLbRtIcGGhnVSdy4tsIok7kwb5KMRpTgkvJ1gyuZnkiHYw9u5mmj6mK9Wh0srAsXJU578MN3e-dE0myPcA0NAPx15QcMl49YReohZZo0YF0Pn4qDUTzYdnilqUFjiI2am6T32tEkCBcaTWbXDWhUKMRIYenJuIOE4Hge6R61tTrh03u6az7TI5NasKj7lX1kkyyHucTmtSy8QzVm23wyh6GvOWZVCDltQmbMrWuyf5wqFdc0i_OndMFaBeQ","access_token":"7IaNWpd6HBnWz4sC4jRMucKN14_AzbyT","refresh_token":"BUtXDL43i_6mThkFkL02Bmn9ekjYpCOQE8MZbDepeGaBl","token_type":"bearer"}'
+  recorded_at: Wed, 22 Jun 2022 07:38:47 GMT
 - request:
     method: post
     uri: https://accounts.dowjones.com/oauth2/v1/token
     body:
       encoding: UTF-8
-      string: assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMzAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJhdWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTgwNTYzNywiZXhwIjoxNjU1ODQxNjM3fQ.W9_3I4wkKZYf6F6APw4UHITnMo4fdbm0QS91Qn4Tzc7kXG6bVo3bxQSnWA96XnXQgYyZAKD7O-hE8W2tmGOyOHjMPCiJHZC6gBNxUWYdO0uRevpCyTMRnFsf9fqKKzNTKlY3Sydg7_fUAqVcIzlCDPn9XBk4DUXW7IL0zPtnLJqoc31xmIhqLh4wxf1jyaO7XnjHmM59DwKqT8ULffD3T0GynZHBZqXUXoi8o6JiBgPiPysm-nTfRzr38SG2akpwEf7RU8NsjcP5P9-AlyfDoISIPdQsTvq4wMDaskhTJl2mYQ92eEl4EbRLesvGQGO9Ah7pQxHOYJ5yLSqUvspEqg&client_id=<SECRET_CLIENT_ID>&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&scope=openid+pib
+      string: assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMzAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJhdWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTg4MzUyNywiZXhwIjoxNjU1OTE5NTI3fQ.QF8zxY1t7cC8W2mMN1MEPlnL2shDAnBIq2xP8du8xzdO5JXGkC4IT8WaUamN6ZBwxt_w0CyWQEdbGC_57_LmB9ik6wSVLbRtIcGGhnVSdy4tsIok7kwb5KMRpTgkvJ1gyuZnkiHYw9u5mmj6mK9Wh0srAsXJU578MN3e-dE0myPcA0NAPx15QcMl49YReohZZo0YF0Pn4qDUTzYdnilqUFjiI2am6T32tEkCBcaTWbXDWhUKMRIYenJuIOE4Hge6R61tTrh03u6az7TI5NasKj7lX1kkyyHucTmtSy8QzVm23wyh6GvOWZVCDltQmbMrWuyf5wqFdc0i_OndMFaBeQ&client_id=<SECRET_CLIENT_ID>&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&scope=openid+pib
     headers:
       Connection:
       - close
@@ -107,12 +107,12 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Tue, 21 Jun 2022 10:00:38 GMT
+      - Wed, 22 Jun 2022 07:38:48 GMT
       Server:
       - Apache
       Set-Cookie:
-      - djcs_route=e8daaf22-1030-47ef-a4f8-8cdfc8e79c8f; domain=.dowjones.com; path=/;
-        Expires=Fri Jun 18 10:00:38 2032; max-age=315360000;Secure; SameSite=none
+      - djcs_route=1b7cbc81-e29b-410a-adc7-7b3d32e99a13; domain=.dowjones.com; path=/;
+        Expires=Sat Jun 19 07:38:48 2032; max-age=315360000;Secure; SameSite=none
       Vary:
       - Accept-Encoding
       X-P-Cache-Control:
@@ -124,7 +124,7 @@ http_interactions:
       X-P-Content-Type:
       - application/json; charset=utf-8
       X-P-Date:
-      - Tue, 21 Jun 2022 10:00:39 GMT
+      - Wed, 22 Jun 2022 07:38:47 GMT
       X-P-P3p:
       - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
         PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
@@ -133,11 +133,11 @@ http_interactions:
       X-P-Server:
       - Microsoft-IIS/8.5
       X-P-Via:
-      - 1.1 70e06614c0a8446cd4a80ab3436628d4.cloudfront.net (CloudFront)
+      - 1.1 4e6e9c8ad6e40529a0e7659f2f4c5f28.cloudfront.net (CloudFront)
       X-P-X-Amz-Cf-Id:
-      - MdKeTpOb-dhyVhYhMZFQDK57Cfq9OS2H-P8Xx5NqBw4i3r9hFVLfWg==
+      - 0d5pu9s1AdEk6FrDZSrPfoI4x1qz3mCLzY8Xo3kt3kdGLJmMiKLr7Q==
       X-P-X-Amz-Cf-Pop:
-      - IAD66-C2
+      - IAD89-P2
       X-P-X-Cache:
       - Miss from cloudfront
       X-P-X-Powered-By:
@@ -145,28 +145,28 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 73e01aac8090da25009ce2370dbd59f0.cloudfront.net (CloudFront)
+      - 1.1 20aad0efbdc15ee6c121141c606f1780.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - LIS50-C1
       X-Amz-Cf-Id:
-      - _hZ6AFnB7qk2bHv3z5kr7Blce31wC9Ws6qZvgGx85SED9VjcLnigAw==
+      - R9tOF-7FBPHLIqQITImNdxvS79rIEQfSmlbhUppbDA7dV6HWIn4cbA==
     body:
       encoding: UTF-8
-      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZIQVlEQ01CU0hBWFdHNktJTUpMWEVZU1RIRjVEU1UzMktOR1hDWUtaTlpRWE1OQ1NJRlNXNDRCUkk1VVRHNEJXTUpZRlVRS0RPQkdXRzNTTU5GSldNM1RUT00yRFM2Q0ZJWVlFTzVTTk9ORldVWlNXSkZMVUM0QlpKSkpFNE4yQ0lSTVVJU1RWTVJLV1M0TEhHSkZIVTRLTEtKSlVDUTJFTjQyVEM1U1NKWlJWU1NEWUlSTUUyVko1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTgwNTYzOSwiZXhwIjoxNjU1ODA5MjM5fQ.Uvewu4yODZloscNzDFdt9fNWGo88dNrjGQVuhGS-Wrd_oNroUnbPw3iAy74G5oAW5arVtNPvesdsGEQDbIDnu3QMV13Vbh7LPq7uT9xKkAVP-8mJobwjXNlt9Pp68dibxWmXhOQnsa2R1dcxxwKBAWywj1Zj9UdbyTuJ3TB_tw4AqXoweYKz-VPJ7hI-W8Jy0kw49BXWp6NalmnfMUKthZJRLzm4ks7DuuV-0F7qy4I-B-xVSxTMIxV7HVOfrX10BVpsv8_k_BL4PxCcDvD-esnx6Vn9MWtJIyEC3oU8tP0zdKHiG4jisrHSAgjLbM4qT_VmPZQJy35aoaQgWZQ7vQ","token_type":"Bearer","expires_in":3600}'
-  recorded_at: Tue, 21 Jun 2022 10:00:39 GMT
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZIQTREQU1SU0hBWFZPM0JRTkVaV0kzU0tNUjJFTTVTRUxCVkU0U1JVR0JCVU1TREhJTlVUS1JLTk9aSlVJMktTSTQzREtSU0lMQjRIUU5MVUpSWlZPVURMS1ZTVEtXU1ZKTlhXQzNCV0tGS1VTNUxVSEZXR0NWVE5JWkJHMjVLR0c1RlcyVExWT04yVk01MlhLNUZXUU5UU0laRlVVMkJZSlZSVU1XU1hMSlpHR1UzVU5WR1hFMlo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTg4MzUyOCwiZXhwIjoxNjU1ODg3MTI4fQ.T8gVl__-TQenldOC_Oaiqv8YNUMTMyHwAM1G_rwx1gNPNbYsc5WQm6bc8SMJ9PPCvXzJHj8k_iyDbCqJiNvxc-9bCo7_S7krYJ-8cp5Kg9CiGFjRMR0Y__xY8afSz9zgINOTjb__DRNq4XAk-3QVnB2aKRwCzbJn9jX_ugE-mZMoxQpA8XOTWZqltMUO-bWXrkrw34IuN3T_vPPpNbEto7xJLijQiBCDA5KIYZRgIPLDymQK0SlmbSLBXcekFln7qSTqbAGFPGpp8JcF3x3h9Uj63hQFu1jWFrIceQfTGJB7WsCCpreguZgIjkpKRJjQvn15L-hX6zopgYdaC7UAtQ","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Wed, 22 Jun 2022 07:38:48 GMT
 - request:
     method: post
     uri: https://api.dowjones.com/risk-entity-screening-cases
     body:
       encoding: UTF-8
-      string: '{"data":{"attributes":{"case_name":"SeQura-TM","options":{"has_to_match_low_quality_alias":false,"is_indexed":true,"score_threshold":1,"search_type":"PRECISE"},"owner_id":"SeQura","score_preferences":{"country":{"has_exclusions":false,"score":0},"gender":{"has_exclusions":false,"score":0},"identification_details":{"has_exclusions":false,"score":0},"industry_sector":{"has_exclusions":false,"score":0},"year_of_birth":{"has_exclusions":false,"score":0},"deceased":{"has_exclusions":false,"score":0}}},"type":"risk-entity-screening-cases"}}'
+      string: '{"data":{"attributes":{"case_name":"SeQura-TM","options":{"has_to_match_low_quality_alias":false,"is_indexed":true,"score_threshold":0.9,"search_type":"PRECISE"},"owner_id":"SeQura","score_preferences":{"country":{"has_exclusions":false,"score":0},"gender":{"has_exclusions":false,"score":0},"identification_details":{"has_exclusions":false,"score":0},"industry_sector":{"has_exclusions":false,"score":0},"year_of_birth":{"has_exclusions":true,"score":0},"deceased":{"has_exclusions":false,"score":0}}},"type":"risk-entity-screening-cases"}}'
     headers:
       Accept:
       - application/json
       Content-Type:
       - application/json
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZIQVlEQ01CU0hBWFdHNktJTUpMWEVZU1RIRjVEU1UzMktOR1hDWUtaTlpRWE1OQ1NJRlNXNDRCUkk1VVRHNEJXTUpZRlVRS0RPQkdXRzNTTU5GSldNM1RUT00yRFM2Q0ZJWVlFTzVTTk9ORldVWlNXSkZMVUM0QlpKSkpFNE4yQ0lSTVVJU1RWTVJLV1M0TEhHSkZIVTRLTEtKSlVDUTJFTjQyVEM1U1NKWlJWU1NEWUlSTUUyVko1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTgwNTYzOSwiZXhwIjoxNjU1ODA5MjM5fQ.Uvewu4yODZloscNzDFdt9fNWGo88dNrjGQVuhGS-Wrd_oNroUnbPw3iAy74G5oAW5arVtNPvesdsGEQDbIDnu3QMV13Vbh7LPq7uT9xKkAVP-8mJobwjXNlt9Pp68dibxWmXhOQnsa2R1dcxxwKBAWywj1Zj9UdbyTuJ3TB_tw4AqXoweYKz-VPJ7hI-W8Jy0kw49BXWp6NalmnfMUKthZJRLzm4ks7DuuV-0F7qy4I-B-xVSxTMIxV7HVOfrX10BVpsv8_k_BL4PxCcDvD-esnx6Vn9MWtJIyEC3oU8tP0zdKHiG4jisrHSAgjLbM4qT_VmPZQJy35aoaQgWZQ7vQ
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZIQTREQU1SU0hBWFZPM0JRTkVaV0kzU0tNUjJFTTVTRUxCVkU0U1JVR0JCVU1TREhJTlVUS1JLTk9aSlVJMktTSTQzREtSU0lMQjRIUU5MVUpSWlZPVURMS1ZTVEtXU1ZKTlhXQzNCV0tGS1VTNUxVSEZXR0NWVE5JWkJHMjVLR0c1RlcyVExWT04yVk01MlhLNUZXUU5UU0laRlVVMkJZSlZSVU1XU1hMSlpHR1UzVU5WR1hFMlo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTg4MzUyOCwiZXhwIjoxNjU1ODg3MTI4fQ.T8gVl__-TQenldOC_Oaiqv8YNUMTMyHwAM1G_rwx1gNPNbYsc5WQm6bc8SMJ9PPCvXzJHj8k_iyDbCqJiNvxc-9bCo7_S7krYJ-8cp5Kg9CiGFjRMR0Y__xY8afSz9zgINOTjb__DRNq4XAk-3QVnB2aKRwCzbJn9jX_ugE-mZMoxQpA8XOTWZqltMUO-bWXrkrw34IuN3T_vPPpNbEto7xJLijQiBCDA5KIYZRgIPLDymQK0SlmbSLBXcekFln7qSTqbAGFPGpp8JcF3x3h9Uj63hQFu1jWFrIceQfTGJB7WsCCpreguZgIjkpKRJjQvn15L-hX6zopgYdaC7UAtQ
       Connection:
       - close
       Host:
@@ -181,13 +181,13 @@ http_interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '786'
+      - '785'
       Connection:
       - close
       B3:
-      - 755f5d1ab1c6a816cf7c697992fbea45-2a2977279baaa773-1
+      - 72a8e621eba7050b65f2e12f1108bec1-91efad978ca4dda8-1
       Date:
-      - Tue, 21 Jun 2022 10:00:40 GMT
+      - Wed, 22 Jun 2022 07:38:49 GMT
       Pattern:
       - "/risk-entity-screening-cases$"
       Request-Uri:
@@ -201,19 +201,19 @@ http_interactions:
       X-Dj-Media-Type:
       - dowjones.dna; resource=risk-entity-screening-cases; version=1.0; format=json
       X-Dj-Transaction-Id:
-      - 755f5d1ab1c6a816cf7c697992fbea45-2a2977279baaa773
+      - 72a8e621eba7050b65f2e12f1108bec1-91efad978ca4dda8
       X-Xss-Protection:
       - 1; mode=block
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 9813751e95982dcece211bb9b1e130c6.cloudfront.net (CloudFront)
+      - 1.1 3166f2aedf1f4565c8dcf3735a2c07a6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - LIS50-C1
       X-Amz-Cf-Id:
-      - 8JYkjVqEe_YihtZpsbV3cL1dt8IKpHVTW31p4eWwZw4ZWtqXOgk8tg==
+      - CYDqOsMD3kNRxuodq8ilXqNCKW4zsqL0OlET-t_3P-o3qUqJ7TV8ZQ==
     body:
       encoding: UTF-8
-      string: '{"data":{"attributes":{"options":{"has_to_match_low_quality_alias":false,"search_type":"PRECISE","score_threshold":1.0,"is_indexed":true},"score_preferences":{"gender":{"score":0,"has_exclusions":false},"year_of_birth":{"score":0,"has_exclusions":false},"industry_sector":{"score":0,"has_exclusions":false},"identification_details":{"score":0,"has_exclusions":false},"country":{"score":0,"has_exclusions":false},"deceased":{"score":0,"has_exclusions":false}},"case_name":"SeQura-TM","has_alerts":false,"timestamp":"2022-06-21T10:00:40.908","revision":1,"owner_id":"SeQura","is_case_valid":true},"type":"risk-entity-screening-cases","links":{"self":"https://api.dowjones.com/risk-entity-screening-cases/2add8f3c-14a2-4115-abde-c3137a5c3149"},"id":"2add8f3c-14a2-4115-abde-c3137a5c3149"}}'
-  recorded_at: Tue, 21 Jun 2022 10:00:40 GMT
+      string: '{"data":{"attributes":{"options":{"has_to_match_low_quality_alias":false,"search_type":"PRECISE","score_threshold":0.9,"is_indexed":true},"score_preferences":{"gender":{"score":0,"has_exclusions":false},"year_of_birth":{"score":0,"has_exclusions":true},"industry_sector":{"score":0,"has_exclusions":false},"identification_details":{"score":0,"has_exclusions":false},"country":{"score":0,"has_exclusions":false},"deceased":{"score":0,"has_exclusions":false}},"case_name":"SeQura-TM","has_alerts":false,"timestamp":"2022-06-22T07:38:49.883","revision":1,"owner_id":"SeQura","is_case_valid":true},"type":"risk-entity-screening-cases","links":{"self":"https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b"},"id":"296373b3-80ee-4fb7-9f2e-b43604051c0b"}}'
+  recorded_at: Wed, 22 Jun 2022 07:38:49 GMT
 recorded_with: VCR 6.0.0
