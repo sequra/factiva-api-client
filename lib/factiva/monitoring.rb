@@ -224,7 +224,7 @@ module Factiva
             "options": {
               "has_to_match_low_quality_alias": false,
               "is_indexed": true,
-              "score_threshold": 1,
+              "score_threshold": 0.9,
               "search_type": "PRECISE"
             },
             "owner_id": "SeQura",
@@ -246,7 +246,7 @@ module Factiva
                 "score": 0
               },
               "year_of_birth": {
-                "has_exclusions": false,
+                "has_exclusions": true,
                 "score": 0
               },
               "deceased": {
