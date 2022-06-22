@@ -36,6 +36,10 @@ module Factiva
       instance.log_decision(*args)
     end
 
+    def self.reset_auth
+      instance.set_auth
+    end
+
     def self.stub!(create_case: {},
         create_association: {},
         add_association_to_case: {},
@@ -77,23 +81,23 @@ module Factiva
         @stubbed_log_decision = stubbed_log_decision
       end
 
-      def create_case
+      def create_case(*args)
         stubbed_create_case
       end
 
-      def create_association
+      def create_association(*args)
         stubbed_create_association
       end
 
-      def add_association_to_case
+      def add_association_to_case(*args)
         stubbed_add_association_to_case
       end
 
-      def get_matches
+      def get_matches(*args)
         stubbed_get_matches
       end
 
-      def log_decision
+      def log_decision(*args)
         stubbed_log_decision
       end
     end
