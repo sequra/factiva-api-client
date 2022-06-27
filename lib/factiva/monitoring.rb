@@ -106,8 +106,8 @@ module Factiva
       set_auth
     end
 
-    def create_case
-      params = { json: create_case_body }
+    def create_case(case_body_payload = nil)
+      params = { json: case_body_payload || create_case_body }
 
       # If the request fails auth is reset and the request retried
       post(create_case_url, params)
