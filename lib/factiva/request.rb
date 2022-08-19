@@ -9,8 +9,8 @@ module Factiva
     private_class_method :new
     attr_reader :auth
 
-    def self.search(*args)
-      instance.search(*args)
+    def self.search(**args)
+      instance.search(**args)
     end
 
     def self.profile(*args)
