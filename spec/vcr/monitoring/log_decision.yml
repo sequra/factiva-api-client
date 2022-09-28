@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://api.dowjones.com/risk-entity-screening-cases/2add8f3c-14a2-4115-abde-c3137a5c3149/matches/5a9f0745fc8f0090fbe7a4ffedefc62e71e46d3355aacb82b801c28ea8f0637a
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"comment":"False positive","current_state":"CLEARED","risk_rating":1},"type":"match"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZIQVlEQ01CU0hBWFdHNktJTUpMWEVZU1RIRjVEU1UzMktOR1hDWUtaTlpRWE1OQ1NJRlNXNDRCUkk1VVRHNEJXTUpZRlVRS0RPQkdXRzNTTU5GSldNM1RUT00yRFM2Q0ZJWVlFTzVTTk9ORldVWlNXSkZMVUM0QlpKSkpFNE4yQ0lSTVVJU1RWTVJLV1M0TEhHSkZIVTRLTEtKSlVDUTJFTjQyVEM1U1NKWlJWU1NEWUlSTUUyVko1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTgwNTYzOSwiZXhwIjoxNjU1ODA5MjM5fQ.Uvewu4yODZloscNzDFdt9fNWGo88dNrjGQVuhGS-Wrd_oNroUnbPw3iAy74G5oAW5arVtNPvesdsGEQDbIDnu3QMV13Vbh7LPq7uT9xKkAVP-8mJobwjXNlt9Pp68dibxWmXhOQnsa2R1dcxxwKBAWywj1Zj9UdbyTuJ3TB_tw4AqXoweYKz-VPJ7hI-W8Jy0kw49BXWp6NalmnfMUKthZJRLzm4ks7DuuV-0F7qy4I-B-xVSxTMIxV7HVOfrX10BVpsv8_k_BL4PxCcDvD-esnx6Vn9MWtJIyEC3oU8tP0zdKHiG4jisrHSAgjLbM4qT_VmPZQJy35aoaQgWZQ7vQ
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1078'
+      Connection:
+      - close
+      Vary:
+      - Accept-Encoding
+      B3:
+      - e260264ef207e099ea15e18c6511b573-146e93852b63147c-1
+      Date:
+      - Tue, 21 Jun 2022 10:04:37 GMT
+      Pattern:
+      - "/risk-entity-screening-cases/{case_id}/matches/{id}$"
+      Request-Uri:
+      - "/risk-entity-screening-cases/2add8f3c-14a2-4115-abde-c3137a5c3149/matches/5a9f0745fc8f0090fbe7a4ffedefc62e71e46d3355aacb82b801c28ea8f0637a"
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Dj-Media-Type:
+      - dowjones.dna; resource=matches; version=1.0; format=json
+      X-Dj-Transaction-Id:
+      - e260264ef207e099ea15e18c6511b573-146e93852b63147c
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 9b77256cb4a2caf313b1650e5e0805f8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LIS50-C1
+      X-Amz-Cf-Id:
+      - SVobbFgZfmNCn7gmSxnkRVeXHmpSCsjuBH42gnchwMxIsJdiM3cYJg==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"peid":"1003410","type":"RELATIONSHIP","variation":{"structural":false,"linguistic":false,"non_linguistic":false},"title":"OFAC
+        - Principal Significant Foreign Narcotics Trafficker List","match_id":"5a9f0745fc8f0090fbe7a4ffedefc62e71e46d3355aacb82b801c28ea8f0637a","match_name":"Maria
+        Remedios Garcia Albert","match_type":"PRECISE","percentage_match":1.0,"subscription_name":"Maria
+        Remedios Garcia Albert","boosting_events":[],"icon_hints":["SAN-PERSON","SI-PERSON"],"primary_country":"SPAIN","is_score_boosted":false,"current_state":{"timestamp":"2022-06-21T10:04:37.645","comment":"False
+        positive","state":"CLEARED","risk_rating":1},"previous_state":[{"timestamp":"2022-06-21T10:01:22","state":"OPEN"}],"birthdates":[{"day":17,"year":1951,"month":2}],"gender":"FEMALE","is_deceased":false,"match_date":"2022-06-21T10:01:22","primary_name":{"name_type":"PRIMARY","first_name":"Maria
+        Remedios","last_name":"Garcia Albert"},"has_alerts":false,"is_match_valid":true},"type":"matches","id":"5a9f0745fc8f0090fbe7a4ffedefc62e71e46d3355aacb82b801c28ea8f0637a"}}'
+  recorded_at: Tue, 21 Jun 2022 10:04:37 GMT
+recorded_with: VCR 6.0.0
