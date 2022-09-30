@@ -4,7 +4,8 @@ require "ostruct"
 
 module Factiva
   RSpec.describe Factiva::Authentication do
-    let(:subject) { Authentication.new }
+    let(:config) { Factiva.configuration(Factiva::REQUEST_API_ACCOUNT) }
+    let(:subject) { Authentication.new(config) }
 
     context "First time authenticating" do
       context "Factiva responds as expected", vcr: { cassette_name: "authentication/first_time_authenticating/ok" } do

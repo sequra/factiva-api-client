@@ -28,6 +28,16 @@ Factiva.configure do |config|
   config.username  = "your_username"
   config.device    = "testdevice"
 end
+
+Factiva.configure(Factiva::MONITORING_API_ACCOUNT) do |config|
+  config.auth_url  = "https://accounts.dowjones.com/oauth2/v1/token"
+  config.base_url  = "https://api.dowjones.com"
+  config.timeout   = 5
+  config.client_id = "your_monitoring_client_id"
+  config.password  = "your_monitoring_password"
+  config.username  = "your_monitoring_username"
+  config.device    = "testdevice"
+end
 ```
 
 Authentication is performed automatically on your first request, as well as token handling and expiration.

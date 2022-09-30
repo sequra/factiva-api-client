@@ -3,6 +3,12 @@ require "json"
 
 module Factiva
   class Authentication
+    attr_reader :config
+
+    def initialize(config)
+      @config = config
+    end
+
     def token
       authz["access_token"]
     end
@@ -89,10 +95,6 @@ module Factiva
 
     def time_now
       Time.now.utc
-    end
-
-    def config
-      Factiva.configuration
     end
   end
 end
