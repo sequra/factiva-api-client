@@ -92,7 +92,7 @@ module Factiva
     end
 
     def set_auth
-      @auth = Authentication.new
+      @auth = Authentication.new(config)
     end
 
     def post(url, params)
@@ -193,7 +193,7 @@ module Factiva
     end
 
     def config
-      Factiva.configuration
+      Factiva.configuration(Factiva::REQUEST_API_ACCOUNT)
     end
   end
 end
