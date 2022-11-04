@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.dowjones.com/risk-entity-screening-associations
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"country":"SPAIN","external_id":"id-XXXXXXX","identification_details":{"type":"1018","value":"00263695-T"},"names":[{"first_name":"Maria
+        Remedios","last_name":"Garcia Albert","name_type":"PRIMARY"}],"record_type":"PERSON","year_of_birth":1976,"is_deceased":false},"type":"risk-entity-screening-associations"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlZIQTREQU1SU0hBWFZHUkNCTUZXVVNOVE9JUVlGQVNTVk5JMlVJTkNaSEU0Rk81S1hNNVFXRzNUUktaQkc0VDNFR0ZDVTZZM0lNRjRFSU5TVVBCWlZVT0xPS0pMRVdRU1JQSkVVSVRCVk1GVUhHMjNaR00zSEVaM0ZOSklXSVIyWElOUkVVTjJRSVJKSFNUUlhHNVVVS09EQk9OU0RJNkRMUElYVElVU0RGTkxFU1NEUk5RNFUyVUo1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjJhOGRlOTcxMDhlY2U1Yjg4MWFkMTJjIiwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhenAiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlhdCI6MTY1NTg4MzU3MSwiZXhwIjoxNjU1ODg3MTcxfQ.UAlFTUZo7bLt9zbLvvUk64xM7wn4KU9iLiDm65RD_Y_gV3jfdKUYJliROLBvJsKS_8EICsB-pj64J9xJjKEIkTQzD6OGooSry64S-P2zZuycP2IyInh8nDWUoS5t_rIy5jmd64i0NXirzOhH8wHfszqGJ6NX-r2I0w3k8HC2XkyfhnV4YGxOT9k62iOaSPDJ31UawmVgpsOLG0H07AcvsKRRxxK6TtDtF5JTNUdgEXZQiOHDMG4nI-vCaQnNmHJdlGCBxUbDBkulTU5wNRxJaY7QqNbktYe3pkD7aF1FJ5VLBhnbn69ZapZrqXgTDmUTinRaT5OLT7z3qVBecRuLmQ
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '528'
+      Connection:
+      - close
+      B3:
+      - 7066b1ea26df3d7c2f36232c01ae7ff5-5f2582ab862a05ae-1
+      Date:
+      - Wed, 22 Jun 2022 07:39:34 GMT
+      Pattern:
+      - "/risk-entity-screening-associations$"
+      Request-Uri:
+      - "/risk-entity-screening-associations"
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Dj-Media-Type:
+      - dowjones.dna; resource=risk-entity-screening-associations; version=1.0; format=json
+      X-Dj-Transaction-Id:
+      - 7066b1ea26df3d7c2f36232c01ae7ff5-5f2582ab862a05ae
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 59cda5562acf9590255c2769167e61bc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LIS50-C1
+      X-Amz-Cf-Id:
+      - 9Rw7tmrDThx64pQGrSe_UKSdKCeaLPS2f1sAvsjTDe4YmmqsxR5aqg==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"country":"SPAIN","record_type":"PERSON","names":[{"name_type":"PRIMARY","first_name":"Maria
+        Remedios","last_name":"Garcia Albert"}],"identification_details":{"type":1018,"value":"00263695-T"},"year_of_birth":1976,"is_deceased":false,"external_id":"id-XXXXXXX","timestamp":"2022-06-22T07:39:34.362"},"type":"risk-entity-screening-associations","links":{"self":"https://api.dowjones.com/risk-entity-screening-associations/3acf8384-dfcd-46d4-9a22-6eb4077889d0"},"id":"3acf8384-dfcd-46d4-9a22-6eb4077889d0"}}'
+  recorded_at: Wed, 22 Jun 2022 07:39:34 GMT
+recorded_with: VCR 6.0.0
