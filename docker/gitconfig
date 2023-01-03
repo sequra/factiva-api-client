@@ -1,0 +1,6 @@
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[credential "https://github.com"]
+	username = x-oauth-token
+[credential]
+	helper = "!f() { echo \"password=$GITHUB_TOKEN\"; }; f"

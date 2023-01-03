@@ -1,0 +1,30 @@
+x-app-config: &app_config
+  image: 'factiva-api-client'
+  build:
+    context: .
+    dockerfile: Dockerfile-development
+    args:
+      RUBY_VERSION: ${SQ_RUBY_VERSION}
+      ALPINE_VERSION: ${SQ_ALPINE_VERSION}
+  environment: &dev_environment
+    GITHUB_TOKEN: ${GITHUB_TOKEN}
+    BUNDLE_FORCE_RUBY_PLATFORM: 'true'
+    RUBYOPT: '-W:deprecated'
+  tty: true
+  stdin_open: true
+  volumes:
+    - .:/app:cached
+    - bundle_cache:/bundle
+    - tmp_cache:/app/tmp
+
+version: '3'
+services:
+  dev:
+    <<: *app_config
+    container_name: ruby_observability_dev
+    environment:
+      <<: *dev_environment
+
+volumes:
+  bundle_cache:
+  tmp_cache:
