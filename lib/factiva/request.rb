@@ -13,8 +13,8 @@ module Factiva
       instance.search(**args)
     end
 
-    def self.profile(*args)
-      instance.profile(*args)
+    def self.profile(profile_id)
+      instance.profile(profile_id)
     end
 
     def self.stub!(search: {}, profile: {})

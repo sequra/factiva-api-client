@@ -9,7 +9,7 @@ module Factiva
 
       context "First search", vcr: "search/first_search" do
         it "authenticates and returns search info" do
-          response = subject.search(params)
+          response = subject.search(**params)
           expect(response["meta"]["total_count"]).to eq(93)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end
@@ -18,12 +18,12 @@ module Factiva
       context "Second search" do
         before do
           VCR.use_cassette("search/first_search") do
-            subject.search(params)
+            subject.search(**params)
           end
         end
 
         it "returns search info", vcr: "search/second_search" do
-          response = subject.search(params)
+          response = subject.search(**params)
           expect(response["meta"]["total_count"]).to eq(93)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end
@@ -41,7 +41,7 @@ module Factiva
             end
 
             it "returns search info" do
-              response = subject.search(params)
+              response = subject.search(**params)
               expect(response["meta"]["total_count"]).to eq(42)
               expect(response["data"][0]["type"]).to eq("RiskEntities")
             end
@@ -57,7 +57,7 @@ module Factiva
             end
 
             it "returns search info" do
-              response = subject.search(params)
+              response = subject.search(**params)
               expect(response["meta"]["total_count"]).to eq(42)
               expect(response["data"][0]["type"]).to eq("RiskEntities")
             end
@@ -75,7 +75,7 @@ module Factiva
               }
             end
             it "takes birthdate as priority and returns search info" do
-              response = subject.search(params)
+              response = subject.search(**params)
               expect(response["meta"]["total_count"]).to eq(42)
               expect(response["data"][0]["type"]).to eq("RiskEntities")
             end
@@ -92,7 +92,7 @@ module Factiva
             }
           end
           it "returns search info", vcr: "search/limit_and_offset" do
-            response = subject.search(params)
+            response = subject.search(**params)
             expect(response["meta"]["total_count"]).to eq(93)
             expect(response["meta"]["count"]).to eq(50)
             expect(response["meta"]["next"]).to eq(70)
@@ -103,7 +103,7 @@ module Factiva
 
       context "Search returns error on the first try", vcr: "search/error_first_try" do
         it "retries the request" do
-          response = subject.search(params)
+          response = subject.search(**params)
           expect(response["meta"]["total_count"]).to eq(93)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end
@@ -116,7 +116,7 @@ module Factiva
 
         it "raises an exception" do
           expect {
-            subject.search(params)
+            subject.search(**params)
           }.to raise_error(RequestError, "Failed to connect to Factiva: SocketError")
         end
       end
@@ -197,7 +197,7 @@ module Factiva
         end
 
         it "returns stubbed response" do
-          expect(subject.search(search_params)).to eq(stubbed_search)
+          expect(subject.search(**search_params)).to eq(stubbed_search)
           expect(subject.profile(profile_id)).to eq(stubbed_profile)
         end
 
@@ -207,7 +207,7 @@ module Factiva
           end
 
           it "makes real search request", vcr: "search/first_search" do
-            search_response = subject.search(search_params)
+            search_response = subject.search(**search_params)
             expect(search_response["meta"]["total_count"]).to eq(93)
             expect(search_response["data"][0]["type"]).to eq("RiskEntities")
           end
