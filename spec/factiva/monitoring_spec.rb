@@ -25,7 +25,7 @@ module Factiva
         }
 
         it "authenticates and adds an Monitoring" do
-          response = subject.create_association(sample_data)
+          response = subject.create_association(**sample_data)
           expect(response["data"]["id"]).to eq("bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
         end
       end
@@ -43,7 +43,7 @@ module Factiva
         }
 
         it "authenticates and adds an Monitoring" do
-          response = subject.create_association(sample_data)
+          response = subject.create_association(**sample_data)
           expect(response["data"]["id"]).to eq("3acf8384-dfcd-46d4-9a22-6eb4077889d0")
         end
       end
@@ -65,13 +65,13 @@ module Factiva
       }
 
       it "authenticates and adds two Associations to a Case" do
-        response = subject.add_association_to_case(sample_data1)
+        response = subject.add_association_to_case(**sample_data1)
 
         expect(response["data"]["attributes"]["operation"]).to eq("CORRELATE")
         expect(response["data"]["attributes"]["status"]).to eq("PENDING")
         expect(response["data"]["id"]).to eq("0b253253-4893-40a0-848b-ca3abdab39b0")
 
-        response = subject.add_association_to_case(sample_data2)
+        response = subject.add_association_to_case(**sample_data2)
 
         expect(response["data"]["attributes"]["operation"]).to eq("CORRELATE")
         expect(response["data"]["attributes"]["status"]).to eq("PENDING")
@@ -90,7 +90,7 @@ module Factiva
         let(:case_id) { "91473caa-9eb8-4eb1-891d-bde3d7c80cdd" }
 
         it "authenticates and doesn't get matches" do
-          response = subject.get_matches(sample_data)
+          response = subject.get_matches(**sample_data)
           expect(response["data"].size).to eq(0)
         end
       end
@@ -100,7 +100,7 @@ module Factiva
         let(:case_id) { "296373b3-80ee-4fb7-9f2e-b43604051c0b" }
 
         it "authenticates and returns 2 matches: 1 valid and 1 invalid" do
-          result = subject.get_matches(sample_data)
+          result = subject.get_matches(**sample_data)
           expect(result["data"].size).to eq(2)
 
           invalid_match = {
@@ -179,7 +179,7 @@ module Factiva
       }
 
       it "authenticates and Logs a decision to a Match" do
-        res = subject.log_decision(sample_data)
+        res = subject.log_decision(**sample_data)
 
         expect(res["data"]["attributes"]["current_state"]).to eq({"timestamp"=>"2022-06-21T10:04:37.645", "comment"=>"False positive", "state"=>"CLEARED", "risk_rating"=>1})
       end

@@ -16,24 +16,24 @@ module Factiva
       "PT" => "PORL",
     }.freeze
 
-    def self.create_case(*args)
-      instance.create_case(*args)
+    def self.create_case(**args)
+      instance.create_case(**args)
     end
 
-    def self.create_association(*args)
-      instance.create_association(*args)
+    def self.create_association(**args)
+      instance.create_association(**args)
     end
 
-    def self.add_association_to_case(*args)
-      instance.add_association_to_case(*args)
+    def self.add_association_to_case(**args)
+      instance.add_association_to_case(**args)
     end
 
-    def self.get_matches(*args)
-      instance.get_matches(*args)
+    def self.get_matches(**args)
+      instance.get_matches(**args)
     end
 
-    def self.log_decision(*args)
-      instance.log_decision(*args)
+    def self.log_decision(**args)
+      instance.log_decision(**args)
     end
 
     def self.reset_auth
@@ -81,23 +81,23 @@ module Factiva
         @stubbed_log_decision = stubbed_log_decision
       end
 
-      def create_case(*args)
+      def create_case(**args)
         stubbed_create_case
       end
 
-      def create_association(*args)
+      def create_association(**args)
         stubbed_create_association
       end
 
-      def add_association_to_case(*args)
+      def add_association_to_case(**args)
         stubbed_add_association_to_case
       end
 
-      def get_matches(*args)
+      def get_matches(**args)
         stubbed_get_matches
       end
 
-      def log_decision(*args)
+      def log_decision(**args)
         stubbed_log_decision
       end
     end
