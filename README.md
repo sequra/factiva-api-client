@@ -120,30 +120,13 @@ Factiva::Request.profile("11266381")
 ```
 
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-### Docker
-Create the docker image defined in Dockerfile:
-```bash
-$ docker build -t factiva-gem .
-```
-
-Run a container based on the image. `bin/console` is the default command:
-```bash
-$ docker run --rm -it -v $(PWD):/app factiva-gem
-```
-
-Run tests:
-```bash
-$ docker run --rm -v $(PWD):/app factiva-gem rspec
-```
-
 ## Contributing
 
-1. Fork it ( https://github.com/sequra/factiva-api-client.git )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+All contributions are welcome, feel free to create a Pull request.
+
+You can start the development environment with `docker-compose run dev sh` and run specs with `docker-compose run dev bundle exec rspec`
+
+In case you want to use the gem in our of our application from your local code, you can do the following:
+
+* Add a new volume in the Rails application's docker-compose with `~/${PATH_TO_THE_GEM}:/app/vendor/gems/factiva-api-client`
+* Update the Gemfile to use the gem from `path:` with line `gem "factiva-api-client", path: '/app/vendor/gems/factiva-api-client'`
