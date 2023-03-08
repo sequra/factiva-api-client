@@ -1,0 +1,20 @@
+name: Run url_shortener-client gem specs
+on:
+  push:
+    branches:
+      - "**" # matches every branch
+      - '!master' # excludes master
+jobs:
+  run-specs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+          bundler-cache: true
+          cache-version: 1
+      - name: Run tests
+        run: |
+          bundle exec rspec
