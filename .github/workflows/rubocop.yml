@@ -1,0 +1,28 @@
+name: Run gem static analysis
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - run: |
+        git fetch --no-tags --prune origin
+    - name: Set up Ruby 3.1
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+        cache-version: 1
+    - name: rubocop
+      uses: reviewdog/action-rubocop@v2
+      with:
+        use_bundler: true
+        reporter: github-pr-review
+        filter_mode: file
+        fail_on_error: true
+        
