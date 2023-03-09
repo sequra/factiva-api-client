@@ -11,9 +11,9 @@ jobs:
         id: release
         with:
           release-type: ruby
-          package-name: i18n-toolkit
+          package-name: factiva-api-client
           bump-minor-pre-major: true
-          version-file: 'lib/i18n_toolkit/version.rb'
+          version-file: 'lib/factiva/version.rb'
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
       - uses: ruby/setup-ruby@v1
