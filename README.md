@@ -1,6 +1,15 @@
 # Factiva-api-client
 
+## 📖 Overview 📖
+
 This gem integrates your ruby app with [Dow Jones Risk & Compliance API](https://developer.dowjones.com/site/docs/risk_and_compliance_apis/risk_and_compliance_2_0/index.gsp)
+
+### 🔌 System dependencies 🔌
+
+* `docker`
+* `docker-compose`
+
+## 👩‍💻 Development environment instructions 👩‍💻
 
 ## Installation
 
@@ -49,8 +58,9 @@ Search the Dow Jones RiskCenter database for risk entities.
 The response will return an array of json formatted `RiskEntities`.
 
 Method parameters:
+
 | parameter   | type    | required |
-| ----------- | ------- | -------- |
+|-------------|---------|----------|
 | first_name  | string  | true     |
 | last_name   | string  | true     |
 | birth_date  | Date    | false    |
@@ -119,12 +129,20 @@ Factiva::Request.profile("11266381")
 => {"data"=>{"attributes"=>{"basic"=>{"type"=>"Person", "name_details"=>{"primary_...
 ```
 
+## 🚧 How to run the test suite 🚧
+
+You can start the development environment with:
+```
+docker-compose run dev sh
+```
+And run specs with:
+```
+docker-compose run dev bundle exec rspec
+```
 
 ## Contributing
 
 All contributions are welcome, feel free to create a Pull request.
-
-You can start the development environment with `docker-compose run dev sh` and run specs with `docker-compose run dev bundle exec rspec`
 
 In case you want to use the gem in our of our application from your local code, you can do the following:
 
