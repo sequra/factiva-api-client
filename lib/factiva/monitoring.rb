@@ -1,13 +1,10 @@
 require "http"
 require "json"
-require "dry/monads"
 
 module Factiva
   class Monitoring
-    include Dry::Monads[:result]
-
     private_class_method :new
-    attr_reader :auth
+    attr_reader :client
 
     COUNTRY_IDS = {
       "ES" => "SPAIN",
@@ -37,7 +34,7 @@ module Factiva
     end
 
     def self.reset_auth
-      instance.set_auth
+      instance.client.set_auth!
     end
 
     def self.stub!(create_case: {},
@@ -103,16 +100,13 @@ module Factiva
     end
 
     def initialize
-      set_auth
+      @client = Client.new(config)
     end
 
     def create_case(case_body_payload = nil)
       params = { json: case_body_payload || create_case_body }
 
-      # If the request fails auth is reset and the request retried
-      post(create_case_url, params)
-        .or       { set_auth; post(create_case_url, params) }
-        .value_or { |error| raise RequestError.new(error) }
+      client.make_authorized_request(:post, create_case_url, params)
     end
 
     def create_association(first_name:, last_name:, birth_year:, external_id:, nin:, country_code:)
@@ -126,10 +120,7 @@ module Factiva
         )
       }
 
-      # If the request fails auth is reset and the request retried
-      post(association_url, params)
-        .or       { set_auth; post(association_url, params) }
-        .value_or { |error| raise RequestError.new(error) }
+      client.make_authorized_request(:post, association_url, params)
     end
 
     def add_association_to_case(case_id:, association_id:)
@@ -138,17 +129,11 @@ module Factiva
         )
       }
 
-      # If the request fails auth is reset and the request retried
-      post(case_association_url(case_id), params)
-        .or       { set_auth; post(case_association_url(case_id), params) }
-        .value_or { |error| raise RequestError.new(error) }
+      client.make_authorized_request(:post, case_association_url(case_id), params)
     end
 
     def get_matches(case_id:)
-      # If the request fails auth is reset and the request retried
-      get(matches_url(case_id))
-        .or       { set_auth; get(matches_url(case_id)) }
-        .value_or { |error| raise RequestError.new(error) }
+      client.make_authorized_request(:get, matches_url(case_id))
     end
 
     def log_decision(case_id:, match_id:, comment:, state:, risk_rating:)
@@ -157,60 +142,13 @@ module Factiva
         )
       }
 
-      # If the request fails auth is reset and the request retried
-      patch(log_decision_url(case_id, match_id), params)
-        .or       { set_auth; patch(log_decision_url(case_id, match_id), params) }
-        .value_or { |error| raise RequestError.new(error) }
+      client.make_authorized_request(:patch, log_decision_url(case_id, match_id), params)
     end
 
   private
+
     def self.instance
       @instance ||= new
-    end
-
-    def set_auth
-      @auth = Authentication.new(config)
-    end
-
-    def post(url, params)
-      make_request(:post, url, params)
-    end
-
-    def patch(url, params)
-      make_request(:patch, url, params)
-    end
-
-    def get(url)
-      make_request(:get, url)
-    end
-
-    def make_request(http_method, url, params = nil)
-      http_params = [http_method, url, params].compact
-
-      begin
-        response = HTTP
-          .headers(:accept => "application/json")
-          .headers("Content-Type" => "application/json")
-          .timeout(config.timeout)
-          .auth("Bearer #{auth.token}")
-          .send(*http_params)
-
-        response_body = JSON.parse(response.body.to_s)
-
-        if response.status.success?
-          Success(response_body)
-        else
-          Failure({ code: response.code, error: response_body["error"] }.to_s)
-        end
-      rescue HTTP::TimeoutError
-        # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError
-        # Raising HTTP::TimeoutError is required for CircuitBreaker to work properly
-        raise
-      rescue SocketError, HTTP::Error => error
-        Failure("Failed to connect to Factiva: #{error.message}")
-      rescue JSON::ParserError => error
-        Failure(error.message)
-      end
     end
 
     def make_url(suffix)
