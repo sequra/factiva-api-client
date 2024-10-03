@@ -13,24 +13,24 @@ module Factiva
     private_class_method :new
     attr_reader :client
 
-    def self.create_case(**args)
-      instance.create_case(**args)
+    def self.create_case(...)
+      instance.create_case(...)
     end
 
-    def self.create_association(**args)
-      instance.create_association(**args)
+    def self.create_association(...)
+      instance.create_association(...)
     end
 
-    def self.add_association_to_case(**args)
-      instance.add_association_to_case(**args)
+    def self.add_association_to_case(...)
+      instance.add_association_to_case(...)
     end
 
-    def self.get_matches(**args)
-      instance.get_matches(**args)
+    def self.get_matches(...)
+      instance.get_matches(...)
     end
 
-    def self.log_decision(**args)
-      instance.log_decision(**args)
+    def self.log_decision(...)
+      instance.log_decision(...)
     end
 
     def self.reset_auth
@@ -78,23 +78,23 @@ module Factiva
         @stubbed_log_decision = stubbed_log_decision
       end
 
-      def create_case(**args)
+      def create_case(...)
         stubbed_create_case
       end
 
-      def create_association(**args)
+      def create_association(...)
         stubbed_create_association
       end
 
-      def add_association_to_case(**args)
+      def add_association_to_case(...)
         stubbed_add_association_to_case
       end
 
-      def get_matches(**args)
+      def get_matches(...)
         stubbed_get_matches
       end
 
-      def log_decision(**args)
+      def log_decision(...)
         stubbed_log_decision
       end
     end
