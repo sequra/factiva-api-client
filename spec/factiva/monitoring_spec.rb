@@ -165,6 +165,18 @@ module Factiva
           expect(result["data"][1]["attributes"]["matches"][0]).to eq(valid_match)
         end
       end
+
+      context "Factiva connection timed out", vcr: "monitoring/authentication_only" do
+        before do
+          WebMock.stub_request(:get, /risk-entity-screening-cases/).to_timeout
+        end
+
+        it "raises HTTP::TimeoutError for CircuitBreaker" do
+          expect {
+            subject.get_matches({ case_id: "id" })
+          }.to raise_error(HTTP::TimeoutError)
+        end
+      end
     end
 
     describe "#log_decision", vcr: "monitoring/log_decision" do
