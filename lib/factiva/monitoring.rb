@@ -3,15 +3,15 @@ require "json"
 
 module Factiva
   class Monitoring
-    private_class_method :new
-    attr_reader :client
-
     COUNTRY_IDS = {
       "ES" => "SPAIN",
       "FR" => "FRA",
       "IT" => "ITALY",
       "PT" => "PORL",
     }.freeze
+
+    private_class_method :new
+    attr_reader :client
 
     def self.create_case(**args)
       instance.create_case(**args)
@@ -71,9 +71,9 @@ module Factiva
         stubbed_get_matches,
         stubbed_log_decision
       )
-        @stubbed_create_case  = stubbed_create_case
-        @stubbed_create_association  = stubbed_create_association
-        @stubbed_add_association_to_case  = stubbed_add_association_to_case
+        @stubbed_create_case = stubbed_create_case
+        @stubbed_create_association = stubbed_create_association
+        @stubbed_add_association_to_case = stubbed_add_association_to_case
         @stubbed_get_matches = stubbed_get_matches
         @stubbed_log_decision = stubbed_log_decision
       end
@@ -111,7 +111,7 @@ module Factiva
 
     def create_association(first_name:, last_name:, birth_year:, external_id:, nin:, country_code:)
       params = { json: association_body(
-          first_name,
+        first_name,
           last_name,
           birth_year,
           external_id,
@@ -125,7 +125,7 @@ module Factiva
 
     def add_association_to_case(case_id:, association_id:)
       params = { json: case_association_body(
-          association_id,
+        association_id,
         )
       }
 
@@ -138,7 +138,7 @@ module Factiva
 
     def log_decision(case_id:, match_id:, comment:, state:, risk_rating:)
       params = { json: log_decision_body(
-          comment, state, risk_rating,
+        comment, state, risk_rating,
         )
       }
 
