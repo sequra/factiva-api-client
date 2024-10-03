@@ -26,6 +26,8 @@ module Factiva
         .value_or { |error| raise RequestError.new(error) }
     end
 
+  private
+
     def make_request(http_method, url, params = nil)
       http_params = [http_method, url, params].compact
 
