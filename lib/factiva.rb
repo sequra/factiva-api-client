@@ -1,7 +1,6 @@
 Dir[File.join(__dir__, "factiva", "*.rb")].each { |file| require file }
 
 module Factiva
-
   REQUEST_API_ACCOUNT = "request_api_account"
   MONITORING_API_ACCOUNT = "monitoring_api_account"
 

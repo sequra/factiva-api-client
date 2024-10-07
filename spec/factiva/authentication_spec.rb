@@ -11,7 +11,7 @@ module Factiva
       context "Factiva responds as expected", vcr: { cassette_name: "authentication/first_time_authenticating/ok" } do
         it "returns token" do
           # Two requests: Get authn and Get authz
-          expect(HTTP).to receive(:timeout).twice.and_call_original
+          expect(subject.client).to receive(:make_request).twice.and_call_original
           expect(subject.token).to eq(
             "eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxME"\
             "NEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc"\
@@ -36,7 +36,7 @@ module Factiva
       context "retrieve authn token fails", vcr: { cassette_name: "authentication/first_time_authenticating/authn_fails" } do
         it "raises an exception" do
           # One request: Get authn
-          expect(HTTP).to receive(:timeout).once.and_call_original
+          expect(subject.client).to receive(:make_request).once.and_call_original
           expect {
             subject.token
           }.to raise_error(RequestError, { code: 403, error: "unauthorized_client" }.to_s)
@@ -46,10 +46,20 @@ module Factiva
       context "retrieve authz token fails", vcr: { cassette_name: "authentication/first_time_authenticating/authz_fails" } do
         it "raises an exception" do
           # Two requests: Get authn and Get authz
-          expect(HTTP).to receive(:timeout).twice.and_call_original
+          expect(subject.client).to receive(:make_request).twice.and_call_original
           expect {
             subject.token
           }.to raise_error(RequestError, { code: 400, error: "request_validation_error" }.to_s)
+        end
+      end
+
+      context "Factiva connection timed out" do
+        before do
+          WebMock.stub_request(:post, /oauth2\/v1\/token/).to_timeout
+        end
+
+        it "raises Factiva::TimeoutError for CircuitBreaker" do
+          expect { subject.token }.to raise_error(Factiva::TimeoutError)
         end
       end
     end
@@ -99,7 +109,7 @@ module Factiva
         context "Factiva responds as expected", vcr: { cassette_name: "authentication/token_expired/ok" } do
           it "refreshes the token" do
             # One request: Refresh authz
-            expect(HTTP).to receive(:timeout).once.and_call_original
+            expect(subject.client).to receive(:make_request).once.and_call_original
             expect(subject.token).to eq(
               "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJF"\
               "UkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnR"\
@@ -119,7 +129,7 @@ module Factiva
         context "Refresh token request fails", vcr: { cassette_name: "authentication/token_expired/refresh_authz_fails" } do
           it "raises an exception" do
             # One request: Refresh authz
-            expect(HTTP).to receive(:timeout).once.and_call_original
+            expect(subject.client).to receive(:make_request).once.and_call_original
             expect {
               subject.token
             }.to raise_error(RequestError, { code: 400, error: "invalid_request" }.to_s)
