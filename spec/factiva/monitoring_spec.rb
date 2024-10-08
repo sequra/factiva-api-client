@@ -86,7 +86,8 @@ module Factiva
         }
       }
 
-      context "when there isn't matches in the Case", vcr: "monitoring/no_matches" do # this VCR was recorded when there wasn't any match
+      # this VCR was recorded when there wasn't any match
+      context "when there isn't matches in the Case", vcr: "monitoring/no_matches" do
         let(:case_id) { "91473caa-9eb8-4eb1-891d-bde3d7c80cdd" }
 
         it "authenticates and doesn't get matches" do
@@ -96,7 +97,6 @@ module Factiva
       end
 
       context "when there are matches in the Case", vcr: "monitoring/matches" do
-
         let(:case_id) { "296373b3-80ee-4fb7-9f2e-b43604051c0b" }
 
         it "authenticates and returns 2 matches: 1 valid and 1 invalid" do
@@ -106,23 +106,23 @@ module Factiva
           invalid_match = {
             "peid" => "1003410",
             "type" => "RELATIONSHIP",
-            "variation" => {"structural" => false, "linguistic" => false, "non_linguistic" => false},
+            "variation" => { "structural" => false, "linguistic" => false, "non_linguistic" => false },
             "title" => "OFAC - Principal Significant Foreign Narcotics Trafficker List",
             "match_id" => "239b4a188aff307a328984b0129dbb3a1fd5a9e9385e664fb3091fcce67ecd17",
             "match_name" => "Maria Remedios Garcia Albert",
             "match_type" => "PRECISE",
-            "percentage_match" =>1.0,
+            "percentage_match" => 1.0,
             "subscription_name" => "Maria Remedios Garcia Albert",
-            "boosting_events" =>[],
+            "boosting_events" => [],
             "icon_hints" => ["SAN-PERSON", "SI-PERSON"],
             "primary_country" => "SPAIN",
             "is_score_boosted" => false,
-            "current_state" => {"timestamp" => "2022-06-22T07:41:53", "state" => "OPEN"},
-            "birthdates" => [{"day" => 17, "year" => 1951, "month" => 2}],
+            "current_state" => { "timestamp" => "2022-06-22T07:41:53", "state" => "OPEN" },
+            "birthdates" => [{ "day" => 17, "year" => 1951, "month" => 2 }],
             "gender" => "FEMALE",
             "is_deceased" => false,
             "match_date" => "2022-06-22T07:41:53",
-            "primary_name" => {"name_type" => "PRIMARY", "first_name" => "Maria Remedios", "last_name" => "Garcia Albert"},
+            "primary_name" => { "name_type" => "PRIMARY", "first_name" => "Maria Remedios", "last_name" => "Garcia Albert" },
             "has_alerts" => false,
             "is_match_valid" => false,
             "match_invalid_date" => "2022-06-22T07:41:53.349",
@@ -132,7 +132,7 @@ module Factiva
           valid_match = {
             "peid" => "1003410",
             "type" => "RELATIONSHIP",
-            "variation" => {"structural"=>false, "linguistic"=>false, "non_linguistic"=>false},
+            "variation" => { "structural" => false, "linguistic" => false, "non_linguistic" => false },
             "title" => "OFAC - Principal Significant Foreign Narcotics Trafficker List",
             "match_id" => "5e7a91388deea1e1368937aaa00c69635890f51e964909eb1f4daccf2ee69ca5",
             "match_name" => "Maria Remedios Garcia Albert",
@@ -143,12 +143,12 @@ module Factiva
             "icon_hints" => ["SAN-PERSON", "SI-PERSON"],
             "primary_country" => "SPAIN",
             "is_score_boosted" => false,
-            "current_state" => {"timestamp" => "2022-06-22T07:41:54", "state" => "OPEN"},
-            "birthdates" => [{"day"=>17, "year"=>1951, "month"=>2}],
+            "current_state" => { "timestamp" => "2022-06-22T07:41:54", "state" => "OPEN" },
+            "birthdates" => [{ "day" => 17, "year" => 1951, "month" => 2 }],
             "gender" => "FEMALE",
             "is_deceased" => false,
             "match_date" => "2022-06-22T07:41:54",
-            "primary_name" => {"name_type" => "PRIMARY", "first_name" => "Maria Remedios", "last_name" => "Garcia Albert"},
+            "primary_name" => { "name_type" => "PRIMARY", "first_name" => "Maria Remedios", "last_name" => "Garcia Albert" },
             "has_alerts" => true,
             "is_match_valid" => true,
           }.freeze
@@ -156,13 +156,26 @@ module Factiva
           expect(result["data"][0]["attributes"]["external_id"]).to eq("id-XXXXXXX")
           expect(result["data"][0]["attributes"]["matches"][0]["subscription_name"]).to eq("Maria Remedios Garcia Albert")
           expect(result["data"][0]["attributes"]["matches"][0]["is_match_valid"]).to be_falsey
-          expect(result["data"][0]["attributes"]["matches"][0]["match_invalid_reason"]).to eq "Match excluded by filter: year_of_birth"
+          expect(result["data"][0]["attributes"]["matches"][0]["match_invalid_reason"])
+            .to eq "Match excluded by filter: year_of_birth"
           expect(result["data"][0]["attributes"]["matches"][0]).to eq(invalid_match)
 
           expect(result["data"][1]["attributes"]["external_id"]).to eq("id1234")
           expect(result["data"][1]["attributes"]["matches"][0]["subscription_name"]).to eq("Maria Remedios Garcia Albert")
           expect(result["data"][1]["attributes"]["matches"][0]["is_match_valid"]).to be_truthy
           expect(result["data"][1]["attributes"]["matches"][0]).to eq(valid_match)
+        end
+      end
+
+      context "Factiva connection timed out", vcr: "monitoring/authentication_only" do
+        before do
+          WebMock.stub_request(:get, /risk-entity-screening-cases/).to_timeout
+        end
+
+        it "raises Factiva::TimeoutError for CircuitBreaker" do
+          expect {
+            subject.get_matches(case_id: "id")
+          }.to raise_error(Factiva::TimeoutError)
         end
       end
     end
@@ -181,7 +194,8 @@ module Factiva
       it "authenticates and Logs a decision to a Match" do
         res = subject.log_decision(**sample_data)
 
-        expect(res["data"]["attributes"]["current_state"]).to eq({"timestamp"=>"2022-06-21T10:04:37.645", "comment"=>"False positive", "state"=>"CLEARED", "risk_rating"=>1})
+        expect(res["data"]["attributes"]["current_state"]).to eq({ "timestamp" => "2022-06-21T10:04:37.645",
+"comment" => "False positive", "state" => "CLEARED", "risk_rating" => 1 })
       end
     end
   end

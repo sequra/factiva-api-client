@@ -1,0 +1,156 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: client_id=<SECRET_CLIENT_ID>&connection=service-account&grant_type=password&password=<SECRET_PASSWORD>&scope=openid+service_account_id+offline_access%3A&username=<SECRET_USERNAME>&device=testdevice
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '873'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Mon, 23 May 2022 15:38:00 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=e7fa33bd-07e1-452c-8be4-e2485098b52d; domain=.dowjones.com; path=/;
+        Expires=Thu May 20 15:38:00 2032; max-age=315360000;Secure; SameSite=none
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '873'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Mon, 23 May 2022 15:38:00 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 749e1450fdc7cac18bb91a34e80053aa.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - BZxGJS-DjxJjddizL7yxx6V8-awZijzI8hJh_xBfjbAzHsw7Kenf-A==
+      X-P-X-Amz-Cf-Pop:
+      - IAD50-C2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 3d4bc9f760d271ea8c82b4a4027b2f92.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD51-C2
+      X-Amz-Cf-Id:
+      - 7jS4QVQDErFcYoFIp41mCqhjXZ_1q6qgDcNHFMbwnLbq_XQKdEcsIw==
+    body:
+      encoding: UTF-8
+      string: '{"id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMjAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJhdWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY1MzMyMDI4MSwiZXhwIjoxNjUzMzU2MjgxfQ.o4a4151n0wsAewyEV8Wbql2yxxdKawoUvvR6be2GA40Z4RI6Q6uBRpURJekxa-K8CjFN37R0z7CUOoZaQPr07e3SXf5z53H5RaHF9bVe-Gh8senZ1N5dU7fC0-CdqB-ChGg-UMaeIZ31dL6241dT2LiNoir5CljZz0SQQ5K9JPKUxvL1C5G2eE8U-oXVSS8ZDOR3bxTq7hHMjNqrPzzju466VWpdNfr_G8f7o75nFn75uYTgvq5WcIa6nnSXK1Vbv1cfiOanb4Rg789n0iNkRR3POX04Z6cPDchddmucuEvaOKhG5YOM1PQws1Z4A6Cw2uBAsN7YfMFcrxcPx8gT8Q","access_token":"COBMdOw9Q8E0xejTJgZAmtcDWfaJ0XGO","refresh_token":"XpQwZxvr1NQFBDaESzVwqpMnMgAyFo68r-6A6GeTp7932","token_type":"bearer"}'
+  recorded_at: Mon, 23 May 2022 15:38:01 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik4wSTJRekJEUWpRM04wUkJSakJFUkRVM05qaEZNREF5T0VWRlJqWkRSVVl4TWtFMU5ERXdSUSJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI5U0VRMDAwMjAwIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLmFjY291bnRzLmRvd2pvbmVzLmNvbS8iLCJzdWIiOiJhdXRoMHw2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJhdWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY1MzMyMDI4MSwiZXhwIjoxNjUzMzU2MjgxfQ.o4a4151n0wsAewyEV8Wbql2yxxdKawoUvvR6be2GA40Z4RI6Q6uBRpURJekxa-K8CjFN37R0z7CUOoZaQPr07e3SXf5z53H5RaHF9bVe-Gh8senZ1N5dU7fC0-CdqB-ChGg-UMaeIZ31dL6241dT2LiNoir5CljZz0SQQ5K9JPKUxvL1C5G2eE8U-oXVSS8ZDOR3bxTq7hHMjNqrPzzju466VWpdNfr_G8f7o75nFn75uYTgvq5WcIa6nnSXK1Vbv1cfiOanb4Rg789n0iNkRR3POX04Z6cPDchddmucuEvaOKhG5YOM1PQws1Z4A6Cw2uBAsN7YfMFcrxcPx8gT8Q&client_id=<SECRET_CLIENT_ID>&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&scope=openid+pib
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1223'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Mon, 23 May 2022 15:38:01 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - djcs_route=bc4142b7-6ca9-4943-b5e3-794721813fcc; domain=.dowjones.com; path=/;
+        Expires=Thu May 20 15:38:01 2032; max-age=315360000;Secure; SameSite=none
+      Vary:
+      - Accept-Encoding
+      X-P-Cache-Control:
+      - no-store
+      X-P-Connection:
+      - keep-alive
+      X-P-Content-Length:
+      - '1223'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Mon, 23 May 2022 15:38:01 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Server:
+      - Microsoft-IIS/8.5
+      X-P-Via:
+      - 1.1 b9c7ee7ef5bcece32a3a0ac817ab1f96.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - iaCJjU_qLH9rAIfPtVRjX7VB-E1Pi08oefcv8SEUUOM35329om3EIQ==
+      X-P-X-Amz-Cf-Pop:
+      - IAD66-C1
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-P-X-Powered-By:
+      - ASP.NET
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 3a040ac81c3e03a31883d4bf85a17866.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD51-C2
+      X-Amz-Cf-Id:
+      - fcZozCvQE0af5NbhHPJhcOOyBLq4vOaP_gP5nDq80rinim8ZtNk7-w==
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlRHTVlUT01CU0hBWFVXMlRIT1JWVVFWTFNONTJGTTUyUklWS1dVMjJCTlpLVU1ZWlZNSTRFNFVUMklWNFhTMlNNT0pLRU9PTFBHSkpYRTVMTUtCRkhPMkNMT1ZRVEVMM1RNWlhHSVYyTElaRkVVUkNJTlJFWEtTWlVGTlNYTzQzTktOR1hNS1pWS1ozVElXRFZOVkdVQ1pLR1BGSkRBTUJRR0JGVk1UQlpPTk1XS1dLU05SWUhTT0I1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY1MzMyMDI4MiwiZXhwIjoxNjUzMzIzODgyfQ.TuX-bDij1w-D8ANRRI5vQSEtia6OBzaQyD33SwgJ99sve-PEQFeu16_wNk4YW_Ziyimx-BCME_NXKU0M80J81LZzJwzLvYP8jCB-DTSaMjnF-XzEsl0VjnS18Vd8sWbbU1f9xW6njqGu-4nLIkYkzSLkuuPgPabuXqq0eAwUURA3F_7iTcZ0O25HDmSO8HHx8eNNtR5NjahbrnD27Q2bm89iZ1ZbGeQ89y1YHDMTOd_1mskXRBERlUzneoR6lso0CX1fsEwR3B2RSz-geOREfMIO5xVDPiG9oCSOT0ERapWGg_VOWhS4Ryev3Hp-ZWLbv6N_m7c8okZ0Zd10QbCEDA","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Mon, 23 May 2022 15:38:02 GMT

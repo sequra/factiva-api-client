@@ -6,15 +6,15 @@ module Factiva
   class Monitoring
     include Dry::Monads[:result]
 
-    private_class_method :new
-    attr_reader :auth
-
     COUNTRY_IDS = {
       "ES" => "SPAIN",
       "FR" => "FRA",
       "IT" => "ITALY",
       "PT" => "PORL",
     }.freeze
+
+    private_class_method :new
+    attr_reader :auth
 
     def self.create_case(**args)
       instance.create_case(**args)
@@ -74,9 +74,9 @@ module Factiva
         stubbed_get_matches,
         stubbed_log_decision
       )
-        @stubbed_create_case  = stubbed_create_case
-        @stubbed_create_association  = stubbed_create_association
-        @stubbed_add_association_to_case  = stubbed_add_association_to_case
+        @stubbed_create_case = stubbed_create_case
+        @stubbed_create_association = stubbed_create_association
+        @stubbed_add_association_to_case = stubbed_add_association_to_case
         @stubbed_get_matches = stubbed_get_matches
         @stubbed_log_decision = stubbed_log_decision
       end
@@ -117,7 +117,7 @@ module Factiva
 
     def create_association(first_name:, last_name:, birth_year:, external_id:, nin:, country_code:)
       params = { json: association_body(
-          first_name,
+        first_name,
           last_name,
           birth_year,
           external_id,
@@ -134,7 +134,7 @@ module Factiva
 
     def add_association_to_case(case_id:, association_id:)
       params = { json: case_association_body(
-          association_id,
+        association_id,
         )
       }
 
@@ -153,7 +153,7 @@ module Factiva
 
     def log_decision(case_id:, match_id:, comment:, state:, risk_rating:)
       params = { json: log_decision_body(
-          comment, state, risk_rating,
+        comment, state, risk_rating,
         )
       }
 
@@ -189,7 +189,7 @@ module Factiva
 
       begin
         response = HTTP
-          .headers(:accept => "application/json")
+          .headers(accept: "application/json")
           .headers("Content-Type" => "application/json")
           .timeout(config.timeout)
           .auth("Bearer #{auth.token}")
@@ -202,6 +202,10 @@ module Factiva
         else
           Failure({ code: response.code, error: response_body["error"] }.to_s)
         end
+      rescue HTTP::TimeoutError
+        # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError
+        # Raising Factiva::TimeoutError is required for CircuitBreaker to work properly
+        raise Factiva::TimeoutError
       rescue SocketError, HTTP::Error => error
         Failure("Failed to connect to Factiva: #{error.message}")
       rescue JSON::ParserError => error

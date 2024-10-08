@@ -120,6 +120,18 @@ module Factiva
           }.to raise_error(RequestError, "Failed to connect to Factiva: SocketError")
         end
       end
+
+      context "Factiva connection timed out", vcr: "search/authentication_only" do
+        before do
+          WebMock.stub_request(:post, /riskentities\/search/).to_timeout
+        end
+
+        it "raises Factiva::TimeoutError for CircuitBreaker" do
+          expect {
+            subject.search(**params)
+          }.to raise_error(Factiva::TimeoutError)
+        end
+      end
     end
 
     context "#Profile" do
@@ -164,6 +176,18 @@ module Factiva
           expect {
             subject.profile(profile_id)
           }.to raise_error(RequestError, "Failed to connect to Factiva: SocketError")
+        end
+      end
+
+      context "Factiva connection timed out", vcr: "profile/authentication_only" do
+        before do
+          WebMock.stub_request(:get, /riskentities\/profiles/).to_timeout
+        end
+
+        it "raises Factiva::TimeoutError for CircuitBreaker" do
+          expect {
+            subject.profile(profile_id)
+          }.to raise_error(Factiva::TimeoutError)
         end
       end
     end

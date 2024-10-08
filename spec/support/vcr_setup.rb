@@ -13,5 +13,6 @@ VCR.configure do |c|
   c.filter_sensitive_data("<SECRET_USERNAME>") { URI.encode_www_form_component(Factiva.configuration.username) }
   c.filter_sensitive_data("<SECRET_CLIENT_ID>") { Factiva.configuration(Factiva::MONITORING_API_ACCOUNT).client_id }
   c.filter_sensitive_data("<SECRET_PASSWORD>") { Factiva.configuration(Factiva::MONITORING_API_ACCOUNT).password }
-  c.filter_sensitive_data("<SECRET_USERNAME>") { URI.encode_www_form_component(Factiva.configuration(Factiva::MONITORING_API_ACCOUNT).username) }
+  c.filter_sensitive_data("<SECRET_USERNAME>") {
+ URI.encode_www_form_component(Factiva.configuration(Factiva::MONITORING_API_ACCOUNT).username) }
 end

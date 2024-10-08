@@ -52,6 +52,16 @@ module Factiva
           }.to raise_error(RequestError, { code: 400, error: "request_validation_error" }.to_s)
         end
       end
+
+      context "Factiva connection timed out" do
+        before do
+          WebMock.stub_request(:post, /oauth2\/v1\/token/).to_timeout
+        end
+
+        it "raises Factiva::TimeoutError for CircuitBreaker" do
+          expect { subject.token }.to raise_error(Factiva::TimeoutError)
+        end
+      end
     end
 
     context "Already authenticated" do
