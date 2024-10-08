@@ -58,8 +58,8 @@ module Factiva
           WebMock.stub_request(:post, /oauth2\/v1\/token/).to_timeout
         end
 
-        it "raises HTTP::TimeoutError for CircuitBreaker" do
-          expect { subject.token }.to raise_error(HTTP::TimeoutError)
+        it "raises Factiva::TimeoutError for CircuitBreaker" do
+          expect { subject.token }.to raise_error(Factiva::TimeoutError)
         end
       end
     end

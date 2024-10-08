@@ -121,8 +121,8 @@ module Factiva
         end
       rescue HTTP::TimeoutError
         # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError
-        # Raising HTTP::TimeoutError is required for CircuitBreaker to work properly
-        raise
+        # Raising Factiva::TimeoutError is required for CircuitBreaker to work properly
+        raise Factiva::TimeoutError
       rescue SocketError, HTTP::Error => error
         Failure("Failed to connect to Factiva: #{error.message}")
       rescue JSON::ParserError => error

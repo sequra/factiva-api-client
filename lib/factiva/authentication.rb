@@ -51,6 +51,10 @@ module Factiva
       end
 
       response_body
+    rescue HTTP::TimeoutError
+      # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError
+      # Raising Factiva::TimeoutError is required for CircuitBreaker to work properly
+      raise Factiva::TimeoutError
     end
 
     def expired?(timestamp)

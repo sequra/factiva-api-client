@@ -1,3 +1,5 @@
 module Factiva
-  class RequestError < StandardError; end
+  class Error < StandardError; end
+  class RequestError < Error; end
+  class TimeoutError < Error; end
 end
