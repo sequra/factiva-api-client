@@ -173,7 +173,7 @@ module Factiva
 
         it "raises Factiva::TimeoutError for CircuitBreaker" do
           expect {
-            subject.get_matches({ case_id: "id" })
+            subject.get_matches(case_id: "id")
           }.to raise_error(Factiva::TimeoutError)
         end
       end
