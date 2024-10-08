@@ -126,10 +126,10 @@ module Factiva
           WebMock.stub_request(:post, /riskentities\/search/).to_timeout
         end
 
-        it "raises HTTP::TimeoutError for CircuitBreaker" do
+        it "raises Factiva::TimeoutError for CircuitBreaker" do
           expect {
             subject.search(**params)
-          }.to raise_error(HTTP::TimeoutError)
+          }.to raise_error(Factiva::TimeoutError)
         end
       end
     end
@@ -184,10 +184,10 @@ module Factiva
           WebMock.stub_request(:get, /riskentities\/profiles/).to_timeout
         end
 
-        it "raises HTTP::TimeoutError for CircuitBreaker" do
+        it "raises Factiva::TimeoutError for CircuitBreaker" do
           expect {
             subject.profile(profile_id)
-          }.to raise_error(HTTP::TimeoutError)
+          }.to raise_error(Factiva::TimeoutError)
         end
       end
     end
