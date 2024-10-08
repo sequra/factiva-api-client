@@ -3,11 +3,10 @@ require "json"
 
 module Factiva
   class Authentication
-    attr_reader :config, :client
+    attr_reader :config
 
     def initialize(config)
       @config = config
-      @client = Client.new(config)
     end
 
     def token
@@ -26,15 +25,32 @@ module Factiva
     end
 
     def set_authn
-      client.make_authentication_request(:post, config.auth_url, set_authn_params)
+      make_request(set_authn_params)
     end
 
     def set_authz(refresh: false)
       params = refresh ? refresh_authz_params : set_authz_params
 
-      new_authz = client.make_authentication_request(:post, config.auth_url, params)
+      new_authz = make_request(params)
       new_authz["expiration_timestamp"] = time_now + new_authz["expires_in"]
       new_authz
+    end
+
+    def make_request(params)
+      response = HTTP
+        .timeout(config.timeout)
+        .post(
+          config.auth_url,
+          params
+        )
+
+      response_body = JSON.parse(response.body.to_s)
+
+      if !response.status.success?
+        raise RequestError.new({ code: response.code, error: response_body["error"] }.to_s)
+      end
+
+      response_body
     end
 
     def expired?(timestamp)
