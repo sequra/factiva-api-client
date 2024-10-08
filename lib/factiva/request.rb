@@ -1,10 +1,13 @@
 require "http"
 require "json"
+require "dry/monads"
 
 module Factiva
   class Request
+    include Dry::Monads[:result]
+
     private_class_method :new
-    attr_reader :client
+    attr_reader :auth
 
     def self.search(**args)
       instance.search(**args)
@@ -43,7 +46,7 @@ module Factiva
     end
 
     def initialize
-      @client = Client.new(config)
+      set_auth
     end
 
     def search(first_name:, last_name:, birth_date: nil, birth_year: nil,
@@ -68,19 +71,59 @@ module Factiva
         limit
       ) }
 
-      client.make_authorized_request(:post, search_url, params)
+      # If the request fails auth is reset and the request retried
+      post(search_url, params)
+        .or       { set_auth; post(search_url, params) }
+        .value_or { |error| raise RequestError.new(error) }
     end
 
     def profile(profile_id)
       url = profile_url(profile_id)
 
-      client.make_authorized_request(:get, url)
+      # If the request fails auth is reset and the request retried
+      get(url)
+        .or       { set_auth; get(url) }
+        .value_or { |error| raise RequestError.new(error) }
     end
 
   private
-
     def self.instance
       @instance ||= new
+    end
+
+    def set_auth
+      @auth = Authentication.new(config)
+    end
+
+    def post(url, params)
+      make_request(:post, url, params)
+    end
+
+    def get(url)
+      make_request(:get, url)
+    end
+
+    def make_request(method, url, params = nil)
+      http_params = method == :post ? [:post, url, params] : [:get, url]
+
+      begin
+        response = HTTP
+          .timeout(config.timeout)
+          .auth("Bearer #{auth.token}")
+          .send(*http_params)
+
+        response_body = JSON.parse(response.body.to_s)
+
+        if response.status.success?
+          Success(response_body)
+        else
+          Failure({ code: response.code, error: response_body["error"] }.to_s)
+        end
+      rescue SocketError, HTTP::Error => error
+        Failure("Failed to connect to Factiva: #{error.message}")
+      rescue JSON::ParserError => error
+        Failure(error.message)
+      end
     end
 
     def search_url
