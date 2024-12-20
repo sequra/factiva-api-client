@@ -49,6 +49,38 @@ module Factiva
       end
     end
 
+    describe "#update_association" do
+      context "with correct year", vcr: "monitoring/update_association" do
+        let(:sample_data) {
+          {
+            first_name: "Maria Remedios",
+            last_name: "Garcia Albert",
+            birth_year: 1951, # valid year
+            external_id: "id1234",
+            nin: "00263695-T",
+            country_code: "ES",
+          }
+        }
+
+        it "authenticates and updates the association" do
+          response = subject.update_association(
+            association_id: "3acf8384-dfcd-46d4-9a22-6eb4077889d0",
+            params: sample_data
+          )
+          expect(response["data"]["id"]).to eq("bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
+        end
+      end
+    end
+
+    describe "#delete_association" do
+      context "with correct year", vcr: "monitoring/delete_association" do
+        it "authenticates and delete the association" do
+          response = subject.delete_association(association_id: "bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
+          expect(response["data"]["id"]).to eq("bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
+        end
+      end
+    end
+
     describe "#add_association_to_case", vcr: "monitoring/add_association_to_case" do
       let(:sample_data1) {
         {
@@ -76,6 +108,18 @@ module Factiva
         expect(response["data"]["attributes"]["operation"]).to eq("CORRELATE")
         expect(response["data"]["attributes"]["status"]).to eq("PENDING")
         expect(response["data"]["id"]).to eq("7c0b2831-e042-4e6e-8d35-5da172c0a860")
+      end
+    end
+
+    describe "#remove_association_from_case" do
+      context "with correct year", vcr: "monitoring/remove_association_from_case" do
+        it "authenticates and removes association from the case" do
+          response = subject.remove_association_from_case(
+            case_id: "296373b3-80ee-4fb7-9f2e-b43604051c0b",
+            association_id: "3acf8384-dfcd-46d4-9a22-6eb4077889d0",
+          )
+          expect(response["data"]["id"]).to eq("bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
+        end
       end
     end
 
