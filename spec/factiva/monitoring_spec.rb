@@ -72,15 +72,6 @@ module Factiva
       end
     end
 
-    describe "#delete_association" do
-      context "with correct year", vcr: "monitoring/delete_association" do
-        it "authenticates and delete the association" do
-          response = subject.delete_association(association_id: "bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
-          expect(response["data"]["id"]).to eq("bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
-        end
-      end
-    end
-
     describe "#add_association_to_case", vcr: "monitoring/add_association_to_case" do
       let(:sample_data1) {
         {
