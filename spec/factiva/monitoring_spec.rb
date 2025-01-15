@@ -64,7 +64,7 @@ module Factiva
 
         it "authenticates and updates the association" do
           response = subject.update_association(
-            association_id: "3acf8384-dfcd-46d4-9a22-6eb4077889d0",
+            association_id: "bb7a6844-7faf-44ef-91fe-eabeb7bbe640",
             params: sample_data
           )
           expect(response["data"]["id"]).to eq("bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
@@ -118,7 +118,10 @@ module Factiva
             case_id: "296373b3-80ee-4fb7-9f2e-b43604051c0b",
             association_id: "3acf8384-dfcd-46d4-9a22-6eb4077889d0",
           )
-          expect(response["data"]["id"]).to eq("bb7a6844-7faf-44ef-91fe-eabeb7bbe640")
+          expect(response["data"]["attributes"]["operation"]).to eq("DECORRELATE")
+          expect(response["data"]["attributes"]["status"]).to eq("COMPLETED")
+          expect(response["data"]["attributes"]["case_id"]).to eq("296373b3-80ee-4fb7-9f2e-b43604051c0b")
+          expect(response["data"]["id"]).to eq("85fb5701-4832-4647-b506-cd07c36aabc6")
         end
       end
     end

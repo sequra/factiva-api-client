@@ -220,9 +220,11 @@ module Factiva
     end
 
     def get_matches(case_id:, offset: 0, limit: 100)
+      url = matches_url(case_id, offset: offset, limit: limit)
+
       # If the request fails auth is reset and the request retried
-      get(matches_url(case_id, offset:, limit:))
-        .or       { set_auth; get(matches_url(case_id, offset:, limit:)) }
+      get(url)
+        .or       { set_auth; get(url) }
         .value_or { |error| raise RequestError.new(error) }
     end
 
@@ -239,6 +241,7 @@ module Factiva
     end
 
   private
+
     def self.instance
       @instance ||= new
     end
