@@ -1,13 +1,5 @@
 ## [Unreleased]
 
-## [0.6.0](https://github.com/sequra/factiva-api-client/compare/v0.5.0...v0.6.0) (2025-01-15)
-
-### Features
-
-* Add `update_association` method to `Factiva::Monitoring` ([#18](https://github.com/sequra/factiva-api-client/pull/18)) ([5053ea2](https://github.com/sequra/factiva-api-client/pull/18/commits/5053ea2462dca9a8d4f9c6a72160bff28554d303))
-* Add `remove_association_from_case` method to `Factiva::Monitoring` ([#18](https://github.com/sequra/factiva-api-client/pull/18)) ([5053ea2](https://github.com/sequra/factiva-api-client/pull/18/commits/5053ea2462dca9a8d4f9c6a72160bff28554d303))
-* Add pagination to the `get_matches` method in `Factiva::Monitoring` ([#18](https://github.com/sequra/factiva-api-client/pull/18)) ([5053ea2](https://github.com/sequra/factiva-api-client/pull/18/commits/5053ea2462dca9a8d4f9c6a72160bff28554d303))
-
 ## [0.5.0](https://github.com/sequra/factiva-api-client/compare/v0.4.0...v0.5.0) (2024-10-08)
 
 
@@ -16,6 +8,7 @@
 * Adapt parameters for Ruby 3 ([#9](https://github.com/sequra/factiva-api-client/issues/9)) ([83487d5](https://github.com/sequra/factiva-api-client/commit/83487d55dd4a8cd90ecd24eaa1b9b34934445234))
 * raise HTTP::TimeoutError for CircuitBreaker ([#13](https://github.com/sequra/factiva-api-client/issues/13)) ([f88bec2](https://github.com/sequra/factiva-api-client/commit/f88bec29f01085340d29e5748c9782e23c19b3a8))
 * raise timeout error for circuit breaker ([#17](https://github.com/sequra/factiva-api-client/issues/17)) ([f329c20](https://github.com/sequra/factiva-api-client/commit/f329c2063dbd16dec3f4bc6aeea02a6c39cb757f))
+
 
 ### Bug Fixes
 
