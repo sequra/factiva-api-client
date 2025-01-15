@@ -255,7 +255,7 @@ module Factiva
           .auth("Bearer #{auth.token}")
           .send(*http_params)
 
-        response_body = JSON.parse(response.body.to_s)
+        response_body = response.body.to_s.empty? ? {} : JSON.parse(response.body.to_s)
 
         if response.status.success?
           Success(response_body)
