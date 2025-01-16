@@ -72,6 +72,23 @@ module Factiva
       end
     end
 
+    describe "#delete_association" do
+      context "when the association can be removed", vcr: "monitoring/delete_association" do
+        it "authenticates and delete the association" do
+          response = subject.delete_association(association_id: "10d89388-60a0-41c2-8497-74f4ed4ad4e5")
+          expect(response).to eq({})
+        end
+      end
+
+      context "when factiva returns an error", vcr: "monitoring/delete_association_invalid" do
+        it "authenticates and delete the association" do
+          expect {
+            subject.delete_association(association_id: "invalid_id")
+          }.to raise_error(Factiva::RequestError)
+        end
+      end
+    end
+
     describe "#add_association_to_case", vcr: "monitoring/add_association_to_case" do
       let(:sample_data1) {
         {

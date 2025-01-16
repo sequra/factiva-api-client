@@ -28,6 +28,10 @@ module Factiva
       instance.update_association(**args)
     end
 
+    def self.delete_association(**args)
+      instance.delete_association(**args)
+    end
+
     def self.add_association_to_case(**args)
       instance.add_association_to_case(**args)
     end
@@ -51,6 +55,7 @@ module Factiva
     def self.stub!(create_case: {},
         create_association: {},
         update_association: {},
+        delete_association: {},
         add_association_to_case: {},
         remove_association_from_case: {},
         get_matches: {},
@@ -60,6 +65,7 @@ module Factiva
         create_case,
         create_association,
         update_association,
+        delete_association,
         add_association_to_case,
         remove_association_from_case,
         get_matches,
@@ -77,6 +83,7 @@ module Factiva
       attr_reader :stubbed_create_case,
       :stubbed_create_association,
       :stubbed_update_association,
+      :stubbed_delete_association,
       :stubbed_add_association_to_case,
       :stubbed_remove_association_from_case,
       :stubbed_get_matches,
@@ -85,6 +92,7 @@ module Factiva
       def initialize(stubbed_create_case,
         stubbed_create_association,
         stubbed_update_association,
+        stubbed_delete_association,
         stubbed_add_association_to_case,
         stubbed_remove_association_from_case,
         stubbed_get_matches,
@@ -93,6 +101,7 @@ module Factiva
         @stubbed_create_case = stubbed_create_case
         @stubbed_create_association = stubbed_create_association
         @stubbed_update_association = stubbed_update_association
+        @stubbed_delete_association = stubbed_delete_association
         @stubbed_add_association_to_case = stubbed_add_association_to_case
         @stubbed_remove_association_from_case = stubbed_remove_association_from_case
         @stubbed_get_matches = stubbed_get_matches
@@ -109,6 +118,10 @@ module Factiva
 
       def update_association(**args)
         stubbed_update_association
+      end
+
+      def delete_association(**args)
+        stubbed_delete_association
       end
 
       def add_association_to_case(**args)
@@ -173,6 +186,15 @@ module Factiva
       # If the request fails auth is reset and the request retried
       patch(url, params)
         .or       { set_auth; patch(url, params) }
+        .value_or { |error| raise RequestError.new(error) }
+    end
+
+    def delete_association(association_id:)
+      url = association_url(association_id)
+
+      # If the request fails auth is reset and the request retried
+      delete(url)
+        .or       { set_auth; delete(url) }
         .value_or { |error| raise RequestError.new(error) }
     end
 
@@ -255,7 +277,7 @@ module Factiva
           .auth("Bearer #{auth.token}")
           .send(*http_params)
 
-        response_body = JSON.parse(response.body.to_s)
+        response_body = response.body.to_s.empty? ? {} : JSON.parse(response.body.to_s)
 
         if response.status.success?
           Success(response_body)
