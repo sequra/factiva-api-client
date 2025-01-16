@@ -72,6 +72,7 @@ module Factiva
       end
     end
 
+<<<<<<< HEAD
     describe "#delete_association" do
       context "when the association can be removed", vcr: "monitoring/delete_association" do
         it "authenticates and delete the association" do
@@ -89,6 +90,8 @@ module Factiva
       end
     end
 
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
     describe "#add_association_to_case", vcr: "monitoring/add_association_to_case" do
       let(:sample_data1) {
         {

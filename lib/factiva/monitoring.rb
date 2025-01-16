@@ -28,10 +28,13 @@ module Factiva
       instance.update_association(**args)
     end
 
+<<<<<<< HEAD
     def self.delete_association(**args)
       instance.delete_association(**args)
     end
 
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
     def self.add_association_to_case(**args)
       instance.add_association_to_case(**args)
     end
@@ -55,7 +58,10 @@ module Factiva
     def self.stub!(create_case: {},
         create_association: {},
         update_association: {},
+<<<<<<< HEAD
         delete_association: {},
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
         add_association_to_case: {},
         remove_association_from_case: {},
         get_matches: {},
@@ -65,7 +71,10 @@ module Factiva
         create_case,
         create_association,
         update_association,
+<<<<<<< HEAD
         delete_association,
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
         add_association_to_case,
         remove_association_from_case,
         get_matches,
@@ -83,7 +92,10 @@ module Factiva
       attr_reader :stubbed_create_case,
       :stubbed_create_association,
       :stubbed_update_association,
+<<<<<<< HEAD
       :stubbed_delete_association,
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
       :stubbed_add_association_to_case,
       :stubbed_remove_association_from_case,
       :stubbed_get_matches,
@@ -92,7 +104,10 @@ module Factiva
       def initialize(stubbed_create_case,
         stubbed_create_association,
         stubbed_update_association,
+<<<<<<< HEAD
         stubbed_delete_association,
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
         stubbed_add_association_to_case,
         stubbed_remove_association_from_case,
         stubbed_get_matches,
@@ -101,7 +116,10 @@ module Factiva
         @stubbed_create_case = stubbed_create_case
         @stubbed_create_association = stubbed_create_association
         @stubbed_update_association = stubbed_update_association
+<<<<<<< HEAD
         @stubbed_delete_association = stubbed_delete_association
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
         @stubbed_add_association_to_case = stubbed_add_association_to_case
         @stubbed_remove_association_from_case = stubbed_remove_association_from_case
         @stubbed_get_matches = stubbed_get_matches
@@ -120,10 +138,13 @@ module Factiva
         stubbed_update_association
       end
 
+<<<<<<< HEAD
       def delete_association(**args)
         stubbed_delete_association
       end
 
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
       def add_association_to_case(**args)
         stubbed_add_association_to_case
       end
@@ -186,6 +207,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       patch(url, params)
         .or       { set_auth; patch(url, params) }
+<<<<<<< HEAD
         .value_or { |error| raise RequestError.new(error) }
     end
 
@@ -195,6 +217,8 @@ module Factiva
       # If the request fails auth is reset and the request retried
       delete(url)
         .or       { set_auth; delete(url) }
+=======
+>>>>>>> ba2775f (monitoring: Add integration with the update and delete association APIs (#18))
         .value_or { |error| raise RequestError.new(error) }
     end
 
