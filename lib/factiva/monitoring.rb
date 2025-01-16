@@ -24,8 +24,16 @@ module Factiva
       instance.create_association(**args)
     end
 
+    def self.update_association(**args)
+      instance.update_association(**args)
+    end
+
     def self.add_association_to_case(**args)
       instance.add_association_to_case(**args)
+    end
+
+    def self.remove_association_from_case(**args)
+      instance.remove_association_from_case(**args)
     end
 
     def self.get_matches(**args)
@@ -42,14 +50,18 @@ module Factiva
 
     def self.stub!(create_case: {},
         create_association: {},
+        update_association: {},
         add_association_to_case: {},
+        remove_association_from_case: {},
         get_matches: {},
         log_decision: {}
         )
       @instance = MockedRequest.new(
         create_case,
         create_association,
+        update_association,
         add_association_to_case,
+        remove_association_from_case,
         get_matches,
         log_decision
       )
@@ -64,19 +76,25 @@ module Factiva
     class MockedRequest
       attr_reader :stubbed_create_case,
       :stubbed_create_association,
+      :stubbed_update_association,
       :stubbed_add_association_to_case,
+      :stubbed_remove_association_from_case,
       :stubbed_get_matches,
       :stubbed_log_decision
 
       def initialize(stubbed_create_case,
         stubbed_create_association,
+        stubbed_update_association,
         stubbed_add_association_to_case,
+        stubbed_remove_association_from_case,
         stubbed_get_matches,
         stubbed_log_decision
       )
         @stubbed_create_case = stubbed_create_case
         @stubbed_create_association = stubbed_create_association
+        @stubbed_update_association = stubbed_update_association
         @stubbed_add_association_to_case = stubbed_add_association_to_case
+        @stubbed_remove_association_from_case = stubbed_remove_association_from_case
         @stubbed_get_matches = stubbed_get_matches
         @stubbed_log_decision = stubbed_log_decision
       end
@@ -89,8 +107,16 @@ module Factiva
         stubbed_create_association
       end
 
+      def update_association(**args)
+        stubbed_update_association
+      end
+
       def add_association_to_case(**args)
         stubbed_add_association_to_case
+      end
+
+      def remove_association_from_case(**args)
+        subbed_remove_association_from_case
       end
 
       def get_matches(**args)
@@ -127,8 +153,26 @@ module Factiva
       }
 
       # If the request fails auth is reset and the request retried
-      post(association_url, params)
-        .or       { set_auth; post(association_url, params) }
+      post(associations_url, params)
+        .or       { set_auth; post(associations_url, params) }
+        .value_or { |error| raise RequestError.new(error) }
+    end
+
+    def update_association(association_id:, params:)
+      params = { json: association_body(
+        params.fetch(:first_name),
+        params.fetch(:last_name),
+        params.fetch(:birth_year),
+        params.fetch(:external_id),
+        params.fetch(:nin),
+        COUNTRY_IDS.fetch(params.fetch(:country_code)),
+      ) }
+
+      url = association_url(association_id)
+
+      # If the request fails auth is reset and the request retried
+      patch(url, params)
+        .or       { set_auth; patch(url, params) }
         .value_or { |error| raise RequestError.new(error) }
     end
 
@@ -139,15 +183,26 @@ module Factiva
       }
 
       # If the request fails auth is reset and the request retried
-      post(case_association_url(case_id), params)
-        .or       { set_auth; post(case_association_url(case_id), params) }
+      post(case_associations_url(case_id), params)
+        .or       { set_auth; post(case_associations_url(case_id), params) }
         .value_or { |error| raise RequestError.new(error) }
     end
 
-    def get_matches(case_id:)
+    def remove_association_from_case(case_id:, association_id:)
+      url = case_association_url(case_id, association_id)
+
       # If the request fails auth is reset and the request retried
-      get(matches_url(case_id))
-        .or       { set_auth; get(matches_url(case_id)) }
+      delete(url)
+        .or       { set_auth; delete(url) }
+        .value_or { |error| raise RequestError.new(error) }
+    end
+
+    def get_matches(case_id:, offset: 0, limit: 100)
+      url = matches_url(case_id, offset: offset, limit: limit)
+
+      # If the request fails auth is reset and the request retried
+      get(url)
+        .or       { set_auth; get(url) }
         .value_or { |error| raise RequestError.new(error) }
     end
 
@@ -164,6 +219,7 @@ module Factiva
     end
 
   private
+
     def self.instance
       @instance ||= new
     end
@@ -174,6 +230,10 @@ module Factiva
 
     def post(url, params)
       make_request(:post, url, params)
+    end
+
+    def delete(url)
+      make_request(:delete, url)
     end
 
     def patch(url, params)
@@ -268,8 +328,12 @@ module Factiva
       }
     end
 
-    def association_url
+    def associations_url
       make_url("risk-entity-screening-associations")
+    end
+
+    def association_url(association_id)
+      make_url("risk-entity-screening-associations/#{association_id}")
     end
 
     def association_body(first_name, last_name, birth_year, external_id, nin, country)
@@ -298,8 +362,12 @@ module Factiva
       }
     end
 
-    def case_association_url(case_id)
+    def case_associations_url(case_id)
       make_url("risk-entity-screening-cases/#{case_id}/risk-entity-screening-associations")
+    end
+
+    def case_association_url(case_id, association_id)
+      make_url("risk-entity-screening-cases/#{case_id}/risk-entity-screening-associations/#{association_id}")
     end
 
     def case_association_body(association_id)
@@ -313,8 +381,8 @@ module Factiva
       }
     end
 
-    def matches_url(case_id)
-      make_url("risk-entity-screening-cases/#{case_id}/matches")
+    def matches_url(case_id, offset:, limit:)
+      make_url("risk-entity-screening-cases/#{case_id}/matches?page[offset]=#{offset}&page[limit]=#{limit}")
     end
 
     def log_decision_url(case_id, match_id)
