@@ -144,7 +144,18 @@ docker-compose run dev bundle exec rspec
 
 All contributions are welcome, feel free to create a Pull request.
 
+### Testing the gem locally in a Rails application
+
 In case you want to use the gem in our of our application from your local code, you can do the following:
 
 * Add a new volume in the Rails application's docker-compose with `~/${PATH_TO_THE_GEM}:/app/vendor/gems/factiva-api-client`
 * Update the Gemfile to use the gem from `path:` with line `gem "factiva-api-client", path: '/app/vendor/gems/factiva-api-client'`
+
+### Releasing a new version
+
+A new version is released when the code is merged to `master` branch if you have conventional commits:
+
+* Use fix: for patches.
+* Use feat: for minor releases.
+* Use feat!: or BREAKING CHANGE: for major releases.
+* Other types (chore:, docs:, test:) will not trigger a release.
