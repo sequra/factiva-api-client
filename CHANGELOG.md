@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.6.0](https://github.com/sequra/factiva-api-client/compare/v0.5.0...v0.6.0) (2025-01-20)
+
+
+### Features
+
+* update README.md with Release information ([5a7e7c6](https://github.com/sequra/factiva-api-client/commit/5a7e7c6e0b51e233b1fd98161244e6b389d5087e))
+
 ## [0.5.0](https://github.com/sequra/factiva-api-client/compare/v0.4.0...v0.5.0) (2024-10-08)
 
 
