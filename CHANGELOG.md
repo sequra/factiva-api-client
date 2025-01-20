@@ -5,7 +5,11 @@
 
 ### Features
 
-* release new version 0.6.0 ([7c91897](https://github.com/sequra/factiva-api-client/commit/7c918976b4ced146ed81c90ce416f884b5d96b1d))
+* Add `update_association` method to `Factiva::Monitoring` ([#18](https://github.com/sequra/factiva-api-client/pull/18)) ([5053ea2](https://github.com/sequra/factiva-api-client/pull/18/commits/5053ea2462dca9a8d4f9c6a72160bff28554d303))
+* Add `remove_association_from_case` method to `Factiva::Monitoring` ([#18](https://github.com/sequra/factiva-api-client/pull/18)) ([5053ea2](https://github.com/sequra/factiva-api-client/pull/18/commits/5053ea2462dca9a8d4f9c6a72160bff28554d303))
+* Add pagination to the `get_matches` method in `Factiva::Monitoring` ([#18](https://github.com/sequra/factiva-api-client/pull/18)) ([5053ea2](https://github.com/sequra/factiva-api-client/pull/18/commits/5053ea2462dca9a8d4f9c6a72160bff28554d303))
+* Handle Factiva empty body responses in  `Factiva::Monitoring#make_request` ([#20](https://github.com/sequra/factiva-api-client/pull/20)) ([87591b5](https://github.com/sequra/factiva-api-client/pull/20/commits/87591b57d41f4a897f5f1c49fce134239e0997e0))
+* Add `delete_association` method to `Factiva::Monitoring` ([#20](https://github.com/sequra/factiva-api-client/pull/20)) ([582573d](https://github.com/sequra/factiva-api-client/pull/20/commits/582573daac45595441878fb7872ba9d02879819a))
 
 ## [0.5.0](https://github.com/sequra/factiva-api-client/compare/v0.4.0...v0.5.0) (2024-10-08)
 
