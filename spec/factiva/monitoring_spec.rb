@@ -81,7 +81,7 @@ module Factiva
       end
 
       context "when factiva returns an error", vcr: "monitoring/delete_association_invalid" do
-        it "authenticates and delete the association" do
+        it "raises a Factiva::RequestError" do
           expect {
             subject.delete_association(association_id: "invalid_id")
           }.to raise_error(Factiva::RequestError)
@@ -130,6 +130,29 @@ module Factiva
           expect(response["data"]["attributes"]["status"]).to eq("COMPLETED")
           expect(response["data"]["attributes"]["case_id"]).to eq("296373b3-80ee-4fb7-9f2e-b43604051c0b")
           expect(response["data"]["id"]).to eq("85fb5701-4832-4647-b506-cd07c36aabc6")
+        end
+      end
+    end
+
+    describe "#get_profile" do
+      let(:response) { subject.get_profile(profile_id: profile_id) }
+
+      context "when the profile exists", vcr: "monitoring/get_profile" do
+        let(:profile_id) { "11666513" }
+
+        it "authenticates and returns the profile" do
+          expect(response["data"]["id"]).to eq("11666513")
+          expect(response["data"]["type"]).to eq("profiles")
+        end
+      end
+
+      context "when factiva returns an error", vcr: "monitoring/get_profile_invalid" do
+        let(:profile_id) { "invalid_id" }
+
+        it "raises a Factiva::RequestError" do
+          expect {
+            response
+          }.to raise_error(Factiva::RequestError)
         end
       end
     end

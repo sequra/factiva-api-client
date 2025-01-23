@@ -40,6 +40,10 @@ module Factiva
       instance.remove_association_from_case(**args)
     end
 
+    def self.get_profile(**args)
+      instance.get_profile(**args)
+    end
+
     def self.get_matches(**args)
       instance.get_matches(**args)
     end
@@ -58,6 +62,7 @@ module Factiva
         delete_association: {},
         add_association_to_case: {},
         remove_association_from_case: {},
+        get_profile: {},
         get_matches: {},
         log_decision: {}
         )
@@ -68,6 +73,7 @@ module Factiva
         delete_association,
         add_association_to_case,
         remove_association_from_case,
+        get_profile,
         get_matches,
         log_decision
       )
@@ -86,6 +92,7 @@ module Factiva
       :stubbed_delete_association,
       :stubbed_add_association_to_case,
       :stubbed_remove_association_from_case,
+      :stubbed_get_profile,
       :stubbed_get_matches,
       :stubbed_log_decision
 
@@ -95,6 +102,7 @@ module Factiva
         stubbed_delete_association,
         stubbed_add_association_to_case,
         stubbed_remove_association_from_case,
+        stubbed_get_profile,
         stubbed_get_matches,
         stubbed_log_decision
       )
@@ -104,6 +112,7 @@ module Factiva
         @stubbed_delete_association = stubbed_delete_association
         @stubbed_add_association_to_case = stubbed_add_association_to_case
         @stubbed_remove_association_from_case = stubbed_remove_association_from_case
+        @stubbed_get_profile = stubbed_get_profile
         @stubbed_get_matches = stubbed_get_matches
         @stubbed_log_decision = stubbed_log_decision
       end
@@ -130,6 +139,10 @@ module Factiva
 
       def remove_association_from_case(**args)
         subbed_remove_association_from_case
+      end
+
+      def get_profile(**args)
+        stubbed_get_profile
       end
 
       def get_matches(**args)
@@ -216,6 +229,15 @@ module Factiva
       # If the request fails auth is reset and the request retried
       delete(url)
         .or       { set_auth; delete(url) }
+        .value_or { |error| raise RequestError.new(error) }
+    end
+
+    def get_profile(profile_id:)
+      url  = profile_url(profile_id)
+
+      # If the request fails auth is reset and the request retried
+      get(url)
+        .or       { set_auth; get(url) }
         .value_or { |error| raise RequestError.new(error) }
     end
 
@@ -401,6 +423,10 @@ module Factiva
           }
         ]
       }
+    end
+
+    def profile_url(profile_id)
+      make_url("riskentities/profiles/#{profile_id}")
     end
 
     def matches_url(case_id, offset:, limit:)
