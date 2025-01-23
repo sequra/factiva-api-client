@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.8.0](https://github.com/sequra/factiva-api-client/compare/v0.7.0...v0.8.0) (2025-01-23)
+
+
+### Features
+
+* add is_match_valid and has_alerts filters to get_matches method ([#29](https://github.com/sequra/factiva-api-client/issues/29)) ([78bd651](https://github.com/sequra/factiva-api-client/commit/78bd651a8dc74ac6b8918f508ff572be1298994f))
+
 ## [0.7.0](https://github.com/sequra/factiva-api-client/compare/v0.6.0...v0.7.0) (2025-01-23)
 
 
