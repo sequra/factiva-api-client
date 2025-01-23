@@ -156,7 +156,7 @@ http_interactions:
   recorded_at: Wed, 22 Jun 2022 07:47:41 GMT
 - request:
     method: get
-    uri: https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b/matches?page%5Blimit%5D=100&page%5Boffset%5D=0
+    uri: https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b/matches?filter%5Bhas_alerts%5D=any&filter%5Bis_match_valid%5D=any&page%5Blimit%5D=100&page%5Boffset%5D=0
     body:
       encoding: UTF-8
       string: ''
