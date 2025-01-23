@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.7.0](https://github.com/sequra/factiva-api-client/compare/v0.6.0...v0.7.0) (2025-01-23)
+
+
+### Features
+
+* add get_profile method to Factiva::Monitoring ([#27](https://github.com/sequra/factiva-api-client/issues/27)) ([bedf4de](https://github.com/sequra/factiva-api-client/commit/bedf4debbef6f2461703ae791955b8296247a4bc))
+
 ## [0.6.0](https://github.com/sequra/factiva-api-client/compare/v0.5.0...v0.6.0) (2025-01-20)
 
 
