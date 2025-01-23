@@ -241,8 +241,14 @@ module Factiva
         .value_or { |error| raise RequestError.new(error) }
     end
 
-    def get_matches(case_id:, offset: 0, limit: 100)
-      url = matches_url(case_id, offset: offset, limit: limit)
+    def get_matches(case_id:, offset: 0, limit: 100, has_alerts: "any", is_match_valid: "any")
+      url = matches_url(
+        case_id,
+        offset: offset,
+        limit: limit,
+        has_alerts: has_alerts,
+        is_match_valid: is_match_valid
+      )
 
       # If the request fails auth is reset and the request retried
       get(url)
@@ -429,8 +435,12 @@ module Factiva
       make_url("riskentities/profiles/#{profile_id}")
     end
 
-    def matches_url(case_id, offset:, limit:)
-      make_url("risk-entity-screening-cases/#{case_id}/matches?page[offset]=#{offset}&page[limit]=#{limit}")
+    def matches_url(case_id, offset:, limit:, has_alerts:, is_match_valid:)
+      make_url(
+        "risk-entity-screening-cases/#{case_id}/matches?" \
+        "page[offset]=#{offset}&page[limit]=#{limit}&" \
+        "filter[has_alerts]=#{has_alerts}&filter[is_match_valid]=#{is_match_valid}"
+      )
     end
 
     def log_decision_url(case_id, match_id)

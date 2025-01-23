@@ -1,0 +1,280 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b/matches?filter%5Bhas_alerts%5D=true&filter%5Bis_match_valid%5D=true&page%5Blimit%5D=100&page%5Boffset%5D=0
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJTMDJZdEpxM0dialpUcW5OcE10TjlNbU1EQW1KY2JhUFRVdE1wTXBOOUFjM0hibVpUclRSVkpXU1VORlhxRkRRcXpWVGJSNVRxRlZWRTZjIn0sImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZG93am9uZXMuY29tL29hdXRoMi92MiIsInN1YiI6IjYyYThkZTk3MTA4ZWNlNWI4ODFhZDEyYyIsImF1ZCI6InR6ZVdKaGExVzVOd3JVQlJDU3dPZHRDR3FJUTVtekFJIiwiYXpwIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJpYXQiOjE3Mzc2MzEyMjgsImV4cCI6MTczNzYzNDgyOH0.nwjwVG5ywApGP5_0Ss1jictTihRrvMvl42JbyaWGBtCAJF3PZadWco6oAhajnLHtegno2LKcndAeyOqZmKAICumT3Xnnu882FQbpt9tu6FdLOay7z3TMtNtorM6Yj78a_wJAKt9ZD3xWLwdY2sGKvOtH1kZ8gHhz4RMv2ITACFja1cegg-tLuxuOrPd5u-J1C7qGHlTURSPQSQUkUhXlXlBOXLkzxeCR7_TZVkJ-fnPb60XST1SSi38Y_lPLPHcfs9N56tAEPRelNeNRvzWNFkpxsRwF_CzrKgtpjE2LvhJrQrkU-Layb-sg6nwfdVJFk0npM5bhqDc0DPQAco7JjQ
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '147'
+      Connection:
+      - close
+      X-Request-Id:
+      - 68b5106b-5b61-4878-9dda-9f50a58fb860
+      Date:
+      - Thu, 23 Jan 2025 15:01:44 GMT
+      Via:
+      - 1.1 google, 1.1 a43329060eb599a869106ad9bb3b16b0.cloudfront.net (CloudFront)
+      X-Cache:
+      - Error from cloudfront
+      X-Amz-Cf-Pop:
+      - MAD56-P2
+      X-Amz-Cf-Id:
+      - Bgu8hSVS2q-wBtWvayOszHDsszD1ns7sJx4byPQo6tnLZhiyLKbOXw==
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: "\n\t\t\t{\"errors\":[{\"title\":\"jwt signature verification failed:
+        'exp' claim expired at Thu, 23 Jan 2025 12:20:28 GMT\",\"status\":401,\"code\":1011007}]}\n\t\t"
+  recorded_at: Thu, 23 Jan 2025 15:01:45 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: client_id=<SECRET_CLIENT_ID>&connection=service-account&grant_type=password&password=<SECRET_PASSWORD>&scope=openid+service_account_id+offline_access%3A&username=<SECRET_USERNAME>&device=testdevice
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2071'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 23 Jan 2025 15:01:45 GMT
+      Set-Cookie:
+      - djcs_route=60f28093-046b-4e2c-bca3-644a39e48b24; domain=.dowjones.com; path=/;
+        Expires=Sun Jan 21 15:01:45 2035; max-age=315360000;Secure; SameSite=none
+      Vary:
+      - Accept-Encoding
+      X-P-Cache-Control:
+      - no-store
+      X-P-Content-Length:
+      - '2071'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Thu, 23 Jan 2025 15:01:44 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Via:
+      - 1.1 9c6666844f92bfc6b8685747b641abc6.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - 3OwNpD9tNm3cW1dNbXRBwTZMXf35mEp5lW09Kcg04WA6_LaPB-ljnA==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2399a583d90a0f74ef1bd2557c02de46.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD53-P4
+      X-Amz-Cf-Id:
+      - XebhHdKY1jXRI_xfq0Qg6wU0Rs19Pq3AxCsODeyBTmdFd2tb5Qsp0A==
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFUWTNRVVpETnpaRFF6WTRRa0kyTkRFMk4wSXdRVVZCTXpkRlJqTTNNak0yT1VZeU56aERRZ28ifQ.eyJzdWIiOiI2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJ0aWQiOiJhdXRoIiwiYXpwIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhdXRoX3RpbWUiOjE3Mzc2NDQ1MDUsInNpZCI6Ik91UFE3RlFWOXdpM3BwNjBBZ1hYbkF1dE9TQ0MzQmR5M0U0ZVdKZ3d4LUNGTkpDQVRzbk9DZyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJhdF9oYXNoIjoidVpZTS00MnBwazMxWXFDa28wX3RidyIsImlhdCI6MTczNzY0NDUwNSwiZXhwIjoxNzM4MDc2NTA1LCJhdWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlzcyI6Imh0dHBzOi8vYXV0aC5hY2NvdW50cy5kb3dqb25lcy5jb20vIn0.AWzbtQNbpSexIWTxfnsyGhSqrTRO0argbrxu83Az5KnFre2_5Z3VcNNq3jQ3EMZ6CFPEI_lTdS3TUjDmQgYzPeK7oW8ZCPuWw5mjZBeclsmBAk1Mz92Ssfe-OcibtQNXEMUTZ3o-3Qi-E0QmCIjT0cK0DY72UspHWFPiE_ADPqL6vWe4HENI8Vf07xZDrwWdkSWLz3oF2kOCBBQSHS1_s-xrnONWsV4lw9LeZkOiQiorMC8QaqfgLvA78w0y0z7IR1KGDlOgozUKS9J3n1P4SfEa_vyuS-XYq34_WLQn2E7NispcNpWOk0LfoKIk6tlPO0EUpQU0MzwDudHZ899bsA","access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFUWTNRVVpETnpaRFF6WTRRa0kyTkRFMk4wSXdRVVZCTXpkRlJqTTNNak0yT1VZeU56aERRZ28ifQ.eyJzdWIiOiI2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJ0aWQiOiJhdXRoIiwiYXpwIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhdXRoX3RpbWUiOjE3Mzc2NDQ1MDUsInNpZCI6Ik91UFE3RlFWOXdpM3BwNjBBZ1hYbkF1dE9TQ0MzQmR5M0U0ZVdKZ3d4LUNGTkpDQVRzbk9DZyIsIm5iZiI6MTczNzY0NDUwNSwic2NvcGUiOlsib3BlbmlkIiwic2VydmljZV9hY2NvdW50X2lkIiwib2ZmbGluZV9hY2Nlc3M6Il0sImV4cGlyZXNJbiI6NDMyMDAwLCJpYXQiOjE3Mzc2NDQ1MDUsImV4cCI6MTczODA3NjUwNSwiYXVkIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJpc3MiOiJodHRwczovL2F1dGguYWNjb3VudHMuZG93am9uZXMuY29tLyJ9.ZdNTPWh6Y9f4WFCDvBj7hlHQK64SgNeuNY2_XVYAL3o68_wijC_J7R2X_qWw9HzP4BmTfCzI3kIuTAnVu6Roww3HJGap64RNq3W0hTniAFIfMx3BOU-6Lc3OB7D1a8synvLHGu0WEQKoAZIPEGlH8UDIgBQkstRoWsL5U1scyq6vmnhPogBS6QYw9aVvSJsXFd-GP1PPlAjSrV4bzCOw2AhDZ4wuMR1toyR9PcXuLuzXiaPdU8hEPfGvJ4TsiaXTYCAt09YMbtNGnbRQfCR-7kNFFSmE09O3pWVg8S_O-qZ1NrKCbLfyV6-FjewyKwIkus1iSX9OYfjLT4ftxyGKgg","refresh_token":"R1737644505bkg7amPp_lW2Ue-pyLtl6p8oKQ57DlV4g4lcbn9eItfFyTFHXxzbywT","token_type":"bearer"}'
+  recorded_at: Thu, 23 Jan 2025 15:01:45 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFUWTNRVVpETnpaRFF6WTRRa0kyTkRFMk4wSXdRVVZCTXpkRlJqTTNNak0yT1VZeU56aERRZ28ifQ.eyJzdWIiOiI2MmE4ZGU5NzEwOGVjZTViODgxYWQxMmMiLCJ0aWQiOiJhdXRoIiwiYXpwIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJhdXRoX3RpbWUiOjE3Mzc2NDQ1MDUsInNpZCI6Ik91UFE3RlFWOXdpM3BwNjBBZ1hYbkF1dE9TQ0MzQmR5M0U0ZVdKZ3d4LUNGTkpDQVRzbk9DZyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJhdF9oYXNoIjoidVpZTS00MnBwazMxWXFDa28wX3RidyIsImlhdCI6MTczNzY0NDUwNSwiZXhwIjoxNzM4MDc2NTA1LCJhdWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsImlzcyI6Imh0dHBzOi8vYXV0aC5hY2NvdW50cy5kb3dqb25lcy5jb20vIn0.AWzbtQNbpSexIWTxfnsyGhSqrTRO0argbrxu83Az5KnFre2_5Z3VcNNq3jQ3EMZ6CFPEI_lTdS3TUjDmQgYzPeK7oW8ZCPuWw5mjZBeclsmBAk1Mz92Ssfe-OcibtQNXEMUTZ3o-3Qi-E0QmCIjT0cK0DY72UspHWFPiE_ADPqL6vWe4HENI8Vf07xZDrwWdkSWLz3oF2kOCBBQSHS1_s-xrnONWsV4lw9LeZkOiQiorMC8QaqfgLvA78w0y0z7IR1KGDlOgozUKS9J3n1P4SfEa_vyuS-XYq34_WLQn2E7NispcNpWOk0LfoKIk6tlPO0EUpQU0MzwDudHZ899bsA&client_id=<SECRET_CLIENT_ID>&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&scope=openid+pib
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1056'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 23 Jan 2025 15:01:45 GMT
+      Set-Cookie:
+      - djcs_route=a2171d4b-0d54-4f53-bfc3-f84739505088; domain=.dowjones.com; path=/;
+        Expires=Sun Jan 21 15:01:45 2035; max-age=315360000;Secure; SameSite=none
+      Vary:
+      - Accept-Encoding
+      X-P-Cache-Control:
+      - no-store
+      X-P-Content-Length:
+      - '1056'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Thu, 23 Jan 2025 15:01:45 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Via:
+      - 1.1 8348c06ca24c7faf1ae00ad6facc20b2.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - 8cWaKGji3KWp8wnfwhMYiz5mEvbdXN-RbSUoizDhliWeRriiA_pRhg==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1df2537babb75ce7cbd82a188abb999c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD53-P4
+      X-Amz-Cf-Id:
+      - dAPgfhm_O640FZMxYdsbtCghWIwwx7FQmPU_fcopjQDSqkckwi7XAg==
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJTMDJZdEpxM0dialpUcW5OcE10TjlRcU5EQW1KY2JhUFRVdE1wTXBOOUFjM0hibVpUclRSVkpXU1VORlhxRkRRcXpWVGJSNVRxRlZWRTZjIn0sImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZG93am9uZXMuY29tL29hdXRoMi92MiIsInN1YiI6IjYyYThkZTk3MTA4ZWNlNWI4ODFhZDEyYyIsImF1ZCI6InR6ZVdKaGExVzVOd3JVQlJDU3dPZHRDR3FJUTVtekFJIiwiYXpwIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJpYXQiOjE3Mzc2NDQ1MDYsImV4cCI6MTczNzY0ODEwNn0.XNfWB0YqvRBgIva8y82TCxdf36Q__2FH0vwgPcsQPsv_jxnPXh9lHSXOV-6mvOVJTGrqs8ZlT6GOW8304QxOO6qnpapAWR1VwkbcKoQu7DMcESYmFc8ik_wTHmnJZlMxpXymZFUmCgK54PmjhJMIhErtFwMPA2nTsGuGH4v2jVwkJt1CjmRRasMF1J_4y2EMTkPICkNNDSZZJvEImPDw8724wmBkSrWyqmenikPxbyHi52F-vdUY28bdqp1tvAZSsZtdvJTGuVQe3-W1DfgGO8UQpqLH1m2Rda1crKBsiq8cQBnwSJmJ062LpMDkRu1mp5WOi_Sor_2Jh7d69ToNQg","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Thu, 23 Jan 2025 15:01:46 GMT
+- request:
+    method: get
+    uri: https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b/matches?filter%5Bhas_alerts%5D=true&filter%5Bis_match_valid%5D=true&page%5Blimit%5D=100&page%5Boffset%5D=0
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJTMDJZdEpxM0dialpUcW5OcE10TjlRcU5EQW1KY2JhUFRVdE1wTXBOOUFjM0hibVpUclRSVkpXU1VORlhxRkRRcXpWVGJSNVRxRlZWRTZjIn0sImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZG93am9uZXMuY29tL29hdXRoMi92MiIsInN1YiI6IjYyYThkZTk3MTA4ZWNlNWI4ODFhZDEyYyIsImF1ZCI6InR6ZVdKaGExVzVOd3JVQlJDU3dPZHRDR3FJUTVtekFJIiwiYXpwIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJpYXQiOjE3Mzc2NDQ1MDYsImV4cCI6MTczNzY0ODEwNn0.XNfWB0YqvRBgIva8y82TCxdf36Q__2FH0vwgPcsQPsv_jxnPXh9lHSXOV-6mvOVJTGrqs8ZlT6GOW8304QxOO6qnpapAWR1VwkbcKoQu7DMcESYmFc8ik_wTHmnJZlMxpXymZFUmCgK54PmjhJMIhErtFwMPA2nTsGuGH4v2jVwkJt1CjmRRasMF1J_4y2EMTkPICkNNDSZZJvEImPDw8724wmBkSrWyqmenikPxbyHi52F-vdUY28bdqp1tvAZSsZtdvJTGuVQe3-W1DfgGO8UQpqLH1m2Rda1crKBsiq8cQBnwSJmJ062LpMDkRu1mp5WOi_Sor_2Jh7d69ToNQg
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5496'
+      Connection:
+      - close
+      Date:
+      - Thu, 23 Jan 2025 15:01:46 GMT
+      Vary:
+      - Access-Control-Request-Headers
+      X-Content-Type-Options:
+      - nosniff
+      X-Dj-Media-Type:
+      - dowjones.dna; resource=matches; version=1.0; format=json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Request-Id:
+      - d2289755-b109-4ef7-be7f-387d71882a30
+      Via:
+      - 1.1 google, 1.1 53ff0e7b87e36077aadcd25e028903a2.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MAD56-P2
+      X-Amz-Cf-Id:
+      - cWGlx0NPaCASGYDGpFj6uSI1Hj1DObhR0PeXKqqap5-Jfttxq2Ya9Q==
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"attributes":{"matches":[{"peid":"4758512","type":"RELATIONSHIP","variation":{"structural":false,"linguistic":false,"non_linguistic":false},"title":"Councillor,
+        Benacazón","match_id":"575a7e89ba69fa7f2344a6a1e377156bb9171e7f0fafea361db7785e81128b93","match_name":"Mercedes
+        Espinosa","match_type":"PRECISE","percentage_match":1.0,"subscription_name":"Mercedes
+        Espinosa","boosting_events":[],"icon_hints":["PEP"],"primary_country":"SPAIN","is_score_boosted":false,"current_state":{"timestamp":"2025-01-20T16:21:20","state":"OPEN"},"gender":"FEMALE","is_deceased":false,"match_date":"2025-01-20T16:21:20","primary_name":{"name_type":"PRIMARY","first_name":"Mercedes","last_name":"Espinosa
+        Sánchez"},"has_alerts":true,"is_match_valid":true},{"peid":"739416","type":"RELATIONSHIP","variation":{"structural":true,"linguistic":false,"non_linguistic":false},"title":"See
+        Previous Roles","match_id":"c1258c203fde3d225c610461bbf0e70d527a4d723f62a9534448aff8374a19ab","match_name":"María
+        Mercedes Espinosa","match_type":"PRECISE","percentage_match":0.970000029,"subscription_name":"Mercedes
+        Espinosa","boosting_events":[],"icon_hints":["PEP"],"primary_country":"SPAIN","is_score_boosted":false,"current_state":{"timestamp":"2025-01-20T16:21:20","state":"OPEN"},"birthdates":[{"day":8,"month":10,"year":1966}],"gender":"FEMALE","is_deceased":false,"match_date":"2025-01-20T16:21:20","primary_name":{"name_type":"PRIMARY","first_name":"María
+        Mercedes","last_name":"Espinosa García-Bravo"},"has_alerts":true,"is_match_valid":true},{"peid":"1284204","type":"RELATIONSHIP","variation":{"structural":true,"linguistic":false,"non_linguistic":false},"title":"See
+        Previous Roles","match_id":"cebf10c7663c21609b3556b220a48a6cde103d415555b7686685798227b6a8fd","match_name":"María
+        Mercedes Espinosa","match_type":"PRECISE","percentage_match":0.970000029,"subscription_name":"Mercedes
+        Espinosa","boosting_events":[],"icon_hints":["PEP"],"primary_country":"SPAIN","is_score_boosted":false,"current_state":{"timestamp":"2025-01-20T16:21:20","state":"OPEN"},"gender":"FEMALE","is_deceased":false,"match_date":"2025-01-20T16:21:20","primary_name":{"name_type":"PRIMARY","first_name":"María
+        Mercedes","last_name":"Martín Espinosa"},"has_alerts":true,"is_match_valid":true},{"peid":"11666513","type":"RELATIONSHIP","variation":{"structural":true,"linguistic":false,"non_linguistic":false},"match_id":"e4dce34302c5cad32591a9ccce9561b115cb16641cdff4c6b01d5acb0c5b54fe","match_name":"Ana
+        Mercedes Espinosa","match_type":"PRECISE","percentage_match":0.959999979,"subscription_name":"Mercedes
+        Espinosa","boosting_events":[],"icon_hints":["RCA"],"primary_country":"ECU","is_score_boosted":false,"current_state":{"timestamp":"2025-01-20T16:21:20","state":"OPEN"},"gender":"FEMALE","is_deceased":false,"match_date":"2025-01-20T16:21:20","primary_name":{"name_type":"PRIMARY","first_name":"Ana","middle_name":"Mercedes","last_name":"Zurita
+        Espinosa"},"has_alerts":true,"is_match_valid":true},{"peid":"4778583","type":"RELATIONSHIP","variation":{"structural":true,"linguistic":false,"non_linguistic":false},"match_id":"f9cbfd58dd31f572e979392b3023b2e9ff660023d9ff1e381c4a525c75036daa","match_name":"María
+        Mercedes Espinosa","match_type":"PRECISE","percentage_match":0.959999979,"subscription_name":"Mercedes
+        Espinosa","boosting_events":[],"icon_hints":["RCA"],"primary_country":"ECU","is_score_boosted":false,"current_state":{"timestamp":"2025-01-20T16:21:20","state":"OPEN"},"gender":"FEMALE","is_deceased":false,"match_date":"2025-01-20T16:21:20","primary_name":{"name_type":"PRIMARY","first_name":"María","middle_name":"Mercedes","last_name":"Prado
+        Espinosa"},"has_alerts":true,"is_match_valid":true}],"has_alerts":true,"match_count":5,"external_id":"id1235"},"type":"matches","links":{"related":"https://api.dowjones.com/risk-entity-screening-associations/57e0e76d-cc1e-42c4-b5a6-475d28a9667a"},"id":"57e0e76d-cc1e-42c4-b5a6-475d28a9667a"},{"attributes":{"matches":[{"peid":"1003410","type":"RELATIONSHIP","variation":{"structural":false,"linguistic":false,"non_linguistic":false},"title":"OFAC
+        - Principal Significant Foreign Narcotics Trafficker List","match_id":"16bbd1ae6466bbcb1868ce2f5bda3fede446ac2764146be2dcdc144433928150","match_name":"Maria
+        Remedios Garcia Albert","match_type":"PRECISE","percentage_match":1.0,"subscription_name":"Maria
+        Remedios Garcia Albert","boosting_events":[],"icon_hints":["SI-PERSON","SAN-PERSON"],"primary_country":"SPAIN","is_score_boosted":false,"current_state":{"timestamp":"2025-01-17T15:59:07","state":"OPEN"},"birthdates":[{"day":17,"month":2,"year":1951}],"gender":"FEMALE","is_deceased":false,"match_date":"2025-01-17T15:59:08","primary_name":{"name_type":"PRIMARY","first_name":"Maria
+        Remedios","last_name":"Garcia Albert"},"has_alerts":true,"is_match_valid":true}],"has_alerts":true,"match_count":1,"external_id":"id1234"},"type":"matches","links":{"related":"https://api.dowjones.com/risk-entity-screening-associations/41a796df-8dd9-4fea-8848-3db3fc5e39ff"},"id":"41a796df-8dd9-4fea-8848-3db3fc5e39ff"}],"links":{"last":"https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b/matches?page[limit]=100&filter[has_alerts]=true&filter[is_match_valid]=true&page[offset]=0","first":"https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b/matches?page[limit]=100&filter[has_alerts]=true&filter[is_match_valid]=true&page[offset]=0"},"meta":{"count":2,"offset":{"last":"0","first":"0"},"total_count":2}}'
+  recorded_at: Thu, 23 Jan 2025 15:01:46 GMT
+recorded_with: VCR 6.0.0

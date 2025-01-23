@@ -243,6 +243,22 @@ module Factiva
           expect(result["data"][1]["attributes"]["matches"][0]["is_match_valid"]).to be_truthy
           expect(result["data"][1]["attributes"]["matches"][0]).to eq(valid_match)
         end
+
+        context "when filtering by valid matches", vcr: "monitoring/matches_has_alerts" do
+          # at the moment of recording this VCR, there are 2 matches with alerts
+          let(:match_attributes) { result["data"].first["attributes"]["matches"] }
+          let(:result) { subject.get_matches(**sample_data, has_alerts: true, is_match_valid: true) }
+
+          it "authenticates and returns matches with alerts" do
+            result
+
+            expect(result["data"].size).to eq(2)
+            expect(match_attributes.first["has_alerts"]).to be_truthy
+            expect(match_attributes.first["is_match_valid"]).to be_truthy
+            expect(match_attributes.last["has_alerts"]).to be_truthy
+            expect(match_attributes.last["is_match_valid"]).to be_truthy
+          end
+        end
       end
 
       context "Factiva connection timed out", vcr: "monitoring/authentication_only" do
