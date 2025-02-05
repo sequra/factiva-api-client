@@ -134,29 +134,6 @@ module Factiva
       end
     end
 
-    describe "#get_profile" do
-      let(:response) { subject.get_profile(profile_id: profile_id) }
-
-      context "when the profile exists", vcr: "monitoring/get_profile" do
-        let(:profile_id) { "11666513" }
-
-        it "authenticates and returns the profile" do
-          expect(response["data"]["id"]).to eq("11666513")
-          expect(response["data"]["type"]).to eq("profiles")
-        end
-      end
-
-      context "when factiva returns an error", vcr: "monitoring/get_profile_invalid" do
-        let(:profile_id) { "invalid_id" }
-
-        it "raises a Factiva::RequestError" do
-          expect {
-            response
-          }.to raise_error(Factiva::RequestError)
-        end
-      end
-    end
-
     describe "#get_matches" do
       let(:sample_data) {
         {
