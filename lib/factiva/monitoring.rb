@@ -232,15 +232,6 @@ module Factiva
         .value_or { |error| raise RequestError.new(error) }
     end
 
-    def get_profile(profile_id:)
-      url  = profile_url(profile_id)
-
-      # If the request fails auth is reset and the request retried
-      get(url)
-        .or       { set_auth; get(url) }
-        .value_or { |error| raise RequestError.new(error) }
-    end
-
     def get_matches(case_id:, offset: 0, limit: 100, has_alerts: "any", is_match_valid: "any")
       url = matches_url(
         case_id,
