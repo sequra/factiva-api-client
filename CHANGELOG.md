@@ -1,5 +1,16 @@
 ## [Unreleased]
 
+## [0.9.0](https://github.com/sequra/factiva-api-client/compare/v0.8.0...v0.9.0) (2025-02-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remove get_profile from Factiva::Monitoring ([#31](https://github.com/sequra/factiva-api-client/issues/31))
+
+### Features
+
+* Remove get_profile from Factiva::Monitoring ([#31](https://github.com/sequra/factiva-api-client/issues/31)) ([ffbcb09](https://github.com/sequra/factiva-api-client/commit/ffbcb09f15b748569c7405ab0a496e0885e39793))
+
 ## [0.8.0](https://github.com/sequra/factiva-api-client/compare/v0.7.0...v0.8.0) (2025-01-23)
 
 
