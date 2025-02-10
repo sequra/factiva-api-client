@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.10.0](https://github.com/sequra/factiva-api-client/compare/v0.9.0...v0.10.0) (2025-02-10)
+
+
+### Features
+
+* add update_matches method to Factiva::Monitoring ([#33](https://github.com/sequra/factiva-api-client/issues/33)) ([d7550b3](https://github.com/sequra/factiva-api-client/commit/d7550b30824dc4dfc168dcf397ddae789abd879e))
+
 ## [0.9.0](https://github.com/sequra/factiva-api-client/compare/v0.8.0...v0.9.0) (2025-02-06)
 
 
