@@ -13,6 +13,9 @@ module Factiva
       "PT" => "PORL",
     }.freeze
 
+    DEFAULT_CONTENT_TYPE = "application/json".freeze
+    BULK_MATCH_UPDATE_CONTENT_TYPE = "application/vnd.dowjones.dna.bulk-match-update.v_1.2+json".freeze
+
     private_class_method :new
     attr_reader :auth
 
@@ -52,6 +55,10 @@ module Factiva
       instance.log_decision(**args)
     end
 
+    def self.update_matches(**args)
+      instance.update_matches(**args)
+    end
+
     def self.reset_auth
       instance.set_auth
     end
@@ -64,8 +71,9 @@ module Factiva
         remove_association_from_case: {},
         get_profile: {},
         get_matches: {},
-        log_decision: {}
-        )
+        log_decision: {},
+        update_matches: {}
+      )
       @instance = MockedRequest.new(
         create_case,
         create_association,
@@ -75,7 +83,8 @@ module Factiva
         remove_association_from_case,
         get_profile,
         get_matches,
-        log_decision
+        log_decision,
+        update_matches
       )
       true
     end
@@ -94,7 +103,8 @@ module Factiva
       :stubbed_remove_association_from_case,
       :stubbed_get_profile,
       :stubbed_get_matches,
-      :stubbed_log_decision
+      :stubbed_log_decision,
+      :stubbed_update_matches
 
       def initialize(stubbed_create_case,
         stubbed_create_association,
@@ -104,7 +114,8 @@ module Factiva
         stubbed_remove_association_from_case,
         stubbed_get_profile,
         stubbed_get_matches,
-        stubbed_log_decision
+        stubbed_log_decision,
+        stubbed_update_matches
       )
         @stubbed_create_case = stubbed_create_case
         @stubbed_create_association = stubbed_create_association
@@ -115,6 +126,7 @@ module Factiva
         @stubbed_get_profile = stubbed_get_profile
         @stubbed_get_matches = stubbed_get_matches
         @stubbed_log_decision = stubbed_log_decision
+        @stubbed_update_matches = stubbed_update_matches
       end
 
       def create_case(**args)
@@ -151,6 +163,10 @@ module Factiva
 
       def log_decision(**args)
         stubbed_log_decision
+      end
+
+      def update_matches(**args)
+        stubbed_update_matches
       end
     end
 
@@ -259,6 +275,20 @@ module Factiva
         .value_or { |error| raise RequestError.new(error) }
     end
 
+    def update_matches(case_id:, matches_data:)
+      params = { json: matches_bulk_body(matches_data) }
+      url = bulk_match_update_url(case_id)
+      headers = {
+        accept: BULK_MATCH_UPDATE_CONTENT_TYPE,
+        content_type: BULK_MATCH_UPDATE_CONTENT_TYPE,
+      }
+
+      # If the request fails auth is reset and the request retried
+      patch(url, params, headers)
+        .or       { set_auth; patch(url, params, headers) }
+        .value_or { |error| raise RequestError.new(error) }
+    end
+
   private
 
     def self.instance
@@ -277,21 +307,21 @@ module Factiva
       make_request(:delete, url)
     end
 
-    def patch(url, params)
-      make_request(:patch, url, params)
+    def patch(url, params, headers = {})
+      make_request(:patch, url, params, headers)
     end
 
     def get(url)
       make_request(:get, url)
     end
 
-    def make_request(http_method, url, params = nil)
+    def make_request(http_method, url, params = nil, headers = {})
       http_params = [http_method, url, params].compact
 
       begin
         response = HTTP
-          .headers(accept: "application/json")
-          .headers("Content-Type" => "application/json")
+          .headers(accept: headers.fetch(:accept, DEFAULT_CONTENT_TYPE))
+          .headers("Content-Type" => headers.fetch(:content_type, DEFAULT_CONTENT_TYPE))
           .timeout(config.timeout)
           .auth("Bearer #{auth.token}")
           .send(*http_params)
@@ -449,6 +479,26 @@ module Factiva
           "type": "match"
         }
       }
+    end
+
+    def matches_bulk_body(matches_data)
+      data = matches_data.map do |match|
+        {
+          "id": match.fetch(:match_id),
+          "type": "matches",
+          "attributes": {
+            "risk_rating": match.fetch(:risk_rating, nil), # optional
+            "current_state": match.fetch(:state),
+            "comment": match.fetch(:comment, nil), # optional
+          }
+        }
+      end
+
+      { "data": data }
+    end
+
+    def bulk_match_update_url(case_id)
+      make_url("risk-entity-screening-cases/#{case_id}/bulk-match-update")
     end
 
     def config

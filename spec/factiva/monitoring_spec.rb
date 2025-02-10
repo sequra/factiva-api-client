@@ -269,5 +269,66 @@ module Factiva
 "comment" => "False positive", "state" => "CLEARED", "risk_rating" => 1 })
       end
     end
+
+    describe "#update_matches" do
+      let(:response) { subject.update_matches(case_id: case_id, matches_data: matches_data) }
+      let(:case_id) { "296373b3-80ee-4fb7-9f2e-b43604051c0b" }
+
+      context "when matches can be updated", vcr: "monitoring/update_matches" do
+        let(:matches_data) { [
+          {
+            match_id: "f9cbfd58dd31f572e979392b3023b2e9ff660023d9ff1e381c4a525c75036daa",
+            comment: "False positive",
+            state: "CLEARED",
+            risk_rating: 1,
+          },
+          {
+            match_id: "16bbd1ae6466bbcb1868ce2f5bda3fede446ac2764146be2dcdc144433928150",
+            comment: "Not the person we were looking for",
+            state: "CLEARED",
+            risk_rating: 1,
+          }
+        ] }
+
+        it "authenticates and updates the matches", :aggregate_failures do
+          expect(response["data"].size).to eq(2)
+          expect(response["data"].first["attributes"]["current_state"]).to eq(
+            "timestamp" => "2025-02-06T11:19:24.528273",
+            "comment" => "Not the person we were looking for",
+            "state" => "CLEARED",
+            "risk_rating" => 1
+          )
+          expect(response["data"].last["attributes"]["current_state"]).to eq(
+            "timestamp" => "2025-02-06T11:19:24.528275",
+            "comment" => "False positive",
+            "state" => "CLEARED",
+            "risk_rating" => 1
+          )
+        end
+      end
+
+      context "when matches can't be updated", vcr: "monitoring/update_matches_invalid" do
+        let(:matches_data) { [
+          {
+            match_id: "invalid",
+            comment: "False positive",
+            state: "CLEARED",
+            risk_rating: 1,
+          },
+          {
+            match_id: "16bbd1ae6466bbcb1868ce2f5bda3fede446ac2764146be2dcdc144433928150",
+            comment: "False positive",
+            state: "CLEARD",
+            risk_rating: 1,
+          }
+        ] }
+
+        it "raises a Factiva::RequestError" do
+          expect {
+            response
+          }.to raise_error(Factiva::RequestError)
+        end
+      end
+    end
   end
 end
