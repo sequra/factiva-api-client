@@ -47,6 +47,22 @@ module Factiva
       instance.get_profile(**args)
     end
 
+    def self.get_matches_stream(**args)
+      limit = args[:limit] || 100
+
+      Enumerator.new do |yielder|
+        offset = 0
+        matches = get_matches(**args.merge(offset:))
+
+        until matches.empty?
+          matches.each { yielder << _1 }
+
+          offset += limit
+          matches = get_matches(**args.merge(offset:))
+        end
+      end
+    end
+
     def self.get_matches(**args)
       instance.get_matches(**args)
     end
