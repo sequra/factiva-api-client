@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.11.0](https://github.com/sequra/factiva-api-client/compare/v0.10.0...v0.11.0) (2025-02-27)
+
+
+### Features
+
+* Add bulk create associations ([#36](https://github.com/sequra/factiva-api-client/issues/36)) ([8f02fb7](https://github.com/sequra/factiva-api-client/commit/8f02fb7c28cbf0162283e7065cf4b8385ef40c39))
+
 ## [0.10.0](https://github.com/sequra/factiva-api-client/compare/v0.9.0...v0.10.0) (2025-02-10)
 
 
