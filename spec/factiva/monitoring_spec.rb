@@ -49,6 +49,36 @@ module Factiva
       end
     end
 
+    describe "#bulk_create_associations" do
+      context "with correct data", vcr: "monitoring/bulk_create_associations" do
+        let(:associations) { [{
+          country: "ES",
+          external_id: "MerchantEntity#123",
+          identification_details: {
+            "type": "1018", # 1018 is for Tax number
+            "value": "foobar"
+          },
+          industry_sector: "iecom", # https://developer.dowjones.com/documents/site-docs-getting_started-data_selection_samples-financial_technology
+          names: [{ entity_name: "Foo", name_type: "PRIMARY" }],
+          record_type: "ENTITY",
+        }] }
+
+        it "authenticates and creates the associations" do
+          response = subject.bulk_create_associations(
+            case_id: "296373b3-80ee-4fb7-9f2e-b43604051c0b",
+            associations: associations
+          )
+          expect(response["data"]["attributes"]).to include(
+            "case_id" => "296373b3-80ee-4fb7-9f2e-b43604051c0b",
+            "operation" => "BULK",
+            "status" => "PROCESSING",
+            "invalid_associations" => 0,
+            "processing_associations" => 1,
+          )
+        end
+      end
+    end
+
     describe "#update_association" do
       context "with correct year", vcr: "monitoring/update_association" do
         let(:sample_data) {
