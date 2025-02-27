@@ -27,6 +27,10 @@ module Factiva
       instance.create_association(**args)
     end
 
+    def self.bulk_create_associations(**args)
+      instance.bulk_create_associations(**args)
+    end
+
     def self.update_association(**args)
       instance.update_association(**args)
     end
@@ -65,6 +69,7 @@ module Factiva
 
     def self.stub!(create_case: {},
         create_association: {},
+        bulk_create_associations: {},
         update_association: {},
         delete_association: {},
         add_association_to_case: {},
@@ -77,6 +82,7 @@ module Factiva
       @instance = MockedRequest.new(
         create_case,
         create_association,
+        bulk_create_associations,
         update_association,
         delete_association,
         add_association_to_case,
@@ -135,6 +141,10 @@ module Factiva
 
       def create_association(**args)
         stubbed_create_association
+      end
+
+      def bulk_create_associations(**args)
+        stubbed_bulk_create_associations
       end
 
       def update_association(**args)
@@ -197,6 +207,16 @@ module Factiva
       # If the request fails auth is reset and the request retried
       post(associations_url, params)
         .or       { set_auth; post(associations_url, params) }
+        .value_or { |error| raise RequestError.new(error) }
+    end
+
+    def bulk_create_associations(case_id:, associations:)
+      params = { json: { data: { attributes: {
+        associations: associations.map { normalize_country(_1) }
+      }, type: "risk-entity-screening-associations" } } }
+
+      post(bulk_create_associations_url(case_id), params)
+        .or       { set_auth; post(bulk_create_associations_url(case_id), params) }
         .value_or { |error| raise RequestError.new(error) }
     end
 
@@ -499,6 +519,17 @@ module Factiva
 
     def bulk_match_update_url(case_id)
       make_url("risk-entity-screening-cases/#{case_id}/bulk-match-update")
+    end
+
+    def bulk_create_associations_url(case_id)
+      make_url("risk-entity-screening-cases/#{case_id}/bulk-associations")
+    end
+
+    def normalize_country(association)
+      country = association[:country]
+      return association unless country.is_a?(String)
+
+      association.merge(country: COUNTRY_IDS.fetch(country))
     end
 
     def config
