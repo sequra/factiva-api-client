@@ -36,7 +36,7 @@ module Factiva
       end
 
       def search(first_name: nil, last_name: nil, birth_date: nil, birth_year: nil,
-                 birth_month: nil, birth_day: nil, offset: 0, limit: 200)
+                 birth_month: nil, birth_day: nil, exclude_pep: false, offset: 0, limit: 200)
         stubbed_search
       end
 
@@ -50,7 +50,7 @@ module Factiva
     end
 
     def search(first_name:, last_name:, birth_date: nil, birth_year: nil,
-               birth_month: nil, birth_day: nil, offset: 0, limit: 200)
+               birth_month: nil, birth_day: nil, exclude_pep: false, offset: 0, limit: 200)
 
       # Birth date takes priority over year, month and day values
       if birth_date
@@ -67,6 +67,7 @@ module Factiva
         birth_year,
         birth_month,
         birth_day,
+        exclude_pep,
         offset,
         limit
       ) }
@@ -145,8 +146,8 @@ module Factiva
       "#{url}/#{suffix}"
     end
 
-    def search_body(first_name, last_name, birth_year, birth_month, birth_day, offset, limit)
-      {
+    def search_body(first_name, last_name, birth_year, birth_month, birth_day, exclude_pep, offset, limit)
+      base = {
         "data" => {
           "type" => "RiskEntitySearch",
           "attributes" => {
@@ -175,6 +176,15 @@ module Factiva
                 )
               },
               "group_operator" => "And"
+            },
+            "filter_group_or": {
+              "filters": {
+                  "occupation_category": {
+                      "is_all_excluded": exclude_pep,
+                      "operator": "Or"
+                  }
+              },
+              "group_operator": "Or"
             }
           }
         }

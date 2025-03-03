@@ -1,0 +1,265 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.dowjones.com/riskentities/search
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"RiskEntitySearch","attributes":{"paging":{"offset":0,"limit":200},"sort":null,"filter_group_and":{"filters":{"content_set":["Watchlist"],"record_types":["Person"],"person_name":{"first_name":"Antonio","last_name":"Diaz
+        González","search_type":"Precise"},"date_of_birth":{"date":{"is_strict_match":true,"year":"1992","month":"12","day":"22"}}},"group_operator":"And"},"filter_group_or":{"filters":{"occupation_category":{"is_all_excluded":false,"operator":"Or"}},"group_operator":"Or"}}}}'
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJJMDBfSlVZVE1OSlRHTVlUT01CU0hBWFVXMlRIT1JWVVFWTFNONTJGTTUyUklWS1dVMjJCTlpLVU1ZWlZNSTRFNFVUMklWNFhTMlNNT0pLRU9PTFBHSkpYRTVMTUtCRkhPMkNMT1ZRVEVMM1RNWlhHSVYyTElaRkVVUkNJTlJFWEtTWlVGTlNYTzQzTktOR1hNS1pWS1ozVElXRFZOVkdVQ1pLR1BGSkRBTUJRR0JGVk1UQlpPTk1XS1dLU05SWUhTT0I1STQifSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5kb3dqb25lcy5jb20vb2F1dGgyL3YyIiwic3ViIjoiYXV0aDB8NjFiMjcyMGYxYzNiMjI1NmQ3ZTM1Mjc2IiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhenAiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlhdCI6MTY1MzMyMDI4MiwiZXhwIjoxNjUzMzIzODgyfQ.TuX-bDij1w-D8ANRRI5vQSEtia6OBzaQyD33SwgJ99sve-PEQFeu16_wNk4YW_Ziyimx-BCME_NXKU0M80J81LZzJwzLvYP8jCB-DTSaMjnF-XzEsl0VjnS18Vd8sWbbU1f9xW6njqGu-4nLIkYkzSLkuuPgPabuXqq0eAwUURA3F_7iTcZ0O25HDmSO8HHx8eNNtR5NjahbrnD27Q2bm89iZ1ZbGeQ89y1YHDMTOd_1mskXRBERlUzneoR6lso0CX1fsEwR3B2RSz-geOREfMIO5xVDPiG9oCSOT0ERapWGg_VOWhS4Ryev3Hp-ZWLbv6N_m7c8okZ0Zd10QbCEDA
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - close
+      Date:
+      - Wed, 05 Mar 2025 09:16:45 GMT
+      B3:
+      - 0c6cb56858b9fd5cdfed3581abb5adf1-4db2f88ef5fa79de-1-31ddcb021e22b315
+      X-Dj-Transaction-Id:
+      - 0c6cb56858b9fd5cdfed3581abb5adf1-4db2f88ef5fa79de
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 b33e450e1cd477843a111c167611fc90.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD56-P2
+      X-Amz-Cf-Id:
+      - G05UPryI6tfqA5cGYqRsZpTiK-FsD_YosVWOP5JVVrKyx-4rYx6pSg==
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"title":"jwt signature verification failed: ''exp'' claim
+        expired at Mon, 23 May 2022 16:38:02 GMT","status":401,"code":1011007}]}'
+  recorded_at: Wed, 05 Mar 2025 09:16:45 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: client_id=<SECRET_CLIENT_ID>&connection=service-account&grant_type=password&password=<SECRET_PASSWORD>&scope=openid+service_account_id+offline_access%3A&username=<SECRET_USERNAME>&device=testdevice
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2071'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 05 Mar 2025 09:16:46 GMT
+      Set-Cookie:
+      - djcs_route=8cd49552-481e-4d75-8bd8-163a13670639; domain=.dowjones.com; path=/;
+        Expires=Sat Mar 03 09:16:46 2035; max-age=315360000;Secure; SameSite=none
+      Vary:
+      - Accept-Encoding
+      X-P-Cache-Control:
+      - no-store
+      X-P-Content-Length:
+      - '2071'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Wed, 05 Mar 2025 09:16:45 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Via:
+      - 1.1 624a1750702d82319b25f17c35c73d04.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - A9ouA7r5Y_Fmnn9SoUwOmD4U90WZk7OvkLJnNhsVCc4VYlucU_jNCg==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2399a583d90a0f74ef1bd2557c02de46.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD53-P4
+      X-Amz-Cf-Id:
+      - KcfarESsyycH-hIfT5opomyP9yGZyDg4VwbuOp-CIJaYG3XWch6YEg==
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFUWTNRVVpETnpaRFF6WTRRa0kyTkRFMk4wSXdRVVZCTXpkRlJqTTNNak0yT1VZeU56aERRZ28ifQ.eyJzdWIiOiI2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJ0aWQiOiJhdXRoIiwiYXpwIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhdXRoX3RpbWUiOjE3NDExNjYyMDYsInNpZCI6Imtzdmdqb1dWUW9NYngwUHZjaTQ2VE4zUHhLRzI5WlJIR1NUQnlNb0dJdE95SUp4Vi1CMHcxQSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJhdF9oYXNoIjoiWHl2Rkl1dzg0TEduTmVUUFN5VEs1QSIsImlhdCI6MTc0MTE2NjIwNiwiZXhwIjoxNzQxNTk4MjA2LCJhdWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlzcyI6Imh0dHBzOi8vYXV0aC5hY2NvdW50cy5kb3dqb25lcy5jb20vIn0.AFlWbSlnqatH-KKbsKs0Gz0qehFW1YAnk_lfdksYc3iyTeV5nagPj_shSFPXQ5yzVhuwTS9sMQtQJyLQFYaXX3KG9XRfkuaHA3Cws_HG7MiWQV4tEkxuIQEfplRgeudGGKPXqnSBYfjJSFrPT5ZVakVjRpt0gG6UEeaB-lfWsjfjtzUrezDDDCfGGBy0XMbJP6gBMKoHuHb6PFT_uLdSVrldzok6TXHtLri_nLQ9E4JZbVuoGQnoXAreUcrlWO9otDbn_PluSjB8j6YIcJVCR2Sm0Z38QVdxB4ItgRGywrEZAMtLxIayjXtwKC5xKzgMod1iLE85xXW97WO1UO9cGA","access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFUWTNRVVpETnpaRFF6WTRRa0kyTkRFMk4wSXdRVVZCTXpkRlJqTTNNak0yT1VZeU56aERRZ28ifQ.eyJzdWIiOiI2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJ0aWQiOiJhdXRoIiwiYXpwIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhdXRoX3RpbWUiOjE3NDExNjYyMDYsInNpZCI6Imtzdmdqb1dWUW9NYngwUHZjaTQ2VE4zUHhLRzI5WlJIR1NUQnlNb0dJdE95SUp4Vi1CMHcxQSIsIm5iZiI6MTc0MTE2NjIwNiwic2NvcGUiOlsib3BlbmlkIiwic2VydmljZV9hY2NvdW50X2lkIiwib2ZmbGluZV9hY2Nlc3M6Il0sImV4cGlyZXNJbiI6NDMyMDAwLCJpYXQiOjE3NDExNjYyMDYsImV4cCI6MTc0MTU5ODIwNiwiYXVkIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJpc3MiOiJodHRwczovL2F1dGguYWNjb3VudHMuZG93am9uZXMuY29tLyJ9.lvjm4OnMpPRE-O4QeOOZEYeVDA9UsEOtTMsHFJZUq4vZkNypyzpVYEHYkam6SOq9PfwAINzId2UqxgGcA4thelvWa68viZXCNBNgsLp_8agrK2AJ_iPW_vPD_7n4vU7HG_8_TSJyWnd2ika3hpRmHaJK_gk9Is4IlI1GNVqf26Hitsbapknq-CLSx_oY8ZTNcpYXs9qgd-gTqtHXvM_WDokWNi1BBJeDcZyW7ZWB7wJoKbTCTBCgEfc2iMa3T9d78cGLLPucCIjpxJYmmBp6h4-eKdqHz9mbXCKOPoZAS7vnvbDA3h6PfAVzrGRSmZRzfvhUnelWEll44whi0-93Ng","refresh_token":"R17411662061iSUE5CRGmQ-uQve6P6eHsUIIeKCrpVj6DdQPziu9aULJn_in4nHyAT","token_type":"bearer"}'
+  recorded_at: Wed, 05 Mar 2025 09:16:46 GMT
+- request:
+    method: post
+    uri: https://accounts.dowjones.com/oauth2/v1/token
+    body:
+      encoding: UTF-8
+      string: assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFUWTNRVVpETnpaRFF6WTRRa0kyTkRFMk4wSXdRVVZCTXpkRlJqTTNNak0yT1VZeU56aERRZ28ifQ.eyJzdWIiOiI2MWIyNzIwZjFjM2IyMjU2ZDdlMzUyNzYiLCJ0aWQiOiJhdXRoIiwiYXpwIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJhdXRoX3RpbWUiOjE3NDExNjYyMDYsInNpZCI6Imtzdmdqb1dWUW9NYngwUHZjaTQ2VE4zUHhLRzI5WlJIR1NUQnlNb0dJdE95SUp4Vi1CMHcxQSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJhdF9oYXNoIjoiWHl2Rkl1dzg0TEduTmVUUFN5VEs1QSIsImlhdCI6MTc0MTE2NjIwNiwiZXhwIjoxNzQxNTk4MjA2LCJhdWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsImlzcyI6Imh0dHBzOi8vYXV0aC5hY2NvdW50cy5kb3dqb25lcy5jb20vIn0.AFlWbSlnqatH-KKbsKs0Gz0qehFW1YAnk_lfdksYc3iyTeV5nagPj_shSFPXQ5yzVhuwTS9sMQtQJyLQFYaXX3KG9XRfkuaHA3Cws_HG7MiWQV4tEkxuIQEfplRgeudGGKPXqnSBYfjJSFrPT5ZVakVjRpt0gG6UEeaB-lfWsjfjtzUrezDDDCfGGBy0XMbJP6gBMKoHuHb6PFT_uLdSVrldzok6TXHtLri_nLQ9E4JZbVuoGQnoXAreUcrlWO9otDbn_PluSjB8j6YIcJVCR2Sm0Z38QVdxB4ItgRGywrEZAMtLxIayjXtwKC5xKzgMod1iLE85xXW97WO1UO9cGA&client_id=<SECRET_CLIENT_ID>&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&scope=openid+pib
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - accounts.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1056'
+      Connection:
+      - close
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 05 Mar 2025 09:16:46 GMT
+      Set-Cookie:
+      - djcs_route=9edd1b06-d17e-4605-b745-f7d4fbbec31a; domain=.dowjones.com; path=/;
+        Expires=Sat Mar 03 09:16:46 2035; max-age=315360000;Secure; SameSite=none
+      Vary:
+      - Accept-Encoding
+      X-P-Cache-Control:
+      - no-store
+      X-P-Content-Length:
+      - '1056'
+      X-P-Content-Type:
+      - application/json; charset=utf-8
+      X-P-Date:
+      - Wed, 05 Mar 2025 09:16:46 GMT
+      X-P-P3p:
+      - CP="CAO DSP COR CURa ADMa DEVi TAIo PSAa PSDa IVDi CONi OTPi OUR OTRi BUS
+        PHY ONL UNI PUR COM NAV INT DEM CNT STA OTC"
+      X-P-Pragma:
+      - no-cache
+      X-P-Via:
+      - 1.1 6ef654a6fd950af1eb6fc4790b972c72.cloudfront.net (CloudFront)
+      X-P-X-Amz-Cf-Id:
+      - xIcg2Al1UN2yzNeXEysESwW-e2mgsksVytyNMbXOSQKP4yGLHeHncQ==
+      X-P-X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-P-X-Cache:
+      - Miss from cloudfront
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 0d0addd1ff32516907e292f3e634231a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD53-P4
+      X-Amz-Cf-Id:
+      - Hd1XzcYoYVbjmPmxE5WY0kVhhLticKKx4lvZOw7yuEXpYaylE74VIw==
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJTMDJZdEpxM0dialpUcW5OcFFuTVRZck05QW1KY2JhUFRVc01UUXZPVE1jM0hibVpUclRSVkpXU1VORlhxRkRRcXpWVGJSNVRxRlZWRTZjIn0sImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZG93am9uZXMuY29tL29hdXRoMi92MiIsInN1YiI6IjYxYjI3MjBmMWMzYjIyNTZkN2UzNTI3NiIsImF1ZCI6ImVOeUhyTDBDTGY0QW1FbGcyZmZCMGRyYWZhVU9Od2NHIiwiYXpwIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJpYXQiOjE3NDExNjYyMDYsImV4cCI6MTc0MTE2OTgwNn0.C8eHbyTQ2bNSrEJfnbttCkfsw5tXf5KLCbYuinC3NTuoghxkweolYsDwPc5h8EixK4cGcqby8tVtbta_evIhT_sB592rNe9ne16vkClInvoCTizfNiwQ_m-7khL8yjeczhUy2iCV37CT4da8tyEeaT-jqPOZUDyOzXB2Gy-sBDwOfLfawjU45LLFuNQ0_Ac3v3-gT6C3iw-rMV8JCqXP0eqr1vJnu53QMikQsmnNT2VojplheT3vUYEAc1QX9buYUL3QXxgb6Ti1zczEm9S2BK1ieNSc3tFCQ3UR574FbkE5vNwEx-FEmS5pBwNmOBPzfI3yplnr7tnUmTuATI2rdA","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Wed, 05 Mar 2025 09:16:46 GMT
+- request:
+    method: post
+    uri: https://api.dowjones.com/riskentities/search
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"RiskEntitySearch","attributes":{"paging":{"offset":0,"limit":200},"sort":null,"filter_group_and":{"filters":{"content_set":["Watchlist"],"record_types":["Person"],"person_name":{"first_name":"Antonio","last_name":"Diaz
+        González","search_type":"Precise"},"date_of_birth":{"date":{"is_strict_match":true,"year":"1992","month":"12","day":"22"}}},"group_operator":"And"},"filter_group_or":{"filters":{"occupation_category":{"is_all_excluded":false,"operator":"Or"}},"group_operator":"Or"}}}}'
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJTMDJZdEpxM0dialpUcW5OcFFuTVRZck05QW1KY2JhUFRVc01UUXZPVE1jM0hibVpUclRSVkpXU1VORlhxRkRRcXpWVGJSNVRxRlZWRTZjIn0sImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZG93am9uZXMuY29tL29hdXRoMi92MiIsInN1YiI6IjYxYjI3MjBmMWMzYjIyNTZkN2UzNTI3NiIsImF1ZCI6ImVOeUhyTDBDTGY0QW1FbGcyZmZCMGRyYWZhVU9Od2NHIiwiYXpwIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJpYXQiOjE3NDExNjYyMDYsImV4cCI6MTc0MTE2OTgwNn0.C8eHbyTQ2bNSrEJfnbttCkfsw5tXf5KLCbYuinC3NTuoghxkweolYsDwPc5h8EixK4cGcqby8tVtbta_evIhT_sB592rNe9ne16vkClInvoCTizfNiwQ_m-7khL8yjeczhUy2iCV37CT4da8tyEeaT-jqPOZUDyOzXB2Gy-sBDwOfLfawjU45LLFuNQ0_Ac3v3-gT6C3iw-rMV8JCqXP0eqr1vJnu53QMikQsmnNT2VojplheT3vUYEAc1QX9buYUL3QXxgb6Ti1zczEm9S2BK1ieNSc3tFCQ3UR574FbkE5vNwEx-FEmS5pBwNmOBPzfI3yplnr7tnUmTuATI2rdA
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/vnd.dowjones.dna.riskentities.v_1.1+json
+      Content-Length:
+      - '2909'
+      Connection:
+      - close
+      Date:
+      - Wed, 05 Mar 2025 09:16:46 GMT
+      B3:
+      - 9ef1c08cc65dd43d86ec557b24e48f22-e0d09088e3257325-1-d8ec8c3023f85377
+      X-Dj-Transaction-Id:
+      - 9ef1c08cc65dd43d86ec557b24e48f22-e0d09088e3257325
+      Request-Uri:
+      - "/riskentities/search"
+      Pattern:
+      - "/riskentities/search$"
+      Vary:
+      - Access-Control-Request-Headers
+      X-Dj-Media-Type:
+      - dowjones.dna;resource=riskentities;version=1.1;format=json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Mesh:
+      - 'true'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 57afd7c325699412aa6569e0643f5f88.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD56-P2
+      X-Amz-Cf-Id:
+      - bPXsZXxJxHcLSZf78fHc6-gQgR1DE7n6n7C2jbi80uTRVDnawPJyuQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJpZCI6IjExMzE0MzM5IiwidHlwZSI6IlJpc2tFbnRpdGllcyIsImF0dHJpYnV0ZXMiOnsidHlwZSI6IlBlcnNvbiIsInByaW1hcnlfbmFtZSI6IkTDrWF6IEdvbnrDoWxleiwgQW50b25pbyIsInRpdGxlIjoiU2VlIFByZXZpb3VzIFJvbGVzIiwiY291bnRyeV90ZXJyaXRvcnlfY29kZSI6IlNQQUlOIiwiY291bnRyeV90ZXJyaXRvcnlfbmFtZSI6IlNwYWluIiwiZ2VuZGVyIjoiTWFsZSIsImlzX3N1YnNpZGlhcnkiOmZhbHNlLCJzY29yZSI6IjAuOTc5MDkwOSIsImNvdW50cmllc190ZXJyaXRvcmllcyI6W3siaXNvX2FscGhhMiI6IkVTIiwiaXNvX2FscGhhMyI6IkVTUCIsInR5cGUiOiJDaXRpemVuc2hpcCIsImNvZGUiOiJTUEFJTiJ9LHsiaXNvX2FscGhhMiI6IkVTIiwiaXNvX2FscGhhMyI6IkVTUCIsInR5cGUiOiJSZXNpZGVudCBvZiIsImNvZGUiOiJTUEFJTiJ9LHsiaXNvX2FscGhhMiI6IkVTIiwiaXNvX2FscGhhMyI6IkVTUCIsInR5cGUiOiJKdXJpc2RpY3Rpb24iLCJjb2RlIjoiU1BBSU4ifV0sIm1hdGNoZWRfY3JpdGVyaWEiOnsiZGF0ZV9vZl9iaXJ0aCI6eyJkYXkiOiIiLCJtb250aCI6IiIsInllYXIiOiIifSwibmFtZSI6eyJuYW1lIjoiQW50b25pbyBEw61heiBHb256w6FsZXoifSwidHlwZSI6eyJ0eXBlIjoiUHJlY2lzZSIsImlzX2xpbmd1aXN0aWNfdmFyaWF0aW9uIjpmYWxzZSwiaXNfbm9uX2xpbmd1aXN0aWNfdmFyaWF0aW9uIjpmYWxzZSwiaXNfc3RydWN0dXJhbF92YXJpYXRpb24iOmZhbHNlfX0sImljb25faGludHMiOlsiUEVQIl19fSx7ImlkIjoiMTI0NzEwMiIsInR5cGUiOiJSaXNrRW50aXRpZXMiLCJhdHRyaWJ1dGVzIjp7InR5cGUiOiJQZXJzb24iLCJwcmltYXJ5X25hbWUiOiJEw61heiBHb256w6FsZXosIEp1YW4gQW50b25pbyIsInRpdGxlIjoiQ291bmNpbGxvciwgQWxkZWF2aWVqYSBkZSBUb3JtZXMiLCJjb3VudHJ5X3RlcnJpdG9yeV9jb2RlIjoiU1BBSU4iLCJjb3VudHJ5X3RlcnJpdG9yeV9uYW1lIjoiU3BhaW4iLCJnZW5kZXIiOiJNYWxlIiwiaXNfc3Vic2lkaWFyeSI6ZmFsc2UsInNjb3JlIjoiMC45NTA3OTgyIiwiY291bnRyaWVzX3RlcnJpdG9yaWVzIjpbeyJpc29fYWxwaGEyIjoiRVMiLCJpc29fYWxwaGEzIjoiRVNQIiwidHlwZSI6IkNpdGl6ZW5zaGlwIiwiY29kZSI6IlNQQUlOIn0seyJpc29fYWxwaGEyIjoiRVMiLCJpc29fYWxwaGEzIjoiRVNQIiwidHlwZSI6IlJlc2lkZW50IG9mIiwiY29kZSI6IlNQQUlOIn0seyJpc29fYWxwaGEyIjoiRVMiLCJpc29fYWxwaGEzIjoiRVNQIiwidHlwZSI6Ikp1cmlzZGljdGlvbiIsImNvZGUiOiJTUEFJTiJ9XSwibWF0Y2hlZF9jcml0ZXJpYSI6eyJkYXRlX29mX2JpcnRoIjp7ImRheSI6IiIsIm1vbnRoIjoiIiwieWVhciI6IiJ9LCJuYW1lIjp7Im5hbWUiOiJKdWFuIEFudG9uaW8gRMOtYXogR29uesOhbGV6In0sInR5cGUiOnsidHlwZSI6IlByZWNpc2UiLCJpc19saW5ndWlzdGljX3ZhcmlhdGlvbiI6ZmFsc2UsImlzX25vbl9saW5ndWlzdGljX3ZhcmlhdGlvbiI6ZmFsc2UsImlzX3N0cnVjdHVyYWxfdmFyaWF0aW9uIjp0cnVlfX0sImljb25faGludHMiOlsiUEVQIl19fSx7ImlkIjoiMTU2NjkxOCIsInR5cGUiOiJSaXNrRW50aXRpZXMiLCJhdHRyaWJ1dGVzIjp7InR5cGUiOiJQZXJzb24iLCJwcmltYXJ5X25hbWUiOiJEw61heiBHb256w6FsZXosIE1hbnVlbCBBbnRvbmlvIiwidGl0bGUiOiJDb3VuY2lsbG9yLCBMYSBBbGJ1ZXJhIiwiY291bnRyeV90ZXJyaXRvcnlfY29kZSI6IlNQQUlOIiwiY291bnRyeV90ZXJyaXRvcnlfbmFtZSI6IlNwYWluIiwiZ2VuZGVyIjoiTWFsZSIsImlzX3N1YnNpZGlhcnkiOmZhbHNlLCJzY29yZSI6IjAuOTUwNzk4MiIsImNvdW50cmllc190ZXJyaXRvcmllcyI6W3siaXNvX2FscGhhMiI6IkVTIiwiaXNvX2FscGhhMyI6IkVTUCIsInR5cGUiOiJDaXRpemVuc2hpcCIsImNvZGUiOiJTUEFJTiJ9LHsiaXNvX2FscGhhMiI6IkVTIiwiaXNvX2FscGhhMyI6IkVTUCIsInR5cGUiOiJSZXNpZGVudCBvZiIsImNvZGUiOiJTUEFJTiJ9LHsiaXNvX2FscGhhMiI6IkVTIiwiaXNvX2FscGhhMyI6IkVTUCIsInR5cGUiOiJKdXJpc2RpY3Rpb24iLCJjb2RlIjoiU1BBSU4ifV0sIm1hdGNoZWRfY3JpdGVyaWEiOnsiZGF0ZV9vZl9iaXJ0aCI6eyJkYXkiOiIiLCJtb250aCI6IiIsInllYXIiOiIifSwibmFtZSI6eyJuYW1lIjoiTWFudWVsIEFudG9uaW8gRMOtYXogR29uesOhbGV6In0sInR5cGUiOnsidHlwZSI6IlByZWNpc2UiLCJpc19saW5ndWlzdGljX3ZhcmlhdGlvbiI6ZmFsc2UsImlzX25vbl9saW5ndWlzdGljX3ZhcmlhdGlvbiI6ZmFsc2UsImlzX3N0cnVjdHVyYWxfdmFyaWF0aW9uIjp0cnVlfX0sImljb25faGludHMiOlsiUEVQIl19fV0sIm1ldGEiOnsiY291bnQiOjMsImZpcnN0IjowLCJsYXN0IjowLCJ0b3RhbF9jb3VudCI6Mywic2NyZWVuaW5nX2NvbnRleHQiOiJINHNJQUFBQUFBQUEvMjFSdTI3RE1BejhsWUt6aDlSYnZCVm8wYkZCTTNRSUNvR1JhRWVvTEJrU0RjUUovREg5bHY1WUtjWG9JOGdrOG80Nkhza3pHR1NFNWd6SUhPMStaRW81RzdDenZzdFJhTnRFRE0ycUFtZDdLMUc5V3MwVkpCMkp2QlFwSFR6VFVRaUFDbHJybUtMcVloZ0hGV0pXV09LQkluSkc0Q1grRkpabVFldHhRTGJCSzQxTVhZaFRoblV3MmN6dXZRSTZhamNhVW4rZ2F6MmJGRHFubGtvRFRZc3UwUVUzS1Y0VDh6eGZtVVZ2YnJwOUVQeWYzVEt2WjFYV3NvTTNaSDF3TmpHSXEwZzZSS040R29wUDJNaWY0RE16bEVoNTdDbUx0RFltWGpKcHdjSGJJRzBjL3FLUEZrOTN6OEdmdmo0ZG5ZUk1oRkVmaXJqUUcrbGxFNEhNSVRja0ZWcTF0NUVQV1QwRGwxYzJDWFV0bjN0eExSemM1MlFTcFJ5djEvVmxkVW1PcjFuMWVSWm9PSTQwRjl5UUpreGticXhQQ2hZbnJ6WjlQSG0yUEcyTFE1am5iMjlPaTMxWUFnQUEifX0=
+  recorded_at: Wed, 05 Mar 2025 09:16:46 GMT
+recorded_with: VCR 6.0.0
