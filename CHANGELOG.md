@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.11.1](https://github.com/sequra/factiva-api-client/compare/v0.11.0...v0.11.1) (2025-03-03)
+
+
+### Bug Fixes
+
+* Add missing stub for bulk_create_associations ([#38](https://github.com/sequra/factiva-api-client/issues/38)) ([87b40d4](https://github.com/sequra/factiva-api-client/commit/87b40d46672b1fbf9ba428a2fa2a08122b90aad5))
+
 ## [0.11.0](https://github.com/sequra/factiva-api-client/compare/v0.10.0...v0.11.0) (2025-02-27)
 
 
