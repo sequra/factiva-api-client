@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.12.0](https://github.com/sequra/factiva-api-client/compare/v0.11.1...v0.12.0) (2025-03-04)
+
+
+### Features
+
+* Add all factiva countries ([#40](https://github.com/sequra/factiva-api-client/issues/40)) ([76f2bad](https://github.com/sequra/factiva-api-client/commit/76f2bad160b2922af942a3b518bb1c12aa096c2f))
+
 ## [0.11.1](https://github.com/sequra/factiva-api-client/compare/v0.11.0...v0.11.1) (2025-03-03)
 
 
