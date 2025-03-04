@@ -6,13 +6,6 @@ module Factiva
   class Monitoring
     include Dry::Monads[:result]
 
-    COUNTRY_IDS = {
-      "ES" => "SPAIN",
-      "FR" => "FRA",
-      "IT" => "ITALY",
-      "PT" => "PORL",
-    }.freeze
-
     DEFAULT_CONTENT_TYPE = "application/json".freeze
     BULK_MATCH_UPDATE_CONTENT_TYPE = "application/vnd.dowjones.dna.bulk-match-update.v_1.2+json".freeze
 
@@ -203,7 +196,7 @@ module Factiva
           birth_year,
           external_id,
           nin,
-          COUNTRY_IDS.fetch(country_code),
+          Countries.from_iso_alpha2(country_code),
         )
       }
 
@@ -230,7 +223,7 @@ module Factiva
         params.fetch(:birth_year),
         params.fetch(:external_id),
         params.fetch(:nin),
-        COUNTRY_IDS.fetch(params.fetch(:country_code)),
+        Countries.from_iso_alpha2(params.fetch(:country_code)),
       ) }
 
       url = association_url(association_id)
@@ -532,7 +525,7 @@ module Factiva
       country = association[:country]
       return association unless country.is_a?(String)
 
-      association.merge(country: COUNTRY_IDS.fetch(country))
+      association.merge(country: Countries.from_iso_alpha2(country))
     end
 
     def config
