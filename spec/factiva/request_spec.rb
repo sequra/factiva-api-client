@@ -112,9 +112,10 @@ module Factiva
               exclude_pep: exclude_pep
             }
           end
-          let(:exclude_pep) { false }
 
           context "when exclude_pep is false", vcr: "search/without_exclude_pep" do
+            let(:exclude_pep) { false }
+
             it "returns search info" do
               response = subject.search(**params)
 
@@ -141,6 +142,7 @@ module Factiva
       context "Search returns error on the first try", vcr: "search/error_first_try" do
         it "retries the request" do
           response = subject.search(**params)
+
           expect(response["meta"]["total_count"]).to eq(93)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end
