@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.13.0](https://github.com/sequra/factiva-api-client/compare/v0.12.0...v0.13.0) (2025-03-06)
+
+
+### Features
+
+* Add parameter to exclude PEP from search ([#42](https://github.com/sequra/factiva-api-client/issues/42)) ([991fdda](https://github.com/sequra/factiva-api-client/commit/991fdda82b71d6ac6dcc0586086ced6a9e4c3330))
+
 ## [0.12.0](https://github.com/sequra/factiva-api-client/compare/v0.11.1...v0.12.0) (2025-03-04)
 
 
