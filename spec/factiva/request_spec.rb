@@ -99,11 +99,50 @@ module Factiva
             expect(response["data"][0]["type"]).to eq("RiskEntities")
           end
         end
+
+        context "with exclude_pep option" do
+          let(:params) do
+            {
+              first_name: "Antonio",
+              last_name: "Diaz González",
+              birth_date: Date.new(1992, 12, 22),
+              birth_year: "1980",
+              birth_month: "5",
+              birth_day: "11",
+              exclude_pep: exclude_pep
+            }
+          end
+
+          context "when exclude_pep is false", vcr: "search/without_exclude_pep" do
+            let(:exclude_pep) { false }
+
+            it "returns search info" do
+              response = subject.search(**params)
+
+              expect(response["meta"]["total_count"]).to eq(3)
+              expect(response["data"][0]["type"]).to eq("RiskEntities")
+              expect(response["data"][0]["attributes"]["icon_hints"]).to match_array("PEP")
+              expect(response["data"][1]["attributes"]["icon_hints"]).to match_array("PEP")
+              expect(response["data"][2]["attributes"]["icon_hints"]).to match_array("PEP")
+            end
+          end
+
+          context "when exclude_pep is true", vcr: "search/exclude_pep" do
+            let(:exclude_pep) { true }
+
+            it "returns search info" do
+              response = subject.search(**params)
+
+              expect(response["meta"]["total_count"]).to eq(0)
+            end
+          end
+        end
       end
 
       context "Search returns error on the first try", vcr: "search/error_first_try" do
         it "retries the request" do
           response = subject.search(**params)
+
           expect(response["meta"]["total_count"]).to eq(93)
           expect(response["data"][0]["type"]).to eq("RiskEntities")
         end

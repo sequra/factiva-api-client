@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.dowjones.com/riskentities/search
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"RiskEntitySearch","attributes":{"paging":{"offset":0,"limit":200},"sort":null,"filter_group_and":{"filters":{"content_set":["Watchlist"],"record_types":["Person"],"person_name":{"first_name":"Antonio","last_name":"Diaz
+        González","search_type":"Precise"},"date_of_birth":{"date":{"is_strict_match":true,"year":"1992","month":"12","day":"22"}}},"group_operator":"And"},"filter_group_or":{"filters":{"occupation_category":{"is_all_excluded":true,"operator":"Or"}},"group_operator":"Or"}}}}'
+    headers:
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJlTnlIckwwQ0xmNEFtRWxnMmZmQjBkcmFmYVVPTndjRyIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAyMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJTMDJZdEpxM0dialpUcW5OcFFuTVRZck05QW1KY2JhUFRVc01UUXZPVE1jM0hibVpUclRSVkpXU1VORlhxRkRRcXpWVGJSNVRxRlZWRTZjIn0sImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZG93am9uZXMuY29tL29hdXRoMi92MiIsInN1YiI6IjYxYjI3MjBmMWMzYjIyNTZkN2UzNTI3NiIsImF1ZCI6ImVOeUhyTDBDTGY0QW1FbGcyZmZCMGRyYWZhVU9Od2NHIiwiYXpwIjoiZU55SHJMMENMZjRBbUVsZzJmZkIwZHJhZmFVT053Y0ciLCJpYXQiOjE3NDExNjYyMDYsImV4cCI6MTc0MTE2OTgwNn0.C8eHbyTQ2bNSrEJfnbttCkfsw5tXf5KLCbYuinC3NTuoghxkweolYsDwPc5h8EixK4cGcqby8tVtbta_evIhT_sB592rNe9ne16vkClInvoCTizfNiwQ_m-7khL8yjeczhUy2iCV37CT4da8tyEeaT-jqPOZUDyOzXB2Gy-sBDwOfLfawjU45LLFuNQ0_Ac3v3-gT6C3iw-rMV8JCqXP0eqr1vJnu53QMikQsmnNT2VojplheT3vUYEAc1QX9buYUL3QXxgb6Ti1zczEm9S2BK1ieNSc3tFCQ3UR574FbkE5vNwEx-FEmS5pBwNmOBPzfI3yplnr7tnUmTuATI2rdA
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/vnd.dowjones.dna.riskentities.v_1.1+json
+      Content-Length:
+      - '538'
+      Connection:
+      - close
+      Date:
+      - Wed, 05 Mar 2025 09:16:47 GMT
+      B3:
+      - 9f7388f73d390271c6ac70c67cfb5118-1720fa560c971afc-1-6bd8ec467ec89147
+      X-Dj-Transaction-Id:
+      - 9f7388f73d390271c6ac70c67cfb5118-1720fa560c971afc
+      Request-Uri:
+      - "/riskentities/search"
+      Pattern:
+      - "/riskentities/search$"
+      Vary:
+      - Access-Control-Request-Headers
+      X-Dj-Media-Type:
+      - dowjones.dna;resource=riskentities;version=1.1;format=json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Mesh:
+      - 'true'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 a21dc4de5833aaa6d917631becb22680.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MAD56-P2
+      X-Amz-Cf-Id:
+      - 8z6pWbAVioPTRhzCCL2s6qhHYcCZVXj9vWVgS6uHTLqvKcP0IAyaFw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"meta":{"count":0,"first":0,"last":0,"total_count":0,"screening_context":"H4sIAAAAAAAA/21RwU7DMAz9FeRzD6O37YYE4sgEBw4TirzE7SLSpEpcad3Uj+Fb+DGctIIx7ZTnZ+f52T6DQUbYnAGZo90PTClHPbbWtxmFpknEsFlV4GxnBdWr1VRB0pHIS5HSwTMdJQFQQWMdU1RtDEOvQswKC+4pImcGXuJvYWkWtB56ZBu80sjUhjhmWgeTzew+KqCjdoMhdUFd69mk0Dm1VBrYcBxopk2KF3yDLtE0TVde0ZubZh+E/+e2jOtZla3s4B1ZH5xNDGIqkg7RKB77YhO28if4nOkLUh47yiKNjYmXSFpw8DZIG4d/7KPF091z8KfvL0cnSSbCqA9FXNJb6WUTgcwhJyQVGrW3kQ9ZPRPzK4uEupbPnbiWHNznYBSljNfret5ckttrVl2eZd7cVHhDmjCRubE+KVicvNr0+eTZ8vhWHMI0/QCahWwrVwIAAA=="}}'
+  recorded_at: Wed, 05 Mar 2025 09:16:47 GMT
+recorded_with: VCR 6.0.0
