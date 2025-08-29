@@ -120,7 +120,7 @@ module Factiva
       )
         @stubbed_create_case = stubbed_create_case
         @stubbed_create_association = stubbed_create_association
-        @stubbed_create_association = stubbed_bulk_create_associations
+        @stubbed_bulk_create_associations = stubbed_bulk_create_associations
         @stubbed_update_association = stubbed_update_association
         @stubbed_delete_association = stubbed_delete_association
         @stubbed_add_association_to_case = stubbed_add_association_to_case
