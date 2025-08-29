@@ -10,7 +10,7 @@ gem "rake", "~> 13.0"
 group :development, :test do
   gem "pry", "~> 0.14.1"
   gem "rspec", "~> 3.0"
-  gem "sequra-style", "~> 0.1", git: "https://github.com/sequra/sequra-style", require: false
+  gem "sequra-style", "~> 1.3.3", git: "https://github.com/sequra/sequra-style", require: false
 end
 
 group :test do
