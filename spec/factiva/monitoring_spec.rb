@@ -11,6 +11,56 @@ module Factiva
       end
     end
 
+    describe "#list_associations" do
+      context "when there are associations", vcr: "monitoring/list_associations" do
+        let(:response) { subject.list_associations }
+
+        it "authenticates and returns a list of associations" do
+          expect(response["data"].size).to eq(2)
+
+          first_match = response["data"].first
+          expect(first_match["type"]).to eq("risk-entity-screening-associations")
+          expect(first_match["id"]).to eq("000001a1-9712-40bb-a76f-2fddfc46ae7b")
+
+          expect(first_match["attributes"]["country"]).to eq("SPAIN")
+          expect(first_match["attributes"]["record_type"]).to eq("PERSON")
+          expect(first_match["attributes"]["year_of_birth"]).to eq(1969)
+          expect(first_match["attributes"]["is_deceased"]).to be_falsey
+          expect(first_match["attributes"]["external_id"]).to eq("sequra/Shopper::User#2510721")
+          expect(first_match["attributes"]["names"].size).to eq(1)
+          expect(first_match["attributes"]["names"].first["name_type"]).to eq("PRIMARY")
+          expect(first_match["attributes"]["names"].first["first_name"]).to eq("Fernando")
+          expect(first_match["attributes"]["names"].first["last_name"]).to eq("Moreira Arthas")
+
+          second_match = response["data"][1]
+          expect(second_match["type"]).to eq("risk-entity-screening-associations")
+          expect(second_match["id"]).to eq("00000977-65df-47db-882d-0f80041624b5")
+
+          expect(second_match["attributes"]["country"]).to eq("FRANCE")
+          expect(second_match["attributes"]["record_type"]).to eq("PERSON")
+          expect(second_match["attributes"]["year_of_birth"]).to eq(1993)
+          expect(second_match["attributes"]["is_deceased"]).to be_truthy
+          expect(second_match["attributes"]["external_id"]).to eq("sequra/Shopper::User#2343362")
+          expect(second_match["attributes"]["names"].size).to eq(1)
+          expect(second_match["attributes"]["names"].first["name_type"]).to eq("PRIMARY")
+          expect(second_match["attributes"]["names"].first["first_name"]).to eq("Lara")
+          expect(second_match["attributes"]["names"].first["last_name"]).to eq("Horde Alliance")
+        end
+
+        it "returns metadata" do
+          expect(response["meta"]).to include(
+            "count" => 2,
+            "total_count" => 2,
+            "offset" => {
+              "last" => "2",
+              "next" => "2",
+              "first" => "0"
+            },
+          )
+        end
+      end
+    end
+
     describe "#create_association" do
       context "with correct year", vcr: "monitoring/create_association" do
         let(:sample_data) {
