@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.14.0](https://github.com/sequra/factiva-api-client/compare/v0.13.0...v0.14.0) (2025-09-01)
+
+
+### Features
+
+* Add `list associations` call ([#44](https://github.com/sequra/factiva-api-client/issues/44)) ([da4ede0](https://github.com/sequra/factiva-api-client/commit/da4ede0234f9582f9e273d853137799d851741fe))
+
 ## [0.13.0](https://github.com/sequra/factiva-api-client/compare/v0.12.0...v0.13.0) (2025-03-06)
 
 
