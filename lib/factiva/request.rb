@@ -118,7 +118,8 @@ module Factiva
         if response.status.success?
           Success(response_body)
         else
-          Failure({ code: response.code, error: response_body["error"] }.to_s)
+          error_message = response_body["error"] || response_body["errors"]
+          Failure({ code: response.code, error: error_message }.to_s)
         end
       rescue HTTP::TimeoutError
         # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError

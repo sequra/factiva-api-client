@@ -161,10 +161,13 @@ module Factiva
       end
 
       context "when factiva returns an error", vcr: "monitoring/delete_association_invalid" do
-        it "raises a Factiva::RequestError" do
+        it "raises a Factiva::RequestError with error details from the 'errors' key" do
           expect {
             subject.delete_association(association_id: "invalid_id")
-          }.to raise_error(Factiva::RequestError)
+          }.to raise_error(Factiva::RequestError) { |error|
+            expect(error.message).to include("404")
+            expect(error.message).to include("Association with id invalid_id not found.")
+          }
         end
       end
     end
@@ -403,10 +406,13 @@ module Factiva
           }
         ] }
 
-        it "raises a Factiva::RequestError" do
+        it "raises a Factiva::RequestError with error details from the 'errors' key" do
           expect {
             response
-          }.to raise_error(Factiva::RequestError)
+          }.to raise_error(Factiva::RequestError) { |error|
+            expect(error.message).to include("400")
+            expect(error.message).to include("match not found")
+          }
         end
       end
     end
