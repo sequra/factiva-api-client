@@ -153,9 +153,11 @@ In case you want to use the gem in our of our application from your local code, 
 
 ### Releasing a new version
 
-A new version is released when the code is merged to `master` branch if you have conventional commits:
+This project uses [release-please](https://github.com/googleapis/release-please) to automate releases. A new version is released when a commit with a [Conventional Commits](https://www.conventionalcommits.org/) message is pushed to `master`:
 
-* Use fix: for patches.
-* Use feat: for minor releases.
-* Use feat!: or BREAKING CHANGE: for major releases.
-* Other types (chore:, docs:, test:) will not trigger a release.
+* Use `fix:` for patches.
+* Use `feat:` for minor releases.
+* Use `feat!:` or `BREAKING CHANGE:` for major releases.
+* Other types (`chore:`, `docs:`, `test:`) will not trigger a release.
+
+**Important:** When merging PRs via squash merge, GitHub uses the **PR title** as the commit message. The PR title must follow Conventional Commits format (e.g. `fix: handle errors key in API responses`). A title starting with a Jira ticket prefix like `[PROJ-123]` will not be parsed by release-please and no release will be created.
