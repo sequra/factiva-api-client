@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.14.1](https://github.com/sequra/factiva-api-client/compare/v0.14.0...v0.14.1) (2026-04-21)
+
+
+### Bug Fixes
+
+* handle 'errors' key in API error responses ([#46](https://github.com/sequra/factiva-api-client/issues/46)) ([dc4a8e4](https://github.com/sequra/factiva-api-client/commit/dc4a8e4c088688774842519a4db13e85a5677c15))
+
 ## [0.14.0](https://github.com/sequra/factiva-api-client/compare/v0.13.0...v0.14.0) (2025-09-01)
 
 
