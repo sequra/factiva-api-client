@@ -199,7 +199,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       post(create_case_url, params)
         .or       { set_auth; post(create_case_url, params) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def create_association(first_name:, last_name:, birth_year:, external_id:, nin:, country_code:)
@@ -216,14 +216,14 @@ module Factiva
       # If the request fails auth is reset and the request retried
       post(associations_url, params)
         .or       { set_auth; post(associations_url, params) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def list_associations(offset: 0, limit: 100, filter_correlated: false)
       # If the request fails auth is reset and the request retried
       get(list_associations_url(offset: offset, limit: limit, filter_correlated: filter_correlated))
         .or       { set_auth; get(list_associations_url(offset: offset, limit: limit, filter_correlated: filter_correlated)) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def bulk_create_associations(case_id:, associations:)
@@ -233,7 +233,7 @@ module Factiva
 
       post(bulk_create_associations_url(case_id), params)
         .or       { set_auth; post(bulk_create_associations_url(case_id), params) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def update_association(association_id:, params:)
@@ -251,7 +251,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       patch(url, params)
         .or       { set_auth; patch(url, params) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def delete_association(association_id:)
@@ -260,7 +260,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       delete(url)
         .or       { set_auth; delete(url) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def add_association_to_case(case_id:, association_id:)
@@ -272,7 +272,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       post(case_associations_url(case_id), params)
         .or       { set_auth; post(case_associations_url(case_id), params) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def remove_association_from_case(case_id:, association_id:)
@@ -281,7 +281,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       delete(url)
         .or       { set_auth; delete(url) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def get_matches(case_id:, offset: 0, limit: 100, has_alerts: "any", is_match_valid: "any")
@@ -296,7 +296,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       get(url)
         .or       { set_auth; get(url) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def log_decision(case_id:, match_id:, comment:, state:, risk_rating:)
@@ -308,7 +308,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       patch(log_decision_url(case_id, match_id), params)
         .or       { set_auth; patch(log_decision_url(case_id, match_id), params) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def update_matches(case_id:, matches_data:)
@@ -322,7 +322,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       patch(url, params, headers)
         .or       { set_auth; patch(url, params, headers) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
   private
@@ -368,7 +368,7 @@ module Factiva
           Success(response_body)
         else
           error_message = response_body["error"] || response_body["errors"]
-          Failure({ code: response.code, error: error_message }.to_s)
+          Failure({ code: response.code, error: error_message })
         end
       rescue HTTP::TimeoutError
         # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError

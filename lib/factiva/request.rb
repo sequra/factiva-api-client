@@ -75,7 +75,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       post(search_url, params)
         .or       { set_auth; post(search_url, params) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
     def profile(profile_id)
@@ -84,7 +84,7 @@ module Factiva
       # If the request fails auth is reset and the request retried
       get(url)
         .or       { set_auth; get(url) }
-        .value_or { |error| raise RequestError.new(error) }
+        .value_or { |error| raise RequestError.from_response(error) }
     end
 
   private
@@ -119,7 +119,7 @@ module Factiva
           Success(response_body)
         else
           error_message = response_body["error"] || response_body["errors"]
-          Failure({ code: response.code, error: error_message }.to_s)
+          Failure({ code: response.code, error: error_message })
         end
       rescue HTTP::TimeoutError
         # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError
