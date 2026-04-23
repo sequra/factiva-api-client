@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.15.0](https://github.com/sequra/factiva-api-client/compare/v0.14.1...v0.15.0) (2026-04-23)
+
+
+### Features
+
+* add status_code and error_body attributes to RequestError ([#49](https://github.com/sequra/factiva-api-client/issues/49)) ([f00cc1a](https://github.com/sequra/factiva-api-client/commit/f00cc1a7a4176c7e314a526e3ccfce4f03a55fe0))
+
 ## [0.14.1](https://github.com/sequra/factiva-api-client/compare/v0.14.0...v0.14.1) (2026-04-21)
 
 
