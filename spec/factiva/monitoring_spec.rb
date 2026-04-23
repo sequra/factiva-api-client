@@ -167,6 +167,9 @@ module Factiva
           }.to raise_error(Factiva::RequestError) { |error|
             expect(error.message).to include("404")
             expect(error.message).to include("Association with id invalid_id not found.")
+            expect(error.status_code).to eq(404)
+            expect(error.error_body).to be_an(Array)
+            expect(error.error_body.first["detail"]).to include("Association with id invalid_id not found.")
           }
         end
       end
@@ -412,6 +415,8 @@ module Factiva
           }.to raise_error(Factiva::RequestError) { |error|
             expect(error.message).to include("400")
             expect(error.message).to include("match not found")
+            expect(error.status_code).to eq(400)
+            expect(error.error_body).to be_an(Array)
           }
         end
       end
