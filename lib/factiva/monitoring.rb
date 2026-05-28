@@ -219,10 +219,12 @@ module Factiva
         .value_or { |error| raise RequestError.from_response(error) }
     end
 
-    def list_associations(offset: 0, limit: 100, filter_correlated: false)
+    def list_associations(offset: 0, limit: 100, filter_correlated: false, timeout: nil)
+      url = list_associations_url(offset: offset, limit: limit, filter_correlated: filter_correlated)
+
       # If the request fails auth is reset and the request retried
-      get(list_associations_url(offset: offset, limit: limit, filter_correlated: filter_correlated))
-        .or       { set_auth; get(list_associations_url(offset: offset, limit: limit, filter_correlated: filter_correlated)) }
+      get(url, timeout: timeout)
+        .or       { set_auth; get(url, timeout: timeout) }
         .value_or { |error| raise RequestError.from_response(error) }
     end
 
@@ -347,18 +349,18 @@ module Factiva
       make_request(:patch, url, params, headers)
     end
 
-    def get(url)
-      make_request(:get, url)
+    def get(url, timeout: nil)
+      make_request(:get, url, nil, {}, timeout)
     end
 
-    def make_request(http_method, url, params = nil, headers = {})
+    def make_request(http_method, url, params = nil, headers = {}, timeout = nil)
       http_params = [http_method, url, params].compact
 
       begin
         response = HTTP
           .headers(accept: headers.fetch(:accept, DEFAULT_CONTENT_TYPE))
           .headers("Content-Type" => headers.fetch(:content_type, DEFAULT_CONTENT_TYPE))
-          .timeout(config.timeout)
+          .timeout(timeout || config.timeout)
           .auth("Bearer #{auth.token}")
           .send(*http_params)
 

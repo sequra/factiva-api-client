@@ -59,6 +59,34 @@ module Factiva
           )
         end
       end
+
+      context "with a timeout override", vcr: "monitoring/list_associations" do
+        it "passes the override to the HTTP client" do
+          timeouts_used = []
+          allow_any_instance_of(HTTP::Client).to receive(:timeout).and_wrap_original do |original, value|
+            timeouts_used << value
+            original.call(value)
+          end
+
+          subject.list_associations(timeout: 42)
+
+          expect(timeouts_used).to include(42)
+        end
+      end
+
+      context "without a timeout override", vcr: "monitoring/list_associations" do
+        it "falls back to config.timeout" do
+          timeouts_used = []
+          allow_any_instance_of(HTTP::Client).to receive(:timeout).and_wrap_original do |original, value|
+            timeouts_used << value
+            original.call(value)
+          end
+
+          subject.list_associations
+
+          expect(timeouts_used).to include(Factiva.configuration(Factiva::MONITORING_API_ACCOUNT).timeout)
+        end
+      end
     end
 
     describe "#create_association" do
