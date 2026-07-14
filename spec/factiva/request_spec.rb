@@ -150,7 +150,8 @@ module Factiva
 
       context "Search returns error twice", vcr: "search/error_twice" do
         before do
-          allow_any_instance_of(HTTP::Client).to receive(:post).and_raise(SocketError)
+          # `perform` is the common request path in both http 5 (Client) and http 6 (Session -> Client)
+          allow_any_instance_of(HTTP::Client).to receive(:perform).and_raise(SocketError)
         end
 
         it "raises an exception" do
@@ -208,7 +209,8 @@ module Factiva
 
       context "Profile returns error twice", vcr: "profile/error_twice" do
         before do
-          allow_any_instance_of(HTTP::Client).to receive(:get).and_raise(SocketError)
+          # `perform` is the common request path in both http 5 (Client) and http 6 (Session -> Client)
+          allow_any_instance_of(HTTP::Client).to receive(:perform).and_raise(SocketError)
         end
 
         it "raises an exception" do

@@ -105,13 +105,11 @@ module Factiva
     end
 
     def make_request(method, url, params = nil)
-      http_params = method == :post ? [:post, url, params] : [:get, url]
-
       begin
         response = HTTP
           .timeout(config.timeout)
           .auth("Bearer #{auth.token}")
-          .send(*http_params)
+          .send(method, url, **(params || {}))
 
         response_body = JSON.parse(response.body.to_s)
 
