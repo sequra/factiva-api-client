@@ -192,6 +192,7 @@ module Factiva
     def self.instance
       @instance ||= new
     end
+
     def initialize
       set_auth
     end
