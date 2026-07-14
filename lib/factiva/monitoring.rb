@@ -189,6 +189,9 @@ module Factiva
       end
     end
 
+    def self.instance
+      @instance ||= new
+    end
     def initialize
       set_auth
     end
@@ -327,9 +330,6 @@ module Factiva
 
   private
 
-    def self.instance
-      @instance ||= new
-    end
 
     def set_auth
       @auth = Authentication.new(config)
