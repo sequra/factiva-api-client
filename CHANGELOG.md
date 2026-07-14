@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.16.0](https://github.com/sequra/factiva-api-client/compare/v0.15.0...v0.16.0) (2026-07-14)
+
+
+### Features
+
+* support http gem 6 alongside 5 ([#52](https://github.com/sequra/factiva-api-client/issues/52)) ([6a3da30](https://github.com/sequra/factiva-api-client/commit/6a3da30551bc5ae22aee7810baad939390e7fd7f))
+
 ## [0.15.0](https://github.com/sequra/factiva-api-client/compare/v0.14.1...v0.15.0) (2026-04-23)
 
 
