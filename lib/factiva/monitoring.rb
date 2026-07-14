@@ -189,6 +189,10 @@ module Factiva
       end
     end
 
+    def self.instance
+      @instance ||= new
+    end
+
     def initialize
       set_auth
     end
@@ -327,9 +331,6 @@ module Factiva
 
   private
 
-    def self.instance
-      @instance ||= new
-    end
 
     def set_auth
       @auth = Authentication.new(config)
@@ -352,15 +353,13 @@ module Factiva
     end
 
     def make_request(http_method, url, params = nil, headers = {})
-      http_params = [http_method, url, params].compact
-
       begin
         response = HTTP
           .headers(accept: headers.fetch(:accept, DEFAULT_CONTENT_TYPE))
           .headers("Content-Type" => headers.fetch(:content_type, DEFAULT_CONTENT_TYPE))
           .timeout(config.timeout)
           .auth("Bearer #{auth.token}")
-          .send(*http_params)
+          .send(http_method, url, **(params || {}))
 
         response_body = response.body.to_s.empty? ? {} : JSON.parse(response.body.to_s)
 

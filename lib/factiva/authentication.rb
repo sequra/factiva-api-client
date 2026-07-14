@@ -41,7 +41,7 @@ module Factiva
         .timeout(config.timeout)
         .post(
           config.auth_url,
-          params
+          **params
         )
 
       response_body = JSON.parse(response.body.to_s)

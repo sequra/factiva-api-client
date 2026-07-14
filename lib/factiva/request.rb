@@ -45,13 +45,16 @@ module Factiva
       end
     end
 
+    def self.instance
+      @instance ||= new
+    end
+
     def initialize
       set_auth
     end
 
     def search(first_name:, last_name:, birth_date: nil, birth_year: nil,
                birth_month: nil, birth_day: nil, exclude_pep: false, offset: 0, limit: 200)
-
       # Birth date takes priority over year, month and day values
       if birth_date
         birth_year, birth_month, birth_day = [
@@ -88,9 +91,6 @@ module Factiva
     end
 
   private
-    def self.instance
-      @instance ||= new
-    end
 
     def set_auth
       @auth = Authentication.new(config)
@@ -105,13 +105,11 @@ module Factiva
     end
 
     def make_request(method, url, params = nil)
-      http_params = method == :post ? [:post, url, params] : [:get, url]
-
       begin
         response = HTTP
           .timeout(config.timeout)
           .auth("Bearer #{auth.token}")
-          .send(*http_params)
+          .send(method, url, **(params || {}))
 
         response_body = JSON.parse(response.body.to_s)
 

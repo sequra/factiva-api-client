@@ -4,7 +4,7 @@ module Factiva
   RSpec.describe Factiva::Request do
     let(:subject) { Request }
 
-    context "#Search" do
+    describe "#Search" do
       let(:params) { { first_name: "John", last_name: "Smith" } }
 
       context "First search", vcr: "search/first_search" do
@@ -150,7 +150,8 @@ module Factiva
 
       context "Search returns error twice", vcr: "search/error_twice" do
         before do
-          allow_any_instance_of(HTTP::Client).to receive(:post).and_raise(SocketError)
+          # `perform` is the common request path in both http 5 (Client) and http 6 (Session -> Client)
+          allow_any_instance_of(HTTP::Client).to receive(:perform).and_raise(SocketError)
         end
 
         it "raises an exception" do
@@ -173,7 +174,7 @@ module Factiva
       end
     end
 
-    context "#Profile" do
+    describe "#Profile" do
       let(:profile_id) { "2261549" }
 
       context "First profile", vcr: "profile/first_profile" do
@@ -208,7 +209,8 @@ module Factiva
 
       context "Profile returns error twice", vcr: "profile/error_twice" do
         before do
-          allow_any_instance_of(HTTP::Client).to receive(:get).and_raise(SocketError)
+          # `perform` is the common request path in both http 5 (Client) and http 6 (Session -> Client)
+          allow_any_instance_of(HTTP::Client).to receive(:perform).and_raise(SocketError)
         end
 
         it "raises an exception" do
@@ -231,7 +233,7 @@ module Factiva
       end
     end
 
-    context "#Stub!" do
+    describe "#Stub!" do
       let(:search_params) { { first_name: "Jhon", last_name: "Smith" } }
       let(:profile_id)    { "2261549" }
 
