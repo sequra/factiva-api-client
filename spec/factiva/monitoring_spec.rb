@@ -421,5 +421,55 @@ module Factiva
         end
       end
     end
+
+    describe "#correlation_status" do
+      let(:case_id) { "296373b3-80ee-4fb7-9f2e-b43604051c0b" }
+      let(:transaction_id) { "49134c67-45f5-4c2d-9439-a15b98f79117" }
+      let(:response) { subject.correlation_status(case_id: case_id, transaction_id: transaction_id) }
+
+      context "when the correlation is still processing", vcr: "monitoring/correlation_status_processing" do
+        it "authenticates and returns the transaction being processed", :aggregate_failures do
+          expect(response["data"]["id"]).to eq(transaction_id)
+          expect(response["data"]["type"]).to eq("transactions")
+          expect(response["data"]["attributes"]).to include(
+            "operation" => "CORRELATE",
+            "status" => "PROCESSING",
+            "case_id" => case_id,
+            "valid_associations" => 0,
+            "processing_associations" => 1,
+          )
+        end
+      end
+
+      context "when the correlation is completed", vcr: "monitoring/correlation_status_completed" do
+        it "authenticates and returns the completed transaction", :aggregate_failures do
+          expect(response["data"]["id"]).to eq(transaction_id)
+          expect(response["data"]["attributes"]).to include(
+            "operation" => "CORRELATE",
+            "status" => "COMPLETED",
+            "case_id" => case_id,
+            "valid_associations" => 1,
+            "processing_associations" => 0,
+            "valid_association_ids" => ["4caa5083-0f04-406a-ad03-500d85375390"],
+          )
+        end
+      end
+
+      context "when factiva returns an error", vcr: "monitoring/correlation_status_invalid" do
+        let(:transaction_id) { "invalid_id" }
+
+        it "raises a Factiva::RequestError with error details from the 'errors' key" do
+          expect {
+            response
+          }.to raise_error(Factiva::RequestError) { |error|
+            expect(error.message).to include("404")
+            expect(error.message).to include("Transaction with id invalid_id not found.")
+            expect(error.status_code).to eq(404)
+            expect(error.error_body).to be_an(Array)
+            expect(error.error_body.first["detail"]).to include("Transaction with id invalid_id not found.")
+          }
+        end
+      end
+    end
   end
 end
