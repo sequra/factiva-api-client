@@ -449,8 +449,9 @@ module Factiva
             "status" => "COMPLETED",
             "case_id" => case_id,
             "valid_associations" => 1,
+            "invalid_associations" => 0,
+            "pending_associations" => 0,
             "processing_associations" => 0,
-            "valid_association_ids" => ["4caa5083-0f04-406a-ad03-500d85375390"],
           )
         end
       end
@@ -463,10 +464,10 @@ module Factiva
             response
           }.to raise_error(Factiva::RequestError) { |error|
             expect(error.message).to include("404")
-            expect(error.message).to include("Transaction with id invalid_id not found.")
             expect(error.status_code).to eq(404)
             expect(error.error_body).to be_an(Array)
-            expect(error.error_body.first["detail"]).to include("Transaction with id invalid_id not found.")
+            expect(error.error_body.first["detail"])
+              .to eq("Case Transaction pair with id #{case_id} and #{transaction_id} not found.")
           }
         end
       end
