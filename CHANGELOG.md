@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.17.0](https://github.com/sequra/factiva-api-client/compare/v0.16.0...v0.17.0) (2026-08-28)
+
+
+### Features
+
+* add correlation_status to poll a correlate transaction ([#54](https://github.com/sequra/factiva-api-client/issues/54)) ([92a67d8](https://github.com/sequra/factiva-api-client/commit/92a67d8314d58f9d68943bcfdf2f4ad600c9b5c6))
+
 ## [0.16.0](https://github.com/sequra/factiva-api-client/compare/v0.15.0...v0.16.0) (2026-07-14)
 
 
