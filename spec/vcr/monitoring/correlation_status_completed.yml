@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b/transactions/49134c67-45f5-4c2d-9439-a15b98f79117
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJEN0IwQTFERkJCNzlDRDFBQjM4NzNCMTcyODMyRjkxMENEQkRBREIiLCJ0eXAiOiJKV1QifQ.eyJwaWIiOnsiYXBjIjoiUk5DIiwiY3RjIjoiUCIsIm1hc3Rlcl9hcHBfaWQiOiJ0emVXSmhhMVc1TndyVUJSQ1N3T2R0Q0dxSVE1bXpBSSIsInNlcnZpY2VfYWNjb3VudF9pZCI6IjlTRVEwMDAzMDAiLCJlbmNyeXB0ZWRfdG9rZW4iOiJTMDJZdEpxM0dialpUcW5OcDZ0T0RNck45QW1KY2JhUFRVdE1wTXBOOUFjM0hibVpUclRSVkpXU1VORlhxRkRRcXpWVGJSNVRxRlZWRTZjIn0sImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZG93am9uZXMuY29tL29hdXRoMi92MiIsInN1YiI6IjYyYThkZTk3MTA4ZWNlNWI4ODFhZDEyYyIsImF1ZCI6InR6ZVdKaGExVzVOd3JVQlJDU3dPZHRDR3FJUTVtekFJIiwiYXpwIjoidHplV0poYTFXNU53clVCUkNTd09kdENHcUlRNW16QUkiLCJpYXQiOjE3ODc4MzcxMTYsImV4cCI6MTc4Nzg0MDcxNiwidGlkIjoiYjJiIn0.oSd9dC_d5dAzz_4dyGwfoPntAcG1snhlITHdJrSO6Y8rI61e-BxfrjSYFoxWg0yEHO42oz0ERSpsQK9XPrfAFsLVVh_lySUEiEasbnMcxIuVcg9o4nQvoXhFr3XrdP5UN82fncALKQrgHqQkXlQkWcFZoI52xkXQfBHcXp_dY5KK5KH8ofiDKj84EOOXMmkIIOtiZTFz_nx84skhRZT1OnKFJCryAbUmuJKTrSoMdkTtgRaQbN1fgeVcWadBGTA1Tdiu1UyqKe46mqOYnAwEIItSzfP4I71Yb3MVUTiIRXaaKN7cfrb3XP3cC6yze0rsSw1SNyuZ2D6SsUXQRE0omw
+      Connection:
+      - close
+      Host:
+      - api.dowjones.com
+      User-Agent:
+      - http.rb/6.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - CloudFront
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '445'
+      Connection:
+      - close
+      Date:
+      - Thu, 27 Aug 2026 13:25:16 GMT
+      Vary:
+      - Access-Control-Request-Headers
+      X-Content-Type-Options:
+      - nosniff
+      X-Dj-Media-Type:
+      - dowjones.dna; resource=transactions; version=1.0; format=json
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Dj-Transaction-Id:
+      - dj-80b42be7-d87a-4cfb-93a0-04eb77baad82
+      X-Request-Id:
+      - a191e40e-1aed-4c47-90c2-5358a05c81c7
+      Via:
+      - 1.1 google, 1.1 bc05735148d76549abe57f2fc185c1f4.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MAD56-P2
+      X-Amz-Cf-Id:
+      - gIzGp5NNbHndb4ck0ImCd6ikklqeRKz31rrxaScD2QEQQB8SHfVV5Q==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"attributes":{"operation":"CORRELATE","status":"COMPLETED","case_id":"296373b3-80ee-4fb7-9f2e-b43604051c0b","valid_associations":1,"invalid_associations":0,"pending_associations":0,"processing_associations":0},"type":"transactions","links":{"self":"https://api.dowjones.com/risk-entity-screening-cases/296373b3-80ee-4fb7-9f2e-b43604051c0b/transactions/49134c67-45f5-4c2d-9439-a15b98f79117"},"id":"49134c67-45f5-4c2d-9439-a15b98f79117"}}'
+  recorded_at: Thu, 27 Aug 2026 13:25:17 GMT
+recorded_with: VCR 6.4.0

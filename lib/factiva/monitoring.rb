@@ -60,6 +60,10 @@ module Factiva
       instance.update_matches(**args)
     end
 
+    def self.correlation_status(**args)
+      instance.correlation_status(**args)
+    end
+
     def self.reset_auth
       instance.set_auth
     end
@@ -75,7 +79,8 @@ module Factiva
         get_profile: {},
         get_matches: {},
         log_decision: {},
-        update_matches: {}
+        update_matches: {},
+        correlation_status: {}
       )
       @instance = MockedRequest.new(
         create_case,
@@ -89,7 +94,8 @@ module Factiva
         get_profile,
         get_matches,
         log_decision,
-        update_matches
+        update_matches,
+        correlation_status
       )
       true
     end
@@ -111,7 +117,8 @@ module Factiva
       :stubbed_get_profile,
       :stubbed_get_matches,
       :stubbed_log_decision,
-      :stubbed_update_matches
+      :stubbed_update_matches,
+      :stubbed_correlation_status
 
       def initialize(stubbed_create_case,
         stubbed_list_associations,
@@ -124,7 +131,8 @@ module Factiva
         stubbed_get_profile,
         stubbed_get_matches,
         stubbed_log_decision,
-        stubbed_update_matches
+        stubbed_update_matches,
+        stubbed_correlation_status
       )
         @stubbed_create_case = stubbed_create_case
         @stubbed_list_associations = stubbed_list_associations
@@ -138,6 +146,7 @@ module Factiva
         @stubbed_get_matches = stubbed_get_matches
         @stubbed_log_decision = stubbed_log_decision
         @stubbed_update_matches = stubbed_update_matches
+        @stubbed_correlation_status = stubbed_correlation_status
       end
 
       def create_case(**args)
@@ -186,6 +195,10 @@ module Factiva
 
       def update_matches(**args)
         stubbed_update_matches
+      end
+
+      def correlation_status(**args)
+        stubbed_correlation_status
       end
     end
 
@@ -326,6 +339,14 @@ module Factiva
       # If the request fails auth is reset and the request retried
       patch(url, params, headers)
         .or       { set_auth; patch(url, params, headers) }
+        .value_or { |error| raise RequestError.from_response(error) }
+    end
+
+    def correlation_status(case_id:, transaction_id:)
+      url = transaction_url(case_id, transaction_id)
+
+      get(url)
+        .or       { set_auth; get(url) }
         .value_or { |error| raise RequestError.from_response(error) }
     end
 
@@ -482,6 +503,10 @@ module Factiva
 
     def case_association_url(case_id, association_id)
       make_url("risk-entity-screening-cases/#{case_id}/risk-entity-screening-associations/#{association_id}")
+    end
+
+    def transaction_url(case_id, transaction_id)
+      make_url("risk-entity-screening-cases/#{case_id}/transactions/#{transaction_id}")
     end
 
     def case_association_body(association_id)
