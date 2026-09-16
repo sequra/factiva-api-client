@@ -61,6 +61,61 @@ module Factiva
       end
     end
 
+    describe "#list_case_associations" do
+      let(:case_id) { "296373b3-80ee-4fb7-9f2e-b43604051c0b" }
+
+      context "when the case has associations", vcr: "monitoring/list_case_associations" do
+        let(:response) { subject.list_case_associations(case_id: case_id, limit: 1) }
+
+        it "requests the case scoped collection with the pagination params" do
+          response
+
+          WebMock.assert_requested(
+            :get,
+            "https://api.dowjones.com/risk-entity-screening-cases/#{case_id}/risk-entity-screening-associations" \
+            "?page[offset]=0&page[limit]=1"
+          )
+        end
+
+        it "authenticates and returns the associations of the case" do
+          expect(response["data"].size).to eq(1)
+
+          association = response["data"].first
+          expect(association["type"]).to eq("risk-entity-screening-associations")
+          expect(association["id"]).to eq("000001a1-9712-40bb-a76f-2fddfc46ae7b")
+          expect(association["attributes"]["external_id"]).to eq("sequra/Shopper::User#2510721")
+        end
+
+        it "returns the total count of associations of the case" do
+          expect(response["meta"]).to include(
+            "count" => 1,
+            "total_count" => 1_319_258,
+            "offset" => {
+              "first" => "0",
+              "last" => "1319257",
+              "next" => "1"
+            },
+          )
+        end
+      end
+
+      context "when the request is stubbed" do
+        let(:stubbed_list_case_associations) { { "meta" => { "total_count" => 42 } } }
+
+        before do
+          subject.stub!(list_case_associations: stubbed_list_case_associations)
+        end
+
+        after do
+          subject.unstub!
+        end
+
+        it "returns the stubbed response" do
+          expect(subject.list_case_associations(case_id: case_id)).to eq(stubbed_list_case_associations)
+        end
+      end
+    end
+
     describe "#create_association" do
       context "with correct year", vcr: "monitoring/create_association" do
         let(:sample_data) {
