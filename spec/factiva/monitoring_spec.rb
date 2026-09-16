@@ -82,17 +82,20 @@ module Factiva
 
           association = response["data"].first
           expect(association["type"]).to eq("risk-entity-screening-associations")
-          expect(association["id"]).to eq("000001a1-9712-40bb-a76f-2fddfc46ae7b")
-          expect(association["attributes"]["external_id"]).to eq("sequra/Shopper::User#2510721")
+          expect(association["id"]).to eq("00258b3d-a8fb-4192-ae8e-678f2a7a4390")
+          expect(association["attributes"]["has_alerts"]).to be_falsey
+          expect(association["attributes"]["association"]["external_id"]).to eq("sequra/Shopper::User#10646")
+          expect(association["attributes"]["association"]["country"]).to eq("SPAIN")
+          expect(association["attributes"]["association"]["record_type"]).to eq("PERSON")
         end
 
         it "returns the total count of associations of the case" do
           expect(response["meta"]).to include(
             "count" => 1,
-            "total_count" => 1_319_258,
+            "total_count" => 1741,
             "offset" => {
               "first" => "0",
-              "last" => "1319257",
+              "last" => "1740",
               "next" => "1"
             },
           )
