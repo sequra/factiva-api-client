@@ -20,6 +20,10 @@ module Factiva
       instance.list_associations(**args)
     end
 
+    def self.list_case_associations(**args)
+      instance.list_case_associations(**args)
+    end
+
     def self.create_association(**args)
       instance.create_association(**args)
     end
@@ -80,7 +84,8 @@ module Factiva
         get_matches: {},
         log_decision: {},
         update_matches: {},
-        correlation_status: {}
+        correlation_status: {},
+        list_case_associations: {}
       )
       @instance = MockedRequest.new(
         create_case,
@@ -95,7 +100,8 @@ module Factiva
         get_matches,
         log_decision,
         update_matches,
-        correlation_status
+        correlation_status,
+        list_case_associations
       )
       true
     end
@@ -118,7 +124,8 @@ module Factiva
       :stubbed_get_matches,
       :stubbed_log_decision,
       :stubbed_update_matches,
-      :stubbed_correlation_status
+      :stubbed_correlation_status,
+      :stubbed_list_case_associations
 
       def initialize(stubbed_create_case,
         stubbed_list_associations,
@@ -132,7 +139,8 @@ module Factiva
         stubbed_get_matches,
         stubbed_log_decision,
         stubbed_update_matches,
-        stubbed_correlation_status
+        stubbed_correlation_status,
+        stubbed_list_case_associations
       )
         @stubbed_create_case = stubbed_create_case
         @stubbed_list_associations = stubbed_list_associations
@@ -147,6 +155,7 @@ module Factiva
         @stubbed_log_decision = stubbed_log_decision
         @stubbed_update_matches = stubbed_update_matches
         @stubbed_correlation_status = stubbed_correlation_status
+        @stubbed_list_case_associations = stubbed_list_case_associations
       end
 
       def create_case(**args)
@@ -200,6 +209,10 @@ module Factiva
       def correlation_status(**args)
         stubbed_correlation_status
       end
+
+      def list_case_associations(**args)
+        stubbed_list_case_associations
+      end
     end
 
     def self.instance
@@ -240,6 +253,12 @@ module Factiva
       # If the request fails auth is reset and the request retried
       get(list_associations_url(offset: offset, limit: limit, filter_correlated: filter_correlated))
         .or       { set_auth; get(list_associations_url(offset: offset, limit: limit, filter_correlated: filter_correlated)) }
+        .value_or { |error| raise RequestError.from_response(error) }
+    end
+
+    def list_case_associations(case_id:, offset: 0, limit: 100)
+      get(list_case_associations_url(case_id: case_id, offset: offset, limit: limit))
+        .or       { set_auth; get(list_case_associations_url(case_id: case_id, offset: offset, limit: limit)) }
         .value_or { |error| raise RequestError.from_response(error) }
     end
 
@@ -499,6 +518,13 @@ module Factiva
 
     def case_associations_url(case_id)
       make_url("risk-entity-screening-cases/#{case_id}/risk-entity-screening-associations")
+    end
+
+    def list_case_associations_url(case_id:, offset:, limit:)
+      make_url(
+        "risk-entity-screening-cases/#{case_id}/risk-entity-screening-associations" \
+        "?page[offset]=#{offset}&page[limit]=#{limit}"
+      )
     end
 
     def case_association_url(case_id, association_id)
