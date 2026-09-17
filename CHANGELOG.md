@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.18.0](https://github.com/sequra/factiva-api-client/compare/v0.17.0...v0.18.0) (2026-09-17)
+
+
+### Features
+
+* add list_case_associations to count associations of one case ([#56](https://github.com/sequra/factiva-api-client/issues/56)) ([00bcdd8](https://github.com/sequra/factiva-api-client/commit/00bcdd8572e67fdf637910d0d4313fc0a5f81238))
+
 ## [0.17.0](https://github.com/sequra/factiva-api-client/compare/v0.16.0...v0.17.0) (2026-08-28)
 
 
