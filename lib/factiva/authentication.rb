@@ -44,17 +44,22 @@ module Factiva
           **params
         )
 
-      response_body = JSON.parse(response.body.to_s)
-
       if !response.status.success?
-        raise RequestError.new({ code: response.code, error: response_body["error"] }.to_s)
+        raise RequestError.from_response({ code: response.code, error: error_from(response.body.to_s) })
       end
 
-      response_body
+      JSON.parse(response.body.to_s)
     rescue HTTP::TimeoutError
       # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError
       # Raising Factiva::TimeoutError is required for CircuitBreaker to work properly
       raise Factiva::TimeoutError
+    end
+
+    def error_from(body)
+      parsed_body = JSON.parse(body)
+      parsed_body.is_a?(Hash) ? parsed_body["error"] : parsed_body
+    rescue JSON::ParserError
+      body
     end
 
     def expired?(timestamp)

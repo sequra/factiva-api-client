@@ -39,7 +39,39 @@ module Factiva
           expect(HTTP).to receive(:timeout).once.and_call_original
           expect {
             subject.token
-          }.to raise_error(RequestError, { code: 403, error: "unauthorized_client" }.to_s)
+          }.to raise_error(RequestError, { code: 403, error: "unauthorized_client" }.to_s) { |error|
+            expect(error).to have_attributes(status_code: 403, error_body: "unauthorized_client")
+          }
+        end
+      end
+
+      context "retrieve authn token fails with a null body" do
+        before do
+          WebMock.stub_request(:post, /oauth2\/v1\/token/)
+                 .to_return(status: 503, body: "null", headers: { "Content-Type" => "application/json" })
+        end
+
+        it "raises a RequestError carrying the status code" do
+          expect {
+            subject.token
+          }.to raise_error(RequestError, { code: 503, error: nil }.to_s) { |error|
+            expect(error).to have_attributes(status_code: 503, error_body: nil)
+          }
+        end
+      end
+
+      context "retrieve authn token fails with a body that is not JSON" do
+        before do
+          WebMock.stub_request(:post, /oauth2\/v1\/token/)
+                 .to_return(status: 502, body: "<html>Bad Gateway</html>", headers: { "Content-Type" => "text/html" })
+        end
+
+        it "raises a RequestError carrying the raw body" do
+          expect {
+            subject.token
+          }.to raise_error(RequestError) { |error|
+            expect(error).to have_attributes(status_code: 502, error_body: "<html>Bad Gateway</html>")
+          }
         end
       end
 
