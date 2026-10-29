@@ -220,6 +220,39 @@ module Factiva
         end
       end
 
+      context "Profile fails with a null body",
+              vcr: { cassette_name: "profile/authentication_only", allow_playback_repeats: true } do
+        before do
+          WebMock.stub_request(:get, /riskentities\/profiles/)
+                 .to_return(status: 503, body: "null", headers: { "Content-Type" => "application/json" })
+        end
+
+        it "retries once and raises a RequestError carrying the status code" do
+          expect {
+            subject.profile(profile_id)
+          }.to raise_error(RequestError, { code: 503, error: nil }.to_s) { |error|
+            expect(error).to have_attributes(status_code: 503, error_body: nil)
+          }
+          WebMock.assert_requested(:get, /riskentities\/profiles/, times: 2)
+        end
+      end
+
+      context "Profile fails with a body that is not JSON",
+              vcr: { cassette_name: "profile/authentication_only", allow_playback_repeats: true } do
+        before do
+          WebMock.stub_request(:get, /riskentities\/profiles/)
+                 .to_return(status: 502, body: "<html>Bad Gateway</html>", headers: { "Content-Type" => "text/html" })
+        end
+
+        it "raises a RequestError carrying the raw body" do
+          expect {
+            subject.profile(profile_id)
+          }.to raise_error(RequestError) { |error|
+            expect(error).to have_attributes(status_code: 502, error_body: "<html>Bad Gateway</html>")
+          }
+        end
+      end
+
       context "Factiva connection timed out", vcr: "profile/authentication_only" do
         before do
           WebMock.stub_request(:get, /riskentities\/profiles/).to_timeout

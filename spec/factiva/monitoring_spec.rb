@@ -276,6 +276,39 @@ module Factiva
           expect(response["data"]["id"]).to eq("85fb5701-4832-4647-b506-cd07c36aabc6")
         end
       end
+
+      context "when factiva fails with a null body",
+              vcr: { cassette_name: "monitoring/authentication_only", allow_playback_repeats: true } do
+        before do
+          WebMock.stub_request(:delete, /risk-entity-screening-cases/)
+                 .to_return(status: 503, body: "null", headers: { "Content-Type" => "application/json" })
+        end
+
+        it "retries once and raises a RequestError carrying the status code" do
+          expect {
+            subject.remove_association_from_case(case_id: "case_id", association_id: "association_id")
+          }.to raise_error(RequestError, { code: 503, error: nil }.to_s) { |error|
+            expect(error).to have_attributes(status_code: 503, error_body: nil)
+          }
+          WebMock.assert_requested(:delete, /risk-entity-screening-cases/, times: 2)
+        end
+      end
+
+      context "when factiva fails with a body that is not JSON",
+              vcr: { cassette_name: "monitoring/authentication_only", allow_playback_repeats: true } do
+        before do
+          WebMock.stub_request(:delete, /risk-entity-screening-cases/)
+                 .to_return(status: 502, body: "<html>Bad Gateway</html>", headers: { "Content-Type" => "text/html" })
+        end
+
+        it "raises a RequestError carrying the raw body" do
+          expect {
+            subject.remove_association_from_case(case_id: "case_id", association_id: "association_id")
+          }.to raise_error(RequestError) { |error|
+            expect(error).to have_attributes(status_code: 502, error_body: "<html>Bad Gateway</html>")
+          }
+        end
+      end
     end
 
     describe "#get_matches" do

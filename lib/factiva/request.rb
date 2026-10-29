@@ -111,13 +111,10 @@ module Factiva
           .auth("Bearer #{auth.token}")
           .send(method, url, **(params || {}))
 
-        response_body = JSON.parse(response.body.to_s)
-
         if response.status.success?
-          Success(response_body)
+          Success(JSON.parse(response.body.to_s))
         else
-          error_message = response_body["error"] || response_body["errors"]
-          Failure({ code: response.code, error: error_message })
+          Failure({ code: response.code, error: error_from(response.body.to_s) })
         end
       rescue HTTP::TimeoutError
         # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError
@@ -128,6 +125,13 @@ module Factiva
       rescue JSON::ParserError => error
         Failure(error.message)
       end
+    end
+
+    def error_from(body)
+      parsed_body = JSON.parse(body)
+      parsed_body.is_a?(Hash) ? (parsed_body["error"] || parsed_body["errors"]) : parsed_body
+    rescue JSON::ParserError
+      body
     end
 
     def search_url
