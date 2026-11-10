@@ -281,7 +281,7 @@ module Factiva
               vcr: { cassette_name: "monitoring/authentication_only", allow_playback_repeats: true } do
         before do
           WebMock.stub_request(:delete, /risk-entity-screening-cases/)
-                 .to_return(status: 503, body: "null", headers: { "Content-Type" => "application/json" })
+                 .to_return(status: 503, body: nil.to_json, headers: { "Content-Type" => "application/json" })
         end
 
         it "retries once and raises a RequestError carrying the status code" do

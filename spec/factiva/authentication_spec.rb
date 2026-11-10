@@ -48,7 +48,7 @@ module Factiva
       context "retrieve authn token fails with a null body" do
         before do
           WebMock.stub_request(:post, /oauth2\/v1\/token/)
-                 .to_return(status: 503, body: "null", headers: { "Content-Type" => "application/json" })
+                 .to_return(status: 503, body: nil.to_json, headers: { "Content-Type" => "application/json" })
         end
 
         it "raises a RequestError carrying the status code" do

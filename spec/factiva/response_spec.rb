@@ -46,7 +46,7 @@ module Factiva
       end
 
       context "when the response fails with a null body" do
-        before { stub_response(status: 503, body: "null") }
+        before { stub_response(status: 503, body: nil.to_json) }
 
         it { is_expected.to eq(Failure({ code: 503, error: nil })) }
       end
