@@ -111,27 +111,14 @@ module Factiva
           .auth("Bearer #{auth.token}")
           .send(method, url, **(params || {}))
 
-        if response.status.success?
-          Success(JSON.parse(response.body.to_s))
-        else
-          Failure({ code: response.code, error: error_from(response.body.to_s) })
-        end
+        Response.to_result(response)
       rescue HTTP::TimeoutError
         # This error should be handled before HTTP::Error which is a superclass of HTTP::TimeoutError
         # Raising Factiva::TimeoutError is required for CircuitBreaker to work properly
         raise Factiva::TimeoutError
       rescue SocketError, HTTP::Error => error
         Failure("Failed to connect to Factiva: #{error.message}")
-      rescue JSON::ParserError => error
-        Failure(error.message)
       end
-    end
-
-    def error_from(body)
-      parsed_body = JSON.parse(body)
-      parsed_body.is_a?(Hash) ? (parsed_body["error"] || parsed_body["errors"]) : parsed_body
-    rescue JSON::ParserError
-      body
     end
 
     def search_url

@@ -253,6 +253,23 @@ module Factiva
         end
       end
 
+      context "Profile succeeds with a body that is not JSON",
+              vcr: { cassette_name: "profile/authentication_only", allow_playback_repeats: true } do
+        before do
+          WebMock.stub_request(:get, /riskentities\/profiles/)
+                 .to_return(status: 200, body: "<html>Maintenance</html>", headers: { "Content-Type" => "text/html" })
+        end
+
+        it "retries once and raises a RequestError carrying the status code and the raw body" do
+          expect {
+            subject.profile(profile_id)
+          }.to raise_error(RequestError) { |error|
+            expect(error).to have_attributes(status_code: 200, error_body: "<html>Maintenance</html>")
+          }
+          WebMock.assert_requested(:get, /riskentities\/profiles/, times: 2)
+        end
+      end
+
       context "Factiva connection timed out", vcr: "profile/authentication_only" do
         before do
           WebMock.stub_request(:get, /riskentities\/profiles/).to_timeout
