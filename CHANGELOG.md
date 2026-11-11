@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.18.1](https://github.com/sequra/factiva-api-client/compare/v0.18.0...v0.18.1) (2026-11-11)
+
+
+### Bug Fixes
+
+* raise RequestError with status code when Factiva auth fails ([#58](https://github.com/sequra/factiva-api-client/issues/58)) ([48566d4](https://github.com/sequra/factiva-api-client/commit/48566d442ecd2b3767f11780d248cc1131ede2c0))
+
 ## [0.18.0](https://github.com/sequra/factiva-api-client/compare/v0.17.0...v0.18.0) (2026-09-17)
 
 
